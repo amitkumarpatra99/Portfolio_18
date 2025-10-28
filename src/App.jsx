@@ -13,8 +13,8 @@ const App = () => {
   return (
       <div className="App">
       <AnimatedCursor
-        innerSize={8}
-        outerSize={15} // Adjust size for the purple ring
+        innerSize={10}
+        outerSize={30} // Adjust size for the purple ring
         color='0,150,255' 
         outerAlpha={0.4} // Controls the opacity of the outer ring
         innerScale={1}
@@ -27,7 +27,7 @@ const App = () => {
           {
             target: '.custom-target-element',
             options: {
-              innerSize: 10, // Custom size on hover
+              innerSize: 15, // Custom size on hover
               outerAlpha: 0.5
             }
           }
