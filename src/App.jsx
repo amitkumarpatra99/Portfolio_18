@@ -14,7 +14,7 @@ const App = () => {
       <div className="App">
       <AnimatedCursor
         innerSize={10}
-        outerSize={30} // Adjust size for the purple ring
+        outerSize={20} // Adjust size for the purple ring
         color='0,150,255' 
         outerAlpha={0.4} // Controls the opacity of the outer ring
         innerScale={1}
