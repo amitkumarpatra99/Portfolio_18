@@ -43,7 +43,7 @@ const About = () => {
           </p>
           {/* Resume */}
           <a
-            href="/src/assets/certificate/AMIT CV.pdf"
+            href="https://drive.google.com/file/d/1TnnNQ06vYZcnq48VJr2bxk1FNLL53T5Q/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block text-white py-3 px-8 rounded-full mt-5 text-lg font-bold transition duration-300 transform hover:scale-105"
