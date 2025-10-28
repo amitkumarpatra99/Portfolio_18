@@ -13,6 +13,14 @@
   cursor: url('./assets/cursor.png') 10 10, auto;
 } */
 
+* {
+  cursor: none !important;
+}
+
+/* Optional: keep the text cursor for typing */
+input[type="text"], textarea {
+  cursor: text !important;
+}
 
 @layer utilities {
   .clip-path-custom {

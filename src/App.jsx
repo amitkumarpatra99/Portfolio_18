@@ -8,8 +8,31 @@ import Education from "./components/Education/Education";
 import Contact from "./components/Contact/Contact";
 import Footer from "./components/Footer/Footer";
 import BlurBlob from './components/BlurBlob';
+import AnimatedCursor from "react-animated-cursor";
 const App = () => {
   return (
+      <div className="App">
+      <AnimatedCursor
+        innerSize={8}
+        outerSize={15} // Adjust size for the purple ring
+        color='0,150,255' 
+        outerAlpha={0.4} // Controls the opacity of the outer ring
+        innerScale={1}
+        outerScale={2}
+        clickables={[
+          'a',  
+          'input[type="text"]',
+          'button',
+          '.link',
+          {
+            target: '.custom-target-element',
+            options: {
+              innerSize: 10, // Custom size on hover
+              outerAlpha: 0.5
+            }
+          }
+        ]}
+      />
     <div className="bg-[#011028]">
 
       <BlurBlob position={{ top: '35%', left: '20%' }} size={{ width: '30%', height: '40%' }} />
@@ -27,6 +50,7 @@ const App = () => {
         <Footer />
 
       </div>
+    </div>
     </div>
   );
 };
