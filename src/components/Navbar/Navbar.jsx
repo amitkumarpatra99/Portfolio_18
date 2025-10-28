@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
-import { Mail, Phone, MapPin, Github, Instagram, ArrowUp, Twitter } from "lucide-react";
+import { Github } from "lucide-react";
 import { LiaLinkedinIn } from "react-icons/lia";
 
 
@@ -56,7 +55,7 @@ const Navbar = () => {
         <div onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
           className="flex items-center gap-2 ">
           <img
-            src="/src/assets/Others/Favicon.png"
+            src="/src/assets/Favicon.png"
             alt="Logo"
             className="h-8 w-8 object-contain drop-shadow-[0_0_8px_#4FB7B3] hover:scale-110 transition-all duration-300"
           />

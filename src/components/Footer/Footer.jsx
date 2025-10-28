@@ -2,7 +2,7 @@ import React from "react";
 import { Link as ScrollLink } from "react-scroll";
 import { Mail, Phone, MapPin, Github, Instagram, ArrowUp, Twitter } from "lucide-react";
 import { SiRazorpay } from "react-icons/si";
-import {  LiaLinkedinIn } from "react-icons/lia";
+import { LiaLinkedinIn } from "react-icons/lia";
 
 
 
@@ -35,7 +35,7 @@ const Footer = () => {
 
             <div className="flex items-center gap-2 mb-4" cursor="default">
               <img
-                src="/src/assets/Others/Favicon.png"
+                src="/src/assets/Favicon.png"
                 alt="Logo"
                 className="h-8 w-8 object-contain drop-shadow-[0_0_8px_#4FB7B3] hover:scale-105 transition-all duration-300"
               />
