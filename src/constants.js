@@ -35,13 +35,13 @@ import angular from './assets/tech_logo/angular.png';
 import redux from './assets/tech_logo/redux.png';
 import gsap from './assets/tech_logo/gsap.png';
 
-
+// Education and Experience Logo
 import vsk from './assets/Education Logo/VSK LOGO.jpg';
 import abacus from './assets/Education Logo/Abacus Logo.jpg';
 import cttc from './assets/Education Logo/CTTC LOGO.jpg';
 import jt from './assets/Education Logo/JT LOGO.jpg';
 import ommshanti from './assets/Education Logo/OMM SHANTI LOGO.jpg';
-import rec from './assets/Education Logo/REC LOGO.png';
+import rec from './assets/Education Logo/REC Logo.jpg';
 import python from './assets/certificate/Python.pdf'
 import java from './assets/certificate/JAVA CERTIFICATE.pdf'
 import aiml from './assets/certificate/AIML.pdf'
@@ -65,7 +65,6 @@ import flipkart from './assets/Project Photo/Flipkart Clone.png'
 import netflix from './assets/Project Photo/Netflix Clone.png'
 import twitter from './assets/Project Photo/Twitter Clone.png'
 import face from './assets/Project Photo/Face Detection.png'
-
 
 
 export const SkillsInfo = [
@@ -258,7 +257,7 @@ export const projects = [
   {
     id: 14,
     title: "TWITTER CLONE",
-    description: "A full-featured social media platform developed using HTML, CSS, JavaScript (and optionally React/Node.js if you used them). It replicates key functionalities of Twitter including posting tweets, liking, and viewing feeds, all wrapped in a sleek and responsive design.",
+    description: "A full-featured social media platform developed using HTML, CSS, JavaScript and Tailwind CSS. It replicates key functionalities of Twitter including posting tweets, liking, and viewing feeds, all wrapped in a sleek and responsive design.",
     image: twitter,
     tags: ["HTML", "CSS", "JavaScript", "Tailwind CSS"],
     github: "https://github.com/amitkumarpatra99/Twitter-Clone",
@@ -330,7 +329,7 @@ export const experiences = [
     img: jt,
     role: "Java Internship",
     company: "Java Tecnocart",
-    date: "November 2023 - February 2024",
+    date: "Nov 2023 - Feb 2024",
     project: "Hospital Management System",
     certificate: java,
 
@@ -351,6 +350,7 @@ export const education = [
     date: "July 2022 - July 2026",
     // desc: "REC",
     degree: "Bachelor of Tecnlogy",
+    add:"Bhubaneswar"
   },
   {
     id: 1,
@@ -358,7 +358,8 @@ export const education = [
     school: "OMM SHANTI +2 SCIENCE COLLEGE ",
     date: "June 2020 - May 2022",
     // desc: "I have completed my +2 Science in This college ",
-    degree: "+2 Science ",
+    degree: "Intermediate Science ",
+    add:"Pipili,Puri"
   },
   {
     id: 2,
@@ -368,6 +369,7 @@ export const education = [
     grade: "",
     // desc: "I have completed my class 10th Education in this School",
     degree: "HSC(10th)",
+    add:"Delang,Puri"
   },
 ];
 

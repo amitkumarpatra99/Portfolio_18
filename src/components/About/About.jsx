@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactTypingEffect from 'react-typing-effect';
 import Tilt from 'react-parallax-tilt';
-import profileImage from '../../assets/image.png';
+import profileImage from '../../assets/Profile.png';
 
 const About = () => {
   return (
@@ -58,8 +58,8 @@ const About = () => {
 
           {/* TILT EFFECT */}
           <Tilt className="w-48 h-48 sm:w-64 sm:h-64 md:w-[30rem] md:h-[30rem] "
-            tiltMaxAngleX={20}
-            tiltMaxAngleY={20}
+            tiltMaxAngleX={5}
+            tiltMaxAngleY={5}
             perspective={1000}
             scale={1.05}
             transitionSpeed={1000}
