@@ -55,7 +55,7 @@ const Navbar = () => {
         <div onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
           className="flex items-center gap-2 ">
           <img
-            src="/src/assets/DP.jpg"
+            src="DP.jpg"
             alt="Logo"
             className="h-8 w-8 object-contain drop-shadow-[0_0_8px_#4FB7B3] hover:scale-110 transition-all duration-300 rounded-full"
           />

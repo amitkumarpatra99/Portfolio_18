@@ -35,7 +35,7 @@ const Footer = () => {
 
             <div className="flex items-center gap-2 mb-4" cursor="default">
               <img
-                src="/src/assets/DP.jpg"
+                src="DP.jpg"
                 alt="Logo"
                 className="h-8 w-8 object-contain drop-shadow-[0_0_8px_#4FB7B3] hover:scale-105 transition-all duration-300 rounded-full"
               />
