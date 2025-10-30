@@ -8,10 +8,6 @@
   font-family: "Poppins", sans-serif;
 }
 
-/* html {
-  scroll-behavior: smooth;
-  cursor: url('./assets/cursor.png') 10 10, auto;
-} */
 
 * {
   cursor: none !important;
@@ -21,6 +17,7 @@
 input[type="text"], textarea {
   cursor: text !important;
 }
+
 
 @layer utilities {
   .clip-path-custom {
@@ -35,3 +32,33 @@ input[type="text"], textarea {
     clip-path: polygon(0 0, 100% 0, 100% 98%, 75% 96%, 0 100%);
   }
 }
+
+
+
+/* floating particles */
+.particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: rgba(79,183,179,0.8);
+  border-radius: 50%;
+  animation: floatParticle linear infinite;
+  opacity: 0.8;
+}
+
+/* random positions + speeds */
+.particle:nth-child(odd) { animation-duration: 6s; }
+.particle:nth-child(even) { animation-duration: 9s; }
+
+@keyframes floatParticle {
+  0% { transform: translateY(100vh) translateX(0); opacity:0; }
+  30% { opacity:1; }
+  100% { transform: translateY(-10vh) translateX(20px); opacity:0; }
+}
+
+/* fade-in hero */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fadeInUp { animation: fadeInUp 1.2s ease forwards; }
