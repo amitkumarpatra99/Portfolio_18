@@ -6,20 +6,25 @@ const About = () => {
   return (
     <section
       id="about"
-      className="relative h-screen w-full flex flex-col items-center justify-center text-center px-[7vw] md:px-[7vw] lg:px-[20vw] font-sans overflow-hidden"
+      className="relative min-h-screen w-full max-w-screen overflow-hidden flex flex-col items-center justify-center text-center 
+      px-5 sm:px-10 md:px-[10vw] lg:px-[20vw] font-sans"
     >
 
       {/* GRID BACKGROUND */}
-      <div className="absolute inset-0 opacity-[0.15] bg-[linear-gradient(to_right,#4fb7b31a_1px,transparent_1px),linear-gradient(to_bottom,#4fb7b31a_1px,transparent_1px)] bg-[size:50px_50px]"></div>
+      <div className="absolute inset-0 opacity-[0.12] bg-[linear-gradient(to_right,#4fb7b31a_1px,transparent_1px),linear-gradient(to_bottom,#4fb7b31a_1px,transparent_1px)] bg-[size:50px_50px]"></div>
 
       {/* DIAMOND GLOW SHAPE */}
-      <div className="absolute w-[60vmin] h-[60vmin] bg-[#4FB7B3]/10 blur-3xl rotate-45"></div>
+      <div className="absolute w-[90vmin] h-[90vmin] md:w-[60vmin] md:h-[60vmin] 
+      bg-[#4FB7B3]/10 blur-3xl rotate-45 
+      left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"></div>
 
       {/* CENTER SPOTLIGHT */}
-      <div className="absolute w-[80vw] h-[80vw] md:w-[50vw] md:h-[50vw] bg-[#4FB7B3]/5 blur-2xl rounded-full"></div>
+      <div className="absolute w-[120vw] h-[120vw] sm:w-[70vw] sm:h-[70vw] 
+      bg-[#4FB7B3]/5 blur-3xl rounded-full 
+      left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"></div>
 
       {/* FLOATING PARTICLES */}
-      <ul className="absolute inset-0 pointer-events-none">
+      <ul className="absolute inset-0 pointer-events-none hidden sm:block">
         {[...Array(20)].map((_, i) => (
           <li key={i} className="particle"></li>
         ))}
@@ -60,15 +65,15 @@ const About = () => {
         {/* SOCIAL ICONS */}
         <div className="flex gap-6 mt-6">
           <a href="https://github.com/" target="_blank" rel="noopener noreferrer"
-             className="text-gray-300 hover:text-[#4FB7B3] transition duration-300">
+            className="text-gray-300 hover:text-[#4FB7B3] transition duration-300">
             <Github size={28}/>
           </a>
           <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer"
-             className="text-gray-300 hover:text-[#4FB7B3] transition duration-300">
+            className="text-gray-300 hover:text-[#4FB7B3] transition duration-300">
             <Linkedin size={28}/>
           </a>
           <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer"
-             className="text-gray-300 hover:text-[#4FB7B3] transition duration-300">
+            className="text-gray-300 hover:text-[#4FB7B3] transition duration-300">
             <Twitter size={28}/>
           </a>
         </div>
