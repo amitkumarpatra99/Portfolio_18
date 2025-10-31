@@ -3,6 +3,7 @@ import { Link as ScrollLink } from "react-scroll";
 import { Mail, Phone, MapPin, Github, Instagram, ArrowUp, Twitter } from "lucide-react";
 import { SiRazorpay } from "react-icons/si";
 import { LiaLinkedinIn } from "react-icons/lia";
+import { FaWhatsapp } from "react-icons/fa6";
 
 
 
@@ -16,11 +17,12 @@ const Footer = () => {
   ];
 
   const links = [
-    { name: "Home", to: "about" },
+    { name: "Home", to: "home" },
+    { name: "About", to: "about" },
     { name: "Skill Set", to: "skills" },
     { name: "Project Hub", to: "work" },
-    { name: "Experience", to: "experience" },
-    { name: "Education", to: "education" },
+    { name: "My Journey", to: "MiniNavigation" },
+
   ];
 
   return (
@@ -39,7 +41,7 @@ const Footer = () => {
                 alt="Logo"
                 className="h-8 w-8 object-contain drop-shadow-[0_0_8px_#4FB7B3] hover:scale-105 transition-all duration-300 rounded-full"
               />
-              <h2 className="text-xl font-bold text-white tracking-wide">AMIT KUMAR PATRA</h2>
+              <h2 className="text-xl font-bold text-white tracking-wide">AMIT KUMAR <span className="text-teal-500">PATRA</span> </h2>
             </div>
 
 
@@ -114,7 +116,7 @@ const Footer = () => {
             <h3 className="text-lg font-semibold text-white  ">Contact</h3>
             <div className="w-[65px] h-[3px] rounded-full mb-3 mt-2 lg:ml-1  bg-gradient-to-r from-[#2351A8] via-[#4FB7B3] to-[#2CB67D] shadow-[0_0_10px_#4FB7B3]"></div>
             {/* Contact List */}
-            <ul className="space-y-3 text-sm">
+            <ul className="space-y-3  text-sm">
               {/* Email */}
               <li className="flex items-center gap-3 group hover:scale-105 transition-all  duration-300">
                 <div
@@ -168,7 +170,32 @@ const Footer = () => {
                   +91 8144129955
                 </a>
               </li>
+              {/* WHATSAPP */}
+              <li className="flex items-center gap-3 group hover:scale-105 transition-all  duration-300">
+                <div
+                  className="w-9 h-9 flex items-center justify-center rounded-full bg-[#1a1f2b] 
+                       transition-all duration-300 group-hover:bg-[#242b3b] relative"
+                >
+                  <FaWhatsapp
+                    size={16}
+                    className="text-[#4FB7B3] group-hover:text-white transition duration-300"
+                  />
+                  <div
+                    className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 blur-md 
+                         transition-all duration-500"
+                    style={{
+                      background:
+                        "conic-gradient(from 0deg, #7f5af0, #2cb67d, #7f5af0)",
+                    }}
+                  ></div>
+                </div>
 
+                <a
+                  href="https://wa.me/8144129955"
+                  className="text-gray-400 group-hover:text-white transition-all duration-300 text-sm md:text-base"
+                > WhatsApp
+                </a>
+              </li>
               {/* Location */}
               <li className="flex items-center gap-3 group hover:scale-105 transition-all  duration-300">
                 <div

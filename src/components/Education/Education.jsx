@@ -5,11 +5,14 @@ const Education = () => {
   return (
     <section
       id="education"
-      className="py-24 pb-24 px-[12vw] md:px-[7vw] lg:px-[16vw] font-sans bg-skills-gradient clip-path-custom-3">
+      className="py-5 pb-24 px-[12vw] md:px-[7vw] lg:px-[16vw] font-sans bg-skills-gradient clip-path-custom-3">
       {/* Section Title */}
       <div className="text-center mb-16">
-        <p className="text-gray-400 mb-1 text-[14px] font-semibold cursor-default">Explore My</p>
-        <h2 className="text-4xl font-bold text-white cursor-pointer hover:scale-105 transform transition-transform duration-300">EDUCATION</h2>
+        <p className="text-gray-400 text-sm tracking-[3px] uppercase">
+          <span className="text-teal-600">Explore</span> My
+        </p>     
+           <h2 className="text-4xl font-bold text-white cursor-pointer hover:scale-105 transform transition-transform duration-300">EDUC
+            <span className="text-teal-500">ATION</span></h2>
         <div className="w-32 h-[3px] rounded-full mx-auto mb-3 mt-3  bg-gradient-to-r from-[#2351A8] via-[#4FB7B3] to-[#2CB67D] shadow-[0_0_10px_#4FB7B3]"></div>
 
       </div>

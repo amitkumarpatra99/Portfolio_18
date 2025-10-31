@@ -1,7 +1,8 @@
 import React from "react";
-import { Briefcase, Code, User } from "lucide-react";
+import { Briefcase, Code, ExternalLink, User, UserCircle } from "lucide-react";
 import { motion } from "framer-motion";
 import profileImage from '../../assets/certificate/A.jpg';
+import { FaGithub, FaInstagram, FaLinkedin, FaTwitter, FaWhatsapp, } from "react-icons/fa6";
 
 const cardVariants = {
   hidden: { opacity: 0, y: 40 },
@@ -12,19 +13,44 @@ const cardVariants = {
   }),
 };
 
+const icons = [
+  { id: 1, icon: <FaGithub size={18} />, link: "https://github.com/amitkumarpatra99" },
+  { id: 2, icon: <FaLinkedin size={18} />, link: "https://www.linkedin.com/in/amitkumarpatra99" },
+  { id: 5, icon: <FaWhatsapp size={18} />, link: "https://wa.me/8144129955" },
+  { id: 4, icon: <FaInstagram size={18} />, link: "https://www.instagram.com/mr_patraa_" },
+  { id: 3, icon: <FaTwitter size={18} />, link: "https://x.com/mr_patra_" },
+
+];
+
 const AboutSection = () => {
   return (
-    <section id="about2" className="py-24 px-4 md:px-6 lg:px-12 relative text-white">
+    <section id="about" className="py-24 px-4 md:px-6 lg:px-12 relative text-white">
       <div className="container mx-auto max-w-6xl">
         {/* Heading */}
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-white cursor-pointer hover:scale-105 transform transition-transform duration-300">
-            ABOUT
-          </h2>
-          <div className="w-24 h-[3px] rounded-full mx-auto mb-3 mt-2 bg-gradient-to-r from-[#2351A8] via-[#4FB7B3] to-[#2CB67D] shadow-[0_0_10px_#4FB7B3]"></div>
-          {/* <p className="text-gray-400 mt-3 text-sm md:text-lg font-medium">
-            aaa
-          </p> */}
+
+        <div className="container mx-auto max-w-6xl">
+          {/* Heading */}
+          <div className="mb-16 flex items-center justify-center gap-3">
+
+            {/* About Icon */}
+            <UserCircle
+              size={32}
+              className="text-6xl text-teal-500 drop-shadow-[0_0_12px_#4FB7B3] hover:scale-110 transition-transform duration-300"
+            />
+
+            {/* Text Section */}
+            <div className="text-center">
+              <p className="text-gray-400 mb-1 cursor-default text-sm tracking-[3px] uppercase">
+                <span className="text-teal-600">Know</span> More
+              </p>
+
+              <h2 className="text-3xl md:text-4xl font-bold text-white cursor-pointer hover:scale-105 transform transition-transform duration-300">
+                ABOUT <span className="text-teal-500">ME</span>
+              </h2>
+
+              <div className="w-24 h-[3px] rounded-full mx-auto mb-3 mt-2 bg-gradient-to-r from-[#2351A8] via-[#4FB7B3] to-[#2CB67D] shadow-[0_0_10px_#4FB7B3]"></div>
+            </div>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
@@ -51,8 +77,8 @@ const AboutSection = () => {
 
               {/* Badge top-right */}
               {/* <div className="absolute top-6 right-6 bg-white/20 backdrop-blur-xl px-6 py-3 rounded-xl border border-white/30 shadow-lg">
-                <p className="text-3xl font-bold">1+</p>
-                <p className="text-xs font-medium">Years Experience</p>
+                <p className="text-3xl font-bold">.... </p>
+                <p className="text-xs font-medium">.... </p>
               </div> */}
             </div>
           </motion.div>
@@ -101,9 +127,61 @@ const AboutSection = () => {
             </div>
 
             {/* Buttons */}
-            <div className="flex gap-4 pt-4">
-              <a href="https://drive.google.com/file/d/1TnnNQ06vYZcnq48VJr2bxk1FNLL53T5Q/view?usp=sharing" className="px-8 py-3 bg-gradient-to-r from-teal-500 to-cyan-500 rounded-full font-semibold hover:scale-105 transition">Download CV</a>
-              <a href="" className="px-8 py-3 border border-cyan-400 text-cyan-300 rounded-full hover:bg-cyan-500/20 hover:scale-105 transition">Contact</a>
+            <div className="flex gap-5 pt-4 items-center">
+
+              <div className="flex gap-2 sm:gap-6 pt-6 ">
+                {/* <a href="https://drive.google.com/file/d/1TnnNQ06vYZcnq48VJr2bxk1FNLL53T5Q/view?usp=sharing" className="px-8 py-3 rounded-full text-white font-medium  bg-[#071e22]/80 backdrop-blur-xl  shadow-[0_0_12px_rgba(79,183,179,0.25)  border border-[#4FB7B3]/40 hover:bg-[#0b2e33]/80  transition-all duration-300  px-5 py-2.5 text-center rounded-full">Download CV <ExternalLink size={16} /></a> */}
+
+                <a
+                  href="https://drive.google.com/file/d/1TnnNQ06vYZcnq48VJr2bxk1FNLL53T5Q/view?usp=sharing"
+                  target="_blank"
+                  className="flex items-center gap-2 px-5 py-2 group  rounded-full text-white font-medium  bg-[#071e22]/80 backdrop-blur-xl  shadow-[0_0_12px_rgba(79,183,179,0.25)  border border-[#4FB7B3]/40 hover:bg-[#0b2e33]/80  transition-all duration-300"
+                >
+                  MY CV<ExternalLink size={18} />
+                </a>
+
+                {/* <a href="#contact" className="px-8 py-3 border border-cyan-400 text-cyan-300 rounded-full hover:bg-cyan-500/20 hover:scale-105 transition">Contact</a> */}
+              </div>
+              {/* <div className="flex gap-2 sm:gap-2 pt-6">
+                <a href="https://github.com/your-github" target="_blank" rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-white p-2 rounded-full transition duration-300 hover:bg-[#4FB7B3]/20">
+                  <Github size={20} className="sm:size-6" />
+                </a>
+                <a href="https://linkedin.com/in/your-linkedin" target="_blank" rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-white p-2 rounded-full transition duration-300 hover:bg-[#4FB7B3]/20">
+                  <FaLinkedinIn size={20} className="sm:size-6" />
+                </a>
+                <a href="https://twitter.com/your-twitter" target="_blank" rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-white p-2 rounded-full transition duration-300 hover:bg-[#4FB7B3]/20">
+                  <BsWhatsapp size={20} className="sm:size-6" />
+                </a>
+                <a href="https://twitter.com/your-twitter" target="_blank" rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-white p-2 rounded-full transition duration-300 hover:bg-[#4FB7B3]/20">
+                  <Twitter size={20} className="sm:size-6" />
+                </a>
+              </div> */}
+
+              <div className="flex space-x-4 mt-4">
+                {icons.map((item) => (
+                  <a
+                    key={item.id}
+                    href={item.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="relative group hover:scale-105 transition-all duration-300">
+                    <div className="w-10 h-10 flex items-center justify-center rounded-full bg-[#1a1f2b] text-[#fff] 
+                          transition-all duration-300 group-hover:text-white group-hover:bg-[#242b3b]  ">
+                      {item.icon}
+                    </div>
+
+                    {/* Neon Ring Glow Effect */}
+                    <div className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 blur-md 
+                          transition-all duration-500"
+                      style={{ background: "conic-gradient(from 0deg, #7f5af0, #2cb67d, #7f5af0)" }}></div>
+                  </a>
+                ))}
+              </div>
+
             </div>
           </motion.div>
         </div>
@@ -112,5 +190,4 @@ const AboutSection = () => {
   );
 };
 
-// ✅ Enhanced with animated gradient border, glassmorphism, blobs & smooth scroll
 export default AboutSection;

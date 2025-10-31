@@ -51,13 +51,14 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="flex flex-col items-center justify-center py-24 px-[12vw] md:px-[7vw] lg:px-[20vw]" >
+      className="flex flex-col items-center justify-center  px-[12vw] md:px-[7vw] lg:px-[20vw]" >
       {/* Toast Container */}
       <ToastContainer />
 
       {/* Section Title */}
-      <div className="text-center mb-16 ">
-        <h2 className="text-4xl font-bold text-white cursor-pointer hover:scale-105 transform transition-transform duration-300">CONTACT</h2>
+      <div className="text-center mb-10">
+        <h2 className="text-4xl font-bold text-white cursor-pointer hover:scale-105 transform transition-transform duration-300">CONT<span className="text-teal-500">ACT</span>
+        </h2>
         <div className="w-32 h-[3px] rounded-full mx-auto mb-3 mt-2  bg-gradient-to-r from-[#2351A8] via-[#4FB7B3] to-[#2CB67D] shadow-[0_0_10px_#4FB7B3]"></div>
         <p className="text-gray-400 mt-3 text-lg font-semibold">
           Feel free to get in touch—I’m eager to explore

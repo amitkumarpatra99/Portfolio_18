@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import { projects } from "../../constants";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronDown, ChevronUp, ExternalLink, Github } from "lucide-react";
+import { ChevronDown, ChevronUp, ExternalLink, Github, Sparkles } from "lucide-react";
+import { SiReact } from "react-icons/si";
+import { FiFolder } from "react-icons/fi";
 
 const Work = () => {
   const [selectedProject, setSelectedProject] = useState(null);
@@ -17,14 +19,26 @@ const Work = () => {
       id="work"
       className="py-24 pb-24 px-[8vw] md:px-[6vw] lg:px-[18vw] font-sans relative"
     >
-      <div className="text-center mb-16">
-        <p className="text-gray-400 mb-1 text-[14px] font-semibold cursor-default">
-          Explore My
-        </p>
 
-        <h2 className="text-4xl font-bold text-white cursor-pointer hover:scale-105 transform transition-transform duration-300">PROJECT <span className="text-slate-400">HUB</span> </h2>
+      <div className="mb-16 flex items-center justify-center gap-4">
 
-        <div className="w-32 h-[3px] rounded-full mx-auto mb-3 mt-3 bg-gradient-to-r from-[#2351A8] via-[#4FB7B3] to-[#2CB67D] shadow-[0_0_10px_#4FB7B3]"></div>
+        {/* React Logo */}
+        <FiFolder
+          className="text-4xl text-teal-500 animate-spin-slow drop-shadow-[0_0_12px_#4FB7B3]"
+        />
+
+        {/* Text */}
+        <div className="text-center">
+          <p className="text-gray-400 mb-1 cursor-default text-sm tracking-[3px] uppercase">
+            <span className="text-teal-600">Explore</span> My
+          </p>
+
+          <h2 className="text-4xl font-bold text-white cursor-pointer hover:scale-105 transform transition-transform duration-300">
+            PROJECT <span className="text-teal-500">HUB</span>
+          </h2>
+
+          <div className="w-32 h-[3px] rounded-full mx-auto mb-3 mt-3 bg-gradient-to-r from-[#2351A8] via-[#4FB7B3] to-[#2CB67D] shadow-[0_0_10px_#4FB7B3]"></div>
+        </div>
       </div>
 
       {/* Cards */}
@@ -56,7 +70,7 @@ const Work = () => {
                 <motion.button
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}
-                  className="flex items-center gap-2 bg-gradient-to-r  from-teal-400 via-teal-500 to-teal-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-teal-300 dark:focus:ring-teal-800 shadow-lg shadow-teal-500/50 dark:shadow-lg dark:shadow-teal-800/80 font-medium text-sm px-5 py-2.5 text-center me-2 mb-2 rounded-full ">
+                  className="flex items-center gap-2 group  px-7 py-3 rounded-full text-white font-medium  bg-[#071e22]/80 backdrop-blur-xl  shadow-[0_0_12px_rgba(79,183,179,0.25)  border border-[#4FB7B3]/40 hover:bg-[#0b2e33]/80  transition-all duration-300  px-5 py-2.5 text-center me-2 mb-2 rounded-full mt-5 ">
                   View Project  <ExternalLink size={18} />
                 </motion.button>
               </div>
@@ -77,7 +91,7 @@ const Work = () => {
               setTimeout(() => section?.scrollIntoView({ behavior: "smooth" }), 200);
             }
           }}
-          className="flex items-center gap-2 px-6 py-3 rounded-full bg-[#173130] text-teal-300 border border-teal-500 shadow-lg hover:bg-teal-600 hover:text-white transition"
+          className="flex items-center gap-2 px-6 py-3 rounded-full group  text-white font-medium  bg-[#071e22]/80 backdrop-blur-xl  shadow-[0_0_12px_rgba(79,183,179,0.25)  border border-[#4FB7B3]/40 hover:bg-[#0b2e33]/80  transition-all duration-300"
         >
           {showAll ? "Show Less" : "View All Projects"}
           {showAll ? <ChevronUp /> : <ChevronDown />}
@@ -110,8 +124,7 @@ const Work = () => {
 
                     <button
                       onClick={handleCloseModal}
-                      className="text-[#4FB7B3] text-3xl font-bold hover:text-red-700 hover:scale-125 transition-all duration-300"
-                    >
+                      className="text-[#4FB7B3] text-3xl font-bold hover:text-red-700 hover:scale-125 transition-all duration-300">
                       &times;
                     </button>
                   </div>
@@ -149,7 +162,7 @@ const Work = () => {
                         <a
                           href={selectedProject.github}
                           target="_blank"
-                          className="flex items-center gap-2 px-5 py-2 bg-teal-600 rounded-full text-white hover:bg-teal-500"
+                          className="flex items-center gap-2 px-5 py-2 group  rounded-full text-white font-medium  bg-[#071e22]/80 backdrop-blur-xl  shadow-[0_0_12px_rgba(79,183,179,0.25)  border border-[#4FB7B3]/40 hover:bg-[#0b2e33]/80  transition-all duration-300"
                         >
                           <Github size={18} /> Code
                         </a>
