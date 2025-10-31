@@ -1,8 +1,8 @@
 import React from "react";
-import { Briefcase, Code, ExternalLink, User, UserCircle } from "lucide-react";
+import { Briefcase, Code, ExternalLink,  User, UserCircle } from "lucide-react";
 import { motion } from "framer-motion";
 import profileImage from '../../assets/certificate/A.jpg';
-import { FaGithub, FaInstagram, FaLinkedin, FaTwitter, FaWhatsapp, } from "react-icons/fa6";
+import { FaGithub, FaLinkedin, FaWhatsapp, } from "react-icons/fa6";
 
 const cardVariants = {
   hidden: { opacity: 0, y: 40 },
@@ -17,9 +17,9 @@ const icons = [
   { id: 1, icon: <FaGithub size={18} />, link: "https://github.com/amitkumarpatra99" },
   { id: 2, icon: <FaLinkedin size={18} />, link: "https://www.linkedin.com/in/amitkumarpatra99" },
   { id: 5, icon: <FaWhatsapp size={18} />, link: "https://wa.me/8144129955" },
-  { id: 4, icon: <FaInstagram size={18} />, link: "https://www.instagram.com/mr_patraa_" },
-  { id: 3, icon: <FaTwitter size={18} />, link: "https://x.com/mr_patra_" },
-
+  // { id: 4, icon: <FaInstagram size={18} />, link: "https://www.instagram.com/mr_patraa_" },
+  // { id: 3, icon: <FaTwitter size={18} />, link: "https://x.com/mr_patra_" },
+// {id:5, icon:<Mail size={18} />, link:"mailto:mrpatra.web@gmail.com" },
 ];
 
 const AboutSection = () => {
