@@ -1,8 +1,9 @@
 import React from "react";
-import { Briefcase, Code, ExternalLink,  User, UserCircle } from "lucide-react";
+import { Briefcase, Code, ExternalLink, User, UserCircle } from "lucide-react";
 import { motion } from "framer-motion";
 import profileImage from '../../assets/certificate/A.jpg';
 import { FaGithub, FaLinkedin, FaWhatsapp, } from "react-icons/fa6";
+import ScrollDownButton from "../ScrollButtons";
 
 const cardVariants = {
   hidden: { opacity: 0, y: 40 },
@@ -19,10 +20,10 @@ const icons = [
   { id: 5, icon: <FaWhatsapp size={18} />, link: "https://wa.me/8144129955" },
   // { id: 4, icon: <FaInstagram size={18} />, link: "https://www.instagram.com/mr_patraa_" },
   // { id: 3, icon: <FaTwitter size={18} />, link: "https://x.com/mr_patra_" },
-// {id:5, icon:<Mail size={18} />, link:"mailto:mrpatra.web@gmail.com" },
+  // {id:5, icon:<Mail size={18} />, link:"mailto:mrpatra.web@gmail.com" },
 ];
 
-const AboutSection = () => {
+const About = () => {
   return (
     <section id="about" className="py-24 px-4 md:px-6 lg:px-12 relative text-white">
       <div className="container mx-auto max-w-6xl">
@@ -70,10 +71,10 @@ const AboutSection = () => {
               />
 
               {/* Badge bottom-left */}
-              <div className="absolute bottom-6 left-6 bg-white/20 backdrop-blur-xl px-6 py-3 rounded-xl border border-white/30 shadow-lg">
+              {/* <div className="absolute bottom-6 left-6 bg-white/20 backdrop-blur-xl px-6 py-3 rounded-xl border border-white/30 shadow-lg">
                 <p className="text-s font-medium">MR PATRA</p>
                 <p className="text-xl font-bold">.WEB</p>
-              </div>
+              </div> */}
 
               {/* Badge top-right */}
               {/* <div className="absolute top-6 right-6 bg-white/20 backdrop-blur-xl px-6 py-3 rounded-xl border border-white/30 shadow-lg">
@@ -89,12 +90,7 @@ const AboutSection = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="space-y-6"
-          >
-            {/* <p className="text-gray-300 text-base leading-relaxed">
-              I am a MERN Full Stack Developer passionate about building interactive, responsive web applications.
-              I enjoy solving problems and continuously learning new technologies to create innovative solutions.
-            </p> */}
+            className="space-y-6">
 
             <div className="grid grid-cols-1 gap-6">
               {[
@@ -130,36 +126,14 @@ const AboutSection = () => {
             <div className="flex gap-5 pt-4 items-center">
 
               <div className="flex gap-2 sm:gap-6 pt-6 ">
-                {/* <a href="https://drive.google.com/file/d/1TnnNQ06vYZcnq48VJr2bxk1FNLL53T5Q/view?usp=sharing" className="px-8 py-3 rounded-full text-white font-medium  bg-[#071e22]/80 backdrop-blur-xl  shadow-[0_0_12px_rgba(79,183,179,0.25)  border border-[#4FB7B3]/40 hover:bg-[#0b2e33]/80  transition-all duration-300  px-5 py-2.5 text-center rounded-full">Download CV <ExternalLink size={16} /></a> */}
-
                 <a
                   href="https://drive.google.com/file/d/1TnnNQ06vYZcnq48VJr2bxk1FNLL53T5Q/view?usp=sharing"
                   target="_blank"
-                  className="flex items-center gap-2 px-5 py-2 group  rounded-full text-white font-medium  bg-[#071e22]/80 backdrop-blur-xl  shadow-[0_0_12px_rgba(79,183,179,0.25)  border border-[#4FB7B3]/40 hover:bg-[#0b2e33]/80  transition-all duration-300"
-                >
+                  className="flex items-center gap-2 px-5 py-2 group  rounded-full text-white font-medium  bg-[#071e22]/80 backdrop-blur-xl  shadow-[0_0_12px_rgba(79,183,179,0.25)  border border-[#4FB7B3]/40 hover:bg-[#0b2e33]/80  transition-all duration-300">
                   MY CV<ExternalLink size={18} />
                 </a>
-
-                {/* <a href="#contact" className="px-8 py-3 border border-cyan-400 text-cyan-300 rounded-full hover:bg-cyan-500/20 hover:scale-105 transition">Contact</a> */}
               </div>
-              {/* <div className="flex gap-2 sm:gap-2 pt-6">
-                <a href="https://github.com/your-github" target="_blank" rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-white p-2 rounded-full transition duration-300 hover:bg-[#4FB7B3]/20">
-                  <Github size={20} className="sm:size-6" />
-                </a>
-                <a href="https://linkedin.com/in/your-linkedin" target="_blank" rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-white p-2 rounded-full transition duration-300 hover:bg-[#4FB7B3]/20">
-                  <FaLinkedinIn size={20} className="sm:size-6" />
-                </a>
-                <a href="https://twitter.com/your-twitter" target="_blank" rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-white p-2 rounded-full transition duration-300 hover:bg-[#4FB7B3]/20">
-                  <BsWhatsapp size={20} className="sm:size-6" />
-                </a>
-                <a href="https://twitter.com/your-twitter" target="_blank" rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-white p-2 rounded-full transition duration-300 hover:bg-[#4FB7B3]/20">
-                  <Twitter size={20} className="sm:size-6" />
-                </a>
-              </div> */}
+
 
               <div className="flex space-x-4 mt-4">
                 {icons.map((item) => (
@@ -186,8 +160,11 @@ const AboutSection = () => {
           </motion.div>
         </div>
       </div>
+      {/* <ScrollDownButton next="skills" /> */}
+
     </section>
+
   );
 };
 
-export default AboutSection;
+export default About;

@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import { projects } from "../../constants";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronDown, ChevronUp, ExternalLink, Github, Sparkles } from "lucide-react";
-import { SiReact } from "react-icons/si";
+import { ChevronDown, ChevronUp, ExternalLink, Github } from "lucide-react";
 import { FiFolder } from "react-icons/fi";
 
 const Work = () => {

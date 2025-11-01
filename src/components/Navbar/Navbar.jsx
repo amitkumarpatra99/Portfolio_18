@@ -96,7 +96,7 @@ const Navbar = () => {
             alt="Logo"
             className="h-9 w-9 object-cover shadow-lg drop-shadow-[0_0_8px_#4FB7B3] rounded-full"
           />
-          <h3 className="text-s font-extrabold text-white tracking-wider">AMIT<span className="text-[#4FB7B3]">⚡</span></h3>
+          {/* <h3 className="text-s font-extrabold text-white tracking-wider">AMIT<span className="text-[#4FB7B3]">⚡</span></h3> */}
         </div>
 
         {/* Desktop Menu */}

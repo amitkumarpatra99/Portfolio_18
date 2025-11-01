@@ -1,6 +1,9 @@
 import React from 'react'
 import ReactTypingEffect from 'react-typing-effect'
-import {  ArrowRight } from "lucide-react"
+import { ArrowRight } from "lucide-react"
+import { FaCode } from 'react-icons/fa6';
+import { Link } from "react-scroll"; // ✅ Add this
+import ScrollButtons from '../ScrollButtons';
 
 const ACCENT_COLOR = "#4FB7B3";
 
@@ -24,7 +27,7 @@ const Home = () => {
         style={{ background: `${ACCENT_COLOR}30` }}
       ></div>
 
-      {/* ✅ Animated Background Particles */}
+      {/* Animated Background Particles */}
       {!reduceMotion && (
         <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
           {[...Array(40)].map((_, i) => (
@@ -46,56 +49,67 @@ const Home = () => {
       )}
 
       {/* TEXT CONTENT */}
-      <div className="z-20 flex flex-col items-center space-y-4 animate-fadeInUp">
-        <h1 className="text-base sm:text-lg md:text-xl font-medium text-gray-300">
-          Hello World, my name is
+      <div className="z-20 flex flex-col items-center space-y-3 animate-fadeInUp
+      -mt-28 sm:-mt-24 md:-mt-32 lg:-mt-36">
+
+        {/* ICON */}
+        <div className="mb-2 flex items-center justify-center">
+          <FaCode
+            className="animate-bounce-slow drop-shadow-lg"
+            style={{
+              color: ACCENT_COLOR,
+              width: "32px",
+              height: "32px",
+              filter: `drop-shadow(0 0 8px ${ACCENT_COLOR})`
+            }}
+          />
+        </div>
+
+        <h1 className="text-base sm:text-s md:text-s font-medium text-gray-400 uppercase tracking-widest">
+          Hello World, My name is
         </h1>
 
-        <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white tracking-tight leading-tight">
+        <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-slate-200 tracking-tight leading-tight ">
           AMIT KUMAR PATRA
         </h2>
 
         <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold"
           style={{ color: ACCENT_COLOR }}>
-          <span className="text-gray-200">I am a  </span>
+          <span className="text-gray-300">I am a </span>
           <ReactTypingEffect
             text={['Student', 'Coder', 'Fullstack Developer']}
             speed={100}
             eraseSpeed={50}
             typingDelay={500}
             eraseDelay={2000}
-            cursorRenderer={(cursor) => <span style={{ color: ACCENT_COLOR }}>{cursor}</span>}/>
+            cursorRenderer={(cursor) => <span style={{ color: ACCENT_COLOR }}>{cursor}</span>}
+          />
         </h3>
 
-        {/* BUTTON */}
-        <a
-          href="#work"
-          className="mt-8 flex items-center gap-2 text-white py-2.5 sm:py-3 px-6 sm:px-8 rounded-full text-base sm:text-lg font-semibold backdrop-blur-md border-2 transition-all duration-300 hover:scale-[1.02]"
+        <p className="text-gray-400 text-base leading-relaxed px-4 uppercase tracking-tight mt-2">
+          Creating fast, beautiful, and interactive web experiences through clean design and thoughtful engineering.
+        </p>
+
+        {/* ✅ Smooth Scroll Button */}
+        <Link
+          to="about"
+          smooth={true}
+          duration={600}
+          offset={-80}
+          className="cursor-pointer mt-5 -mb-2 flex items-center gap-2 text-white py-2.5 sm:py-3 px-6 sm:px-8 rounded-full text-base sm:text-lg font-semibold backdrop-blur-md border-2 transition-all duration-300 hover:scale-[1.02]"
           style={{
             borderColor: ACCENT_COLOR,
             backgroundColor: `${ACCENT_COLOR}15`,
             boxShadow: `0 0 25px ${ACCENT_COLOR}60`,
           }}
         >
-          Explore My Project Hub <ArrowRight size={20} />
-        </a>
+          Know More About Me <ArrowRight size={20} />
+        </Link>
 
-        {/* SOCIAL ICONS */}
-        {/* <div className="flex gap-4 sm:gap-6 pt-6">
-          <a href="https://github.com/your-github" target="_blank" rel="noopener noreferrer"
-            className="text-gray-400 hover:text-white p-2 rounded-full transition duration-300 hover:bg-[#4FB7B3]/20">
-            <Github size={20} className="sm:size-6" />
-          </a>
-          <a href="https://linkedin.com/in/your-linkedin" target="_blank" rel="noopener noreferrer"
-            className="text-gray-400 hover:text-white p-2 rounded-full transition duration-300 hover:bg-[#4FB7B3]/20">
-            <Linkedin size={20} className="sm:size-6" />
-          </a>
-          <a href="https://twitter.com/your-twitter" target="_blank" rel="noopener noreferrer"
-            className="text-gray-400 hover:text-white p-2 rounded-full transition duration-300 hover:bg-[#4FB7B3]/20">
-            <Twitter size={20} className="sm:size-6" />
-          </a>
-        </div> */}
       </div>
+    
+      <ScrollButtons next="about" />
+
     </section>
   );
 };

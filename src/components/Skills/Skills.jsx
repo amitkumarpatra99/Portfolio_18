@@ -32,6 +32,7 @@ const Skills = () => {
   });
 
   return (
+
     <section id="skills" className="py-24 px-[5vw] font-sans bg-[]">
 
       {/* Title */}
@@ -119,6 +120,7 @@ const Skills = () => {
         </button>
       </div>
     </section>
+
   );
 };
 

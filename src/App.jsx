@@ -3,11 +3,8 @@ import Navbar from "./components/Navbar/Navbar";
 import Home from "./components/Home/Home";
 import Skills from "./components/Skills/Skills";
 import Work from "./components/Work/Work";
-// import Experience from "./components/Experience/Experience";
-// import Education from "./components/Education/Education";
-// import Contact from "./components/Contact/Contact";
 import Footer from "./components/Footer/Footer";
-import AboutSection from './components/AboutSection/AboutSection';
+import About from './components/About/About';
 import MiniNavigation from './components/MiniNavigation';
 import CustomCursor from "./components/CustomCursor/CustomCursor";
 import StickyMiniNavbar from "./components/StickyMiniNavbar/StickyMiniNavbar";
@@ -41,13 +38,10 @@ const App = () => {
                       <Navbar />
 
                       <Home />
-                      <AboutSection />
+                      <About />
                       <Skills />
                       <Work />
                       <MiniNavigation />
-                      {/* <Experience /> */}
-                      {/* <Education /> */}
-                      {/* <Contact /> */}
                       <Footer />
                     </div>
                   }
@@ -76,7 +70,7 @@ const App = () => {
                 />
 
 
-
+                {/* contact page  */}
                 <Route
                   path="/Contact"
                   element={
@@ -89,9 +83,6 @@ const App = () => {
                 <Route path="/navigation" element={<MiniNavigation />} />
 
               </Routes>
-
-
-
             </div>
           </div>
         </BrowserRouter >
