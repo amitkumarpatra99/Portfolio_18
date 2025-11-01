@@ -191,7 +191,7 @@ export const projects = [
     description: "Animated Portfolio Website – A visually appealing and fully responsive personal portfolio designed with HTML, CSS, JavaScript and  React. It includes engaging animations, smooth scrolling, and interactive UI elements that highlight my skills, projects, and contact details in an elegant way.",
     image: Portfolio,
     tags: ["HTML", "CSS", "JavaScript", "API", "Mongo DB", "Express Js", "React JS ", "Next JS", "Node JS", "Tailwind CSS"],
-    github: "https://github.com/amitkumarpatra99/Portfolio-18",
+    github: "https://github.com/amitkumarpatra99/Portfolio_18",
   },
 
   {
