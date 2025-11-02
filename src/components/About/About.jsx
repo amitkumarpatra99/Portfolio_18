@@ -128,7 +128,7 @@ const About = () => {
 
               <div className="flex gap-2 sm:gap-6 pt-6 ">
                 <a
-                  href="https://drive.google.com/file/d/15A-cHbMWjlDZHDiuV2gFD_a0iDNNUjYC/view?usp=sharing"
+                  href="https://drive.google.com/file/d/1xgU-OvduPOkcmW6dzjLCwNYCRdNBGHdU/view?usp=sharing"
                   target="_blank"
                   className="flex items-center gap-2 px-5 py-2 group  rounded-full text-white font-medium  bg-[#071e22]/80 backdrop-blur-xl  shadow-[0_0_12px_rgba(79,183,179,0.25)  border border-[#4FB7B3]/40 hover:bg-[#0b2e33]/80  transition-all duration-300">
                   MY CV<ExternalLink size={18} />
