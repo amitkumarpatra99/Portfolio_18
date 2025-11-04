@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { projects } from "../../constants";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronDown, ChevronUp, ExternalLink, Github } from "lucide-react";
+import { ChevronDown, ChevronUp, ExternalLink, Github, X } from "lucide-react";
 import { FiFolder } from "react-icons/fi";
 
 const Work = () => {
@@ -123,9 +123,8 @@ const Work = () => {
 
                     <button
                       onClick={handleCloseModal}
-                      className="text-[#4FB7B3] text-3xl font-bold hover:text-red-700 hover:scale-125 transition-all duration-300">
-                      &times;
-                    </button>
+                      className=" text-3xl font-bold text-red-600 hover:scale-125 transition-all duration-300">
+                      <X size={18} />                    </button>
                   </div>
 
                   <div className="flex flex-col">

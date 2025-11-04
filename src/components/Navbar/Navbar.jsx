@@ -1,19 +1,27 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
 import { FaGithub, FaLinkedin } from "react-icons/fa6";
+import { motion, AnimatePresence } from "framer-motion";
 
-// Define the menu items and their corresponding IDs (matching your section IDs)
 const menuItems = [
   { id: "home", label: "Home" },
   { id: "about", label: "About" },
-  { id: "skills", label: "Skill Set" },
-  { id: "work", label: "Project Hub" },
-  { id: "MiniNavigation", label: "My Journey" },
+  { id: "skills", label: "Skills" },
+  { id: "work", label: "Projects" },
+  { id: "MiniNavigation", label: "Journey" },
 ];
 
 const icons = [
-  { id: 1, icon: <FaGithub size={18} />, link: "https://github.com/amitkumarpatra99" },
-  { id: 2, icon: <FaLinkedin size={18} />, link: "https://www.linkedin.com/in/amitkumarpatra99" },
+  {
+    id: 1,
+    icon: <FaGithub size={18} />,
+    link: "https://github.com/amitkumarpatra99",
+  },
+  {
+    id: 2,
+    icon: <FaLinkedin size={18} />,
+    link: "https://www.linkedin.com/in/amitkumarpatra99",
+  },
 ];
 
 const Navbar = () => {
@@ -21,131 +29,126 @@ const Navbar = () => {
   const [activeSection, setActiveSection] = useState("");
   const [isScrolled, setIsScrolled] = useState(false);
 
-  // --- 1. Dynamic Background and Active Section on Scroll (The Modern Improvement) ---
-
-  // Detect scroll for background change
+  // Background on scroll
   useEffect(() => {
-    const handleScroll = () => {
-      // Background changes after 50px scroll
-      setIsScrolled(window.scrollY > 50);
-    };
-
+    const handleScroll = () => setIsScrolled(window.scrollY > 50);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Intersection Observer to detect the currently visible section
+  // Active section highlight
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          // If the section is visible and at least 50% in view (or a custom threshold)
-          if (entry.isIntersecting) {
-            setActiveSection(entry.target.id);
-          }
+          if (entry.isIntersecting) setActiveSection(entry.target.id);
         });
       },
-      {
-        root: null, // relative to the viewport
-        rootMargin: "-40% 0px -40% 0px", // A smaller margin makes it more sensitive 
-        // Note: You must ensure your sections (about, skills, etc.) have an id matching the menuItems id
-      }
+      { rootMargin: "-40% 0px -40% 0px" }
     );
 
-    // Observe all sections defined in menuItems
     menuItems.forEach((item) => {
-      const element = document.getElementById(item.id);
-      if (element) {
-        observer.observe(element);
-      }
+      const el = document.getElementById(item.id);
+      if (el) observer.observe(el);
     });
 
     return () => observer.disconnect();
-  }, []); // Run once on mount
-
-  // --- 2. Smooth Scroll Handler ---
-
-  const handleMenuItemClick = useCallback((sectionId) => {
-    // Only set active state on click if you want to override the observer temporarily
-    // setActiveSection(sectionId); 
-    setIsOpen(false);
-
-    const section = document.getElementById(sectionId);
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
-    }
   }, []);
 
+  // Smooth scroll
+  const handleMenuItemClick = useCallback((sectionId) => {
+    setIsOpen(false);
+    const section = document.getElementById(sectionId);
+    if (section) section.scrollIntoView({ behavior: "smooth" });
+  }, []);
 
-  // --- 3. Render Component ---
   return (
     <nav
-      className={`fixed top-0 w-full z-50 transition-all duration-300 px-[7vw] md:px-[7vw] lg:px-[20vw]
-      ${isScrolled
-          ? "bg-[#08242b] bg-opacity-80 backdrop-blur-xl shadow-2xl"
-          : "bg-[#08242b] bg-opacity-30 backdrop-blur-sm"}
-      `}
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${isScrolled ? "backdrop-blur-xl bg-[#0A0F1D]/60" : "bg-transparent"
+        }`}
     >
-      <div className="text-white h-20 flex justify-between items-center max-w-screen-xl mx-auto">
-
-        {/* Logo/Brand */}
-        <div onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-          className="flex items-center gap-2 cursor-pointer transition  duration-300 hover:scale-[1.02]">
+      <div className="max-w-screen-xl mx-auto flex justify-between items-center h-20 px-[7vw] text-white">
+        {/* Logo */}
+        <motion.div
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          className="flex items-center gap-3 cursor-pointer hover:scale-[1.05] transition-all duration-300"
+          initial={{ opacity: 0, y: -15 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
           <img
-            src="DP.jpg" // Make sure this image path is correct
+            src="DP.jpg"
             alt="Logo"
-            className="h-9 w-9 object-cover shadow-lg drop-shadow-[0_0_8px_#4FB7B3] rounded-full"
+            className="h-10 w-10 rounded-full object-cover shadow-[0_0_10px_#4FB7B3]"
           />
-          {/* <h3 className="text-s font-extrabold text-white tracking-wider">AMIT<span className="text-[#4FB7B3]">⚡</span></h3> */}
-        </div>
+        </motion.div>
 
-        {/* Desktop Menu */}
+        {/* Desktop Nav */}
         <ul className="hidden md:flex space-x-10 text-gray-300 font-medium">
           {menuItems.map((item) => (
             <li
               key={item.id}
-              className={`relative cursor-pointer transition-all duration-200 
-                ${activeSection === item.id
-                  ? "text-[#4FB7B3] font-semibold"
-                  : "hover:text-white"}`
-              }
+              className={`relative transition-all duration-200 hover:text-white ${activeSection === item.id ? "text-[#4FB7B3]" : ""
+                }`}
             >
-              {/* Active Underline Effect */}
               {activeSection === item.id && (
-                <span className="absolute bottom-[-5px] left-0 w-full h-[2px] bg-[#4FB7B3] rounded-full transition-all duration-300"></span>
+                <motion.span
+                  layoutId="underline"
+                  className="absolute -bottom-1 left-0 w-full h-[2px] bg-gradient-to-r from-[#2351A8] via-[#4FB7B3] to-[#2CB67D] rounded-full"
+                />
               )}
-
-              <button onClick={() => handleMenuItemClick(item.id)}>
+              <button
+                onClick={() => handleMenuItemClick(item.id)}
+                className="hover:scale-[1.05] transition-transform duration-300"
+              >
                 {item.label}
               </button>
             </li>
           ))}
         </ul>
 
-        {/* Social Icons (Desktop) */}
-        <div className="hidden md:flex space-x-4">
+        {/* Social Icons */}
+        <div className="hidden md:flex items-center gap-4">
           {icons.map((item) => (
             <a
               key={item.id}
               href={item.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative transition-all duration-300 hover:scale-105"
+              className="relative group"
             >
-              <div className="w-10 h-10 flex items-center justify-center rounded-full bg-[#1a1f2b] text-[#fff] 
-                transition-all duration-300 group-hover:text-white  group-hover:shadow-lg">
+              <div
+                className="w-9 h-9 flex items-center justify-center rounded-full bg-[#111926] text-gray-300 
+                transition-all duration-300 hover:text-[#4FB7B3] hover:scale-110"
+              >
                 {item.icon}
               </div>
-              {/* Neon Ring Glow Effect (Refined) */}
-              <div className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 blur-md 
-                          transition-all duration-500"
-                style={{ background: "conic-gradient(from 0deg, #7f5af0, #2cb67d, #7f5af0)" }}></div>
+              <motion.div
+                className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 blur-md transition-all duration-500"
+                style={{
+                  background:
+                    "conic-gradient(from 0deg, #7f5af0, #2cb67d, #7f5af0)",
+                }}
+                animate={{
+                  rotate: [0, 360],
+                }}
+                transition={{
+                  repeat: Infinity,
+                  duration: 6,
+                  ease: "linear",
+                }}
+              ></motion.div>
             </a>
           ))}
         </div>
 
-        {/* Mobile Menu Icon */}
-        <div className="md:hidden">
+        {/* Mobile Menu Button */}
+        <motion.div
+          className="md:hidden"
+          initial={{ opacity: 0, rotate: -90 }}
+          animate={{ opacity: 1, rotate: 0 }}
+          transition={{ duration: 0.5 }}
+        >
           {isOpen ? (
             <FiX
               className="text-3xl text-red-500 cursor-pointer hover:rotate-90 transition-transform duration-300"
@@ -157,54 +160,78 @@ const Navbar = () => {
               onClick={() => setIsOpen(true)}
             />
           )}
-        </div>
+        </motion.div>
       </div>
 
-      {/* Mobile Menu Dropdown */}
-      {isOpen && (
-        <div className="absolute top-20 left-1/2 transform -translate-x-1/2 w-[70%] md:w-4/5 bg-[#050414] bg-opacity-85 backdrop-blur-lg z-40 rounded-xl shadow-2xl p-6 md:hidden">
-          <ul className="flex flex-col items-center space-y-2 text-gray-300 font-medium">
-            {menuItems.map((item) => (
-              <li
-                key={item.id}
-                className={`cursor-pointer text-lg p-2 transition-all duration-300 
-                  ${activeSection === item.id
-                    ? "text-[#4FB7B3] font-bold border-b-2 border-teal-700"
-                    : "hover:text-white hover:border-b-2 hover:border-gray-500"}`
-                }
-              >
-                <button onClick={() => handleMenuItemClick(item.id)}>
-                  {item.label}
-                </button>
-              </li>
-            ))}
+      {/* Animated Drawer */}
+      <AnimatePresence>
+        {isOpen && (
+          <>
+            <motion.div
+              key="drawer"
+              initial={{ x: "100%", opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              exit={{ x: "100%", opacity: 0 }}
+              transition={{ type: "spring", stiffness: 100, damping: 18 }}
+              className="fixed top-0 right-0 h-screen w-[50%] sm:w-[60%] bg-[rgba(10,15,25,0.9)] backdrop-blur-md 
+              shadow-[0_0_25px_rgba(79,183,179,0.25)] border-l border-[#4FB7B3]/30 text-gray-300 font-medium
+              flex flex-col py-10 px-8 z-[60]">
 
-            {/* MOBILE ICON (GITHUB AND LINKEDIN) - Separated by a divider */}
+              <button
+                onClick={() => setIsOpen(false)}
+                className="absolute top-6 right-6 text-[#4FB7B3] text-3xl hover:text-white transition-all duration-300 hover:scale-110">
+                <FiX />
+              </button>
 
-            <div className="w-16 h-[3px] rounded-full mx-auto mt-3 mb-2  bg-gradient-to-r from-[#2351A8] via-[#4FB7B3] to-[#2CB67D] shadow-[0_0_10px_#4FB7B3]"></div>     
+              <ul className="flex flex-col items-center gap-6 text-lg mt-16">
+                {menuItems.map((item) => (
+                  <motion.li
+                    key={item.id}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.1 }}
+                    className={`cursor-pointer transition-all duration-300 tracking-wide ${activeSection === item.id
+                      ? "text-[#4FB7B3] scale-105"
+                      : "hover:text-white hover:scale-105"
+                      }`}
+                  >
+                    <button onClick={() => handleMenuItemClick(item.id)}>
+                      {item.label}
+                    </button>
+                  </motion.li>
+                ))}
+              </ul>
 
-            <div className="flex space-x-6 pb-2 ">
-              {icons.map((item) => (
-                <a
-                  key={item.id}
-                  href={item.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group relative transition-all duration-300 hover:scale-110"
-                >
-                  <div className="w-10 h-10 flex items-center justify-center rounded-full bg-[#1a1f2b] text-[#fff] 
-                    transition-all duration-300 group-hover:text-white group-hover:bg-[#4FB7B3] group-hover:shadow-lg">
-                    {item.icon}
-                  </div>
-                   <div className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 blur-md 
-                          transition-all duration-500"
-                style={{ background: "conic-gradient(from 0deg, #7f5af0, #2cb67d, #7f5af0)" }}></div>
-            </a>
-              ))}
-            </div>
-          </ul>
-        </div>
-      )}
+              {/* Social Icons */}
+              <div className="flex gap-6 mt-auto justify-center mb-8">
+                {icons.map((item) => (
+                  <a
+                    key={item.id}
+                    href={item.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="relative group">
+
+                    <div
+                      className="w-10 h-10 flex items-center justify-center rounded-full bg-[#111926] text-gray-300 
+                      transition-all duration-300 group-hover:text-[#4FB7B3] group-hover:scale-110">
+                      {item.icon}
+                    </div>
+
+                    <div
+                      className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 blur-md transition-all duration-500"
+                      style={{
+                        background:
+                          "conic-gradient(from 0deg, #7f5af0, #2cb67d, #7f5af0)",
+                      }}></div>
+
+                  </a>
+                ))}
+              </div>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
     </nav>
   );
 };
