@@ -32,8 +32,9 @@ const About = () => {
   return (
     <section
       id="about"
-      className="py-24 px-4 md:px-8 lg:px-12 relative text-white overflow-hidden"
+      className="py-24 px-4 md:px-8 lg:px-12 relative text-white overflow-hidden "
     >
+      
       <div className="container mx-auto max-w-6xl flex flex-col gap-20">
         {/* Heading */}
 

@@ -5,7 +5,7 @@ import Skills from "./components/Skills/Skills";
 import Work from "./components/Work/Work";
 import Footer from "./components/Footer/Footer";
 import About from './components/About/About';
-import MiniNavigation from './components/MiniNavigation';
+import Journey from "./components/Journey/Journey";
 import CustomCursor from "./components/CustomCursor/CustomCursor";
 import StickyMiniNavbar from "./components/StickyMiniNavbar/StickyMiniNavbar";
 
@@ -14,6 +14,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ExperiencePage from "./pages/ExperiencePage";
 import EducationPage from "./pages/EducationPage";
 import ContactPage from "./pages/ContactPage";
+
 
 const App = () => {
   return (
@@ -29,7 +30,7 @@ const App = () => {
 
               {/* Routing logic */}
               <Routes>
-                
+
                 <Route
                   path="/"
                   element={
@@ -39,7 +40,7 @@ const App = () => {
                       <About />
                       <Skills />
                       <Work />
-                      <MiniNavigation />
+                      <Journey />
                       <Footer />
                     </div>
                   }
@@ -66,7 +67,7 @@ const App = () => {
                     </div>
                   }
                 />
-                
+
 
 
                 {/* contact page  */}
@@ -79,7 +80,7 @@ const App = () => {
                     </div>
                   }
                 />
-                <Route path="/navigation" element={<MiniNavigation />} />
+                <Route path="/navigation" element={<Journey />} />
 
               </Routes>
             </div>

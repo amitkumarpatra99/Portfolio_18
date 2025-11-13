@@ -138,7 +138,7 @@ export const projects = [
     image: cup,
     tags: ["HTML", "CSS", "JavaScript", "API", "Mongo DB", "Express Js", "React JS ", "Next JS", "Node JS", "Tailwind CSS"],
     github: "https://github.com/amitkumarpatra99/Warm_Cup",
-    live: "/https://warmcup.vercel.app/"
+    live: "https://warmcup.vercel.app/"
 
   },
 

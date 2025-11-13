@@ -9,7 +9,7 @@ const menuItems = [
   { id: "about", label: "About" },
   { id: "skills", label: "Skills" },
   { id: "work", label: "Projects" },
-  { id: "MiniNavigation", label: "Journey" },
+  { id: "Journey", label: "Journey" },
 ];
 
 const icons = [

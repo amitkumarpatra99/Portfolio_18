@@ -20,7 +20,7 @@ const Footer = () => {
     { name: "About", to: "about" },
     { name: "Skill Set", to: "skills" },
     { name: "Project Hub", to: "work" },
-    { name: "My Journey", to: "MiniNavigation" },
+    { name: "My Journey", to: "Journey" },
 
   ];
 

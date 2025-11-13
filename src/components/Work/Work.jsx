@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import { projects } from "../../constants";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight, ArrowRightCircleIcon, ArrowRightFromLineIcon, ChevronDown, ChevronUp, ExternalLink, Github, X } from "lucide-react";
+import { ArrowRight,ChevronDown, ChevronUp, ExternalLink, Github, X } from "lucide-react";
 import { FiFolder } from "react-icons/fi";
-import { BiRightArrow, BiSolidRightArrow, BiSolidRightArrowCircle } from "react-icons/bi";
-import { RiExternalLinkFill, RiExternalLinkLine } from "react-icons/ri";
+import {  RiExternalLinkLine } from "react-icons/ri";
 
 const Work = () => {
   const [selectedProject, setSelectedProject] = useState(null);
