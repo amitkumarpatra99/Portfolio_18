@@ -1,4 +1,4 @@
-// Skills Section Logo's
+// Skills Section Logo
 import htmlLogo from './assets/tech_logo/html.png';
 import cssLogo from './assets/tech_logo/css.png';
 import sassLogo from './assets/tech_logo/sass.png';
