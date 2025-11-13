@@ -1,7 +1,8 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
-import { Briefcase, CreditCard, GraduationCap, Mail, Sparkles } from "lucide-react";
+import { Briefcase, Coffee, GraduationCap, Mail, Sparkles } from "lucide-react";
+
 
 
 
@@ -53,11 +54,11 @@ const MiniNavigation = () => {
                     </motion.button>
                 ))}
                 <a
-                    href="https://rzp.io/rzp/amitpatra"
+                    href="https://warmcup.vercel.app/"
                     target="_blank"
                     className="group flex items-center gap-2 px-7 py-3 rounded-full text-white font-medium  bg-[#071e22]/80 backdrop-blur-xl  shadow-[0_0_12px_rgba(79,183,179,0.25)  border border-[#4FB7B3]/40 hover:bg-[#0b2e33]/80 hover:scale-110 transition-transform duration-300">
                 <span className="text-teal-300 group-hover:text-teal-200 duration-300">
-                    <CreditCard /> </span>PAY</a>
+                    <Coffee /> </span>WARM CUP</a>
 
         </div>
         </section >

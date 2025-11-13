@@ -44,9 +44,9 @@ const Skills = () => {
         />
 
         {/* Text Block */}
-        <div className="text-center">
+        <div className="text-center ">
 
-          <p className="text-gray-400 text-sm tracking-[3px] uppercase">
+          <p className="text-gray-400 text-sm tracking-[3px] uppercase ">
             <span className="text-teal-600">Explore</span> My
           </p>
 
@@ -55,6 +55,7 @@ const Skills = () => {
           </h2>
 
           <div className="w-20 h-[3px] rounded-full mx-auto mb-3 mt-3 bg-gradient-to-r from-[#2351A8] via-[#4FB7B3] to-[#2CB67D] shadow-[0_0_10px_#4FB7B3]"></div>
+
         </div>
       </div>
 

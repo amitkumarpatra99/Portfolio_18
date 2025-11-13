@@ -47,13 +47,13 @@ import java from './assets/certificate/JAVA CERTIFICATE.pdf'
 import aiml from './assets/certificate/AIML.pdf'
 
 // Project Section Logo
-import chai from './assets/Project Photo/Get Me A chai.png'
+import cup from './assets/Project Photo/Warm Cup.png'
 import url from './assets/Project Photo/URL shortner.png'
 import password from './assets/Project Photo/Password Mannager.png'
 import todo from './assets/Project Photo/To-do List.png'
 import webstore from './assets/Project Photo/Web Store.png'
 import linkTree from './assets/Project Photo/Link Tree Clone.png'
-import Portfolio from './assets/Project Photo/New Portfolio.png'
+import mrpatra from './assets/Project Photo/MRPATRA.png'
 import currency from './assets/Project Photo/Currency Converter.png'
 import rock from './assets/Project Photo/Rock Paper.png'
 import tic from './assets/Project Photo/Tic Tac Toe.png'
@@ -133,11 +133,13 @@ export const SkillsInfo = [
 export const projects = [
   {
     id: 0,
-    title: "BUY ME A CHAI ",
-    description: "Chai is a creator support platform inspired by Buy Me a Coffee, allowing artists and creators to receive donations and share exclusive content with their supporters. Built with React, Node.js, it offers a seamless and modern way to monetize creativity and connect with fans.",
-    image: chai,
+    title: "Warm Cup ",
+    description: "Warm Cup is a modern platform designed to help developers receive support from their audience. Inspired by “Buy Me a Coffee,” Warm Cup brings a clean design, smooth UI, and a warm donor experience..",
+    image: cup,
     tags: ["HTML", "CSS", "JavaScript", "API", "Mongo DB", "Express Js", "React JS ", "Next JS", "Node JS", "Tailwind CSS"],
-    github: "https://github.com/amitkumarpatra99/GET-ME-A-CHAI",
+    github: "https://github.com/amitkumarpatra99/Warm_Cup",
+    live: "/https://warmcup.vercel.app/"
+
   },
 
   {
@@ -147,10 +149,22 @@ export const projects = [
     image: url,
     tags: ["HTML", "CSS", "JavaScript", "API", "Mongo DB", "Express Js", "React JS ", "Next JS", "Node JS", "Tailwind CSS"],
     github: "https://github.com/amitkumarpatra99/Link_Compressor",
+    live: "https://link-compressor.vercel.app/"
   },
 
   {
     id: 2,
+    title: "ACTION PLAN",
+    description: "TODO LIST - A task management application that helps users organize and prioritize their daily activities. With a simple interface, users can add, edit, and delete tasks, set deadlines, and mark tasks as complete, enhancing productivity and time management",
+    image: todo,
+    tags: ["HTML", "CSS", "JavaScript", "API", "Mongo DB", "Express Js", "React JS ", "Next JS", "Node JS", "Tailwind CSS"],
+    github: "https://github.com/amitkumarpatra99/ACTION_PLAN",
+    live: "https://actionp.netlify.app/",
+
+  },
+
+  {
+    id: 3,
     title: "PASSWORD KEEPER",
     description: "Password Keeper is a secure and user-friendly application designed to store and manage passwords with encryption. It helps users organize, access, and protect sensitive login information effortlessly, ensuring robust security with features like auto-fill and password generation",
     image: password,
@@ -158,14 +172,7 @@ export const projects = [
     github: "https://github.com/amitkumarpatra99/Password_Keeper",
   },
 
-  {
-    id: 3,
-    title: "ACTION PLAN",
-    description: "TODO LIST - A task management application that helps users organize and prioritize their daily activities. With a simple interface, users can add, edit, and delete tasks, set deadlines, and mark tasks as complete, enhancing productivity and time management",
-    image: todo,
-    tags: ["HTML", "CSS", "JavaScript", "API", "Mongo DB", "Express Js", "React JS ", "Next JS", "Node JS", "Tailwind CSS"],
-    github: "https://github.com/amitkumarpatra99/ACTION_PLAN",
-  },
+
 
   {
     id: 4,
@@ -187,11 +194,12 @@ export const projects = [
 
   {
     id: 6,
-    title: "PORTFOLIO 18",
+    title: "MR PATRA WEB ",
     description: "Animated Portfolio Website – A visually appealing and fully responsive personal portfolio designed with HTML, CSS, JavaScript and  React. It includes engaging animations, smooth scrolling, and interactive UI elements that highlight my skills, projects, and contact details in an elegant way.",
-    image: Portfolio,
+    image: mrpatra,
     tags: ["HTML", "CSS", "JavaScript", "API", "Mongo DB", "Express Js", "React JS ", "Next JS", "Node JS", "Tailwind CSS"],
-    github: "https://github.com/amitkumarpatra99/Portfolio_18",
+    github: "https://github.com/amitkumarpatra99/MR_PATRA_WEB",
+    live:"https://mrpatra.vercel.app/"
   },
 
   {
@@ -201,13 +209,14 @@ export const projects = [
     image: portfolio01,
     tags: ["HTML", "CSS", "JavaScript"],
     github: "https://github.com/amitkumarpatra99/PORTFOLIO_99",
+    live:"https://akpatra.netlify.app/"
   },
   {
     id: 8,
     title: "FACE DETECTION",
     description: "A Face Detection project- using AI/ML that identifies and recognizes human faces in images or video streams. Built with machine learning algorithms to enable real-time detection with high accuracy. Demonstrates practical application of computer vision techniques.",
     image: face,
-    tags: ["AI","ML","Keras","Matplot","Python"],
+    tags: ["AI", "ML", "Keras", "Matplot", "Python"],
     github: "https://github.com/amitkumarpatra99/FACE_DETECTION",
   },
 
@@ -350,7 +359,7 @@ export const education = [
     date: "July 2022 - July 2026",
     // desc: "REC",
     degree: "Bachelor of Tecnlogy",
-    add:"Bhubaneswar"
+    add: "Bhubaneswar"
   },
   {
     id: 1,
@@ -359,7 +368,7 @@ export const education = [
     date: "June 2020 - May 2022",
     // desc: "I have completed my +2 Science in This college ",
     degree: "Intermediate Science ",
-    add:"Pipili,Puri"
+    add: "Pipili,Puri"
   },
   {
     id: 2,
@@ -369,7 +378,7 @@ export const education = [
     grade: "",
     // desc: "I have completed my class 10th Education in this School",
     degree: "HSC(10th)",
-    add:"Delang,Puri"
+    add: "Delang,Puri"
   },
 ];
 

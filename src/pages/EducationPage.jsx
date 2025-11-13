@@ -12,7 +12,7 @@ const EducationPage = () => {
     }, []);
 
     return (
-        <div className="min-h-screen  text-white px-5 md:px-20 py-20">
+        <div className="min-h-screen  text-white px-1 md:px-1 py-10">
 
             {/* Close Button */}
             <button

@@ -2,6 +2,7 @@ import React, { useState, useEffect, useCallback } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
 import { FaGithub, FaLinkedin } from "react-icons/fa6";
 import { motion, AnimatePresence } from "framer-motion";
+import { Coffee } from "lucide-react";
 
 const menuItems = [
   { id: "home", label: "Home" },
@@ -19,8 +20,8 @@ const icons = [
   },
   {
     id: 2,
-    icon: <FaLinkedin size={18} />,
-    link: "https://www.linkedin.com/in/amitkumarpatra99",
+    icon: <Coffee size={18} />,
+    link: "https://warmcup.vercel.app/",
   },
 ];
 
@@ -203,7 +204,7 @@ const Navbar = () => {
               </ul>
 
               {/* Social Icons */}
-              <div className="flex gap-6 mt-auto justify-center mb-8">
+              {/* <div className="flex gap-6 mt-auto justify-center mb-8">
                 {icons.map((item) => (
                   <a
                     key={item.id}
@@ -227,7 +228,7 @@ const Navbar = () => {
 
                   </a>
                 ))}
-              </div>
+              </div> */}
             </motion.div>
           </>
         )}

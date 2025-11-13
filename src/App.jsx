@@ -24,19 +24,17 @@ const App = () => {
         <BrowserRouter>
           <div className="bg-[#011028]">
 
-            {/* Navbar always visible */}
             <StickyMiniNavbar />
             <div className="relative pt-20">
 
               {/* Routing logic */}
               <Routes>
-                {/* HOME PAGE */}
+                
                 <Route
                   path="/"
                   element={
                     <div className="bg-[#011028] min-h-screen">
                       <Navbar />
-
                       <Home />
                       <About />
                       <Skills />
@@ -68,6 +66,7 @@ const App = () => {
                     </div>
                   }
                 />
+                
 
 
                 {/* contact page  */}

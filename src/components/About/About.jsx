@@ -67,7 +67,7 @@ const About = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="flex justify-center md:justify-end"
+            className="flex justify-center md:justify-end "
           >
             <div className="relative w-full max-w-md md:max-w-lg rounded-3xl overflow-hidden border border-white/10 shadow-[0_0_40px_rgba(0,200,255,0.25)]">
               <img

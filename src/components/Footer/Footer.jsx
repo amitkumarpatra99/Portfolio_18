@@ -1,7 +1,6 @@
 import React from "react";
 import { Link as ScrollLink } from "react-scroll";
-import { Mail, Phone, MapPin, Github, Instagram, ArrowUp, Twitter } from "lucide-react";
-import { SiRazorpay } from "react-icons/si";
+import { Mail, Phone, MapPin, Github, Instagram, ArrowUp, Twitter, CreditCard } from "lucide-react";
 import { LiaLinkedinIn } from "react-icons/lia";
 import { FaWhatsapp } from "react-icons/fa6";
 
@@ -13,7 +12,7 @@ const Footer = () => {
     { id: 2, icon: <LiaLinkedinIn size={18} />, link: "https://www.linkedin.com/in/amitkumarpatra99" },
     { id: 4, icon: <Instagram size={18} />, link: "https://www.instagram.com/mr_patraa_" },
     { id: 3, icon: <Twitter size={18} />, link: "https://x.com/mr_patra_" },
-    { id: 5, icon: <SiRazorpay size={18} />, link: "https://rzp.io/rzp/amitpatra" },
+    { id: 5, icon: <CreditCard size={18} />, link: "https://warmcup.vercel.app/" },
   ];
 
   const links = [
