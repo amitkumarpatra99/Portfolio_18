@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { projects } from "../../constants";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight,ChevronDown, ChevronUp, ExternalLink, Github, X } from "lucide-react";
+import { ArrowRight, ChevronDown, ChevronUp, ExternalLink, Github, X } from "lucide-react";
 import { FiFolder } from "react-icons/fi";
-import {  RiExternalLinkLine } from "react-icons/ri";
+import { RiExternalLinkLine } from "react-icons/ri";
 
 const Work = () => {
   const [selectedProject, setSelectedProject] = useState(null);
@@ -19,7 +19,7 @@ const Work = () => {
       id="work"
       className="py-24 pb-24 px-[8vw] md:px-[6vw] lg:px-[18vw] font-sans relative"
     >
-      <div className="mb-16 flex items-center justify-center gap-4">
+      <div className="mb-16 flex items-center justify-center gap-2 ">
         <FiFolder className="text-4xl text-teal-500 animate-spin-slow drop-shadow-[0_0_12px_#4FB7B3]" />
 
         <div className="text-center">
@@ -78,7 +78,8 @@ const Work = () => {
                hover:bg-[#0b2e33]/80 
                transition-all duration-300"
                   >
-                    Details <ArrowRight size={18} />
+                    Details <ArrowRight size={18} 
+                    className="text-[#4FB7B3]"/>
                   </motion.button>
 
                   {/* View Live Button */}
@@ -97,7 +98,8 @@ const Work = () => {
                  hover:bg-[#0b2e33]/80 
                  transition-all duration-300"
                     >
-                      Live <RiExternalLinkLine size={18} />
+                      Live <RiExternalLinkLine size={18} 
+                      className="text-[#4FB7B3]" />
                     </motion.a>
                   )}
                 </div>

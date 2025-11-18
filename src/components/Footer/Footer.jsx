@@ -58,7 +58,7 @@ const Footer = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="relative group hover:scale-105 transition-all duration-300">
-                  <div className="w-10 h-10 flex items-center justify-center rounded-full bg-[#1a1f2b] text-[#4FB7B3] 
+                  <div className="w-10 h-10 flex items-center justify-center rounded-full bg-teal-950/55 text-[#4FB7B3] 
                           transition-all duration-300 group-hover:text-white group-hover:bg-[#242b3b]  ">
                     {item.icon}
                   </div>
@@ -119,12 +119,12 @@ const Footer = () => {
               {/* Email */}
               <li className="flex items-center gap-3 group hover:scale-105 transition-all  duration-300">
                 <div
-                  className="w-9 h-9 flex items-center justify-center rounded-full bg-[#1a1f2b] 
+                  className="w-9 h-9 flex items-center justify-center rounded-full bg-teal-950/55
                        transition-all duration-300 group-hover:bg-[#242b3b] relative"
                 >
                   <Mail
                     size={16}
-                    className="text-[#4FB7B3] group-hover:text-white transition duration-300"
+                    className="text-[#4FB7B3]  group-hover:text-white transition duration-300"
                   />
                   <div
                     className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 blur-md 
@@ -145,7 +145,7 @@ const Footer = () => {
               {/* Phone */}
               <li className="flex items-center gap-3 group hover:scale-105 transition-all  duration-300">
                 <div
-                  className="w-9 h-9 flex items-center justify-center rounded-full bg-[#1a1f2b] 
+                  className="w-9 h-9 flex items-center justify-center rounded-full bg-teal-950/55 
                        transition-all duration-300 group-hover:bg-[#242b3b] relative"
                 >
                   <Phone
@@ -172,7 +172,7 @@ const Footer = () => {
               {/* WHATSAPP */}
               <li className="flex items-center gap-3 group hover:scale-105 transition-all  duration-300">
                 <div
-                  className="w-9 h-9 flex items-center justify-center rounded-full bg-[#1a1f2b] 
+                  className="w-9 h-9 flex items-center justify-center rounded-full bg-teal-950/55 
                        transition-all duration-300 group-hover:bg-[#242b3b] relative"
                 >
                   <FaWhatsapp
@@ -198,7 +198,7 @@ const Footer = () => {
               {/* Location */}
               <li className="flex items-center gap-3 group hover:scale-105 transition-all  duration-300">
                 <div
-                  className="w-9 h-9 flex items-center justify-center rounded-full bg-[#1a1f2b] 
+                  className="w-9 h-9 flex items-center justify-center rounded-full bg-teal-950/55 
                        transition-all duration-300 group-hover:bg-[#242b3b] relative"
                 >
                   <MapPin

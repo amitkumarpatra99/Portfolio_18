@@ -18,9 +18,9 @@ const Journey = () => {
       className="w-full min-h-screen flex flex-col items-center justify-center px-6 py-24"
     >
       {/* Heading */}
-      <div className="mb-16 flex items-center justify-center gap-4">
+      <div className="mb-16 flex items-center justify-center gap-2">
         <Sparkles
-          size={24}
+          size={30}
           className="text-4xl text-[#4FB7B3] animate-spin-slow drop-shadow-[0_0_12px_#4FB7B3]"
         />
 

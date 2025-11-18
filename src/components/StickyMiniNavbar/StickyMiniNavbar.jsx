@@ -21,7 +21,7 @@ const StickyMiniNavbar = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
+  
   return (
     <>
       {/* Animations */}
@@ -104,7 +104,7 @@ const StickyMiniNavbar = () => {
           <div className="relative flex items-center justify-center w-full h-full">
             <ArrowUp size={16} className="text-[#4FB7B3] z-10" />
 
-            {/* Neon ring */}
+            {/* Neon ring  */}
             <div
               className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 blur-md 
                    transition-all duration-500"

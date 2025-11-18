@@ -1,5 +1,5 @@
 import React from "react";
-import { Briefcase, Code, ExternalLink, User, UserCircle } from "lucide-react";
+import { Briefcase, Code, Coffee, ExternalLink, User, UserCircle } from "lucide-react";
 import { motion } from "framer-motion";
 import profileImage from "../../assets/certificate/A.jpg";
 import { FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa6";
@@ -25,22 +25,23 @@ const icons = [
     icon: <FaLinkedin size={18} />,
     link: "https://www.linkedin.com/in/amitkumarpatra99",
   },
-  { id: 5, icon: <FaWhatsapp size={18} />, link: "https://wa.me/8144129955" },
+  { id: 3, icon: <FaWhatsapp size={18} />, link: "https://wa.me/8144129955" },
+  { id: 4, icon: <Coffee size={18} />, link: "https://warmcup.vercel.app/" },
 ];
+
 
 const About = () => {
   return (
     <section
       id="about"
-      className="py-24 px-4 md:px-8 lg:px-12 relative text-white overflow-hidden "
-    >
-      
-      <div className="container mx-auto max-w-6xl flex flex-col gap-20">
+      className="py-24 px-4 md:px-8 lg:px-12 relative text-white overflow-hidden ">
+
+      <div className="container mx-auto max-w-6xl flex flex-col ">
         {/* Heading */}
 
-        <div className="mb-12 flex items-center justify-center gap-4">
+        <div className="mb-12 flex items-center justify-center gap-2">
 
-          {/* Skills Icon */}
+
           <UserCircle size={40}
             className="text-4xl text-teal-500 drop-shadow-[0_0_12px_#4FB7B3] hover:scale-110 transition-transform duration-300"
           />
@@ -49,11 +50,11 @@ const About = () => {
           <div className="text-center">
 
             <p className="text-gray-400 text-sm tracking-[3px] uppercase">
-              <span className="text-teal-600">Explore</span> My
+              <span className="text-teal-600">Know</span> More
             </p>
 
-            <h2 className="text-4xl font-bold text-white mt-1 hover:scale-105 transition duration-400">
-              SKILL <span className="text-teal-500">SET</span>
+            <h2 className="text-4xl font-bold text-white mt-1 hover:scale-105 transition duration-400 uppercase">
+              About <span className="text-teal-500">ME</span>
             </h2>
 
             <div className="w-20 h-[3px] rounded-full mx-auto mb-3 mt-3 bg-gradient-to-r from-[#2351A8] via-[#4FB7B3] to-[#2CB67D] shadow-[0_0_10px_#4FB7B3]"></div>
@@ -164,7 +165,7 @@ const About = () => {
                     rel="noopener noreferrer"
                     className="relative group hover:scale-110 transition-all duration-300"
                   >
-                    <div className="w-10 h-10 flex items-center justify-center rounded-full bg-[#1a1f2b] text-white transition-all duration-300 group-hover:bg-[#0b2e33]">
+                    <div className="w-10 h-10 flex items-center justify-center rounded-full  transition-all duration-300 group-hover:bg-[#0b2e33]  bg-teal-950/55 text-[#4FB7B3] ">
                       {item.icon}
                     </div>
                     {/* Neon Glow */}

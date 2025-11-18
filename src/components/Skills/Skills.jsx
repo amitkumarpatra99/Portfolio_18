@@ -33,10 +33,10 @@ const Skills = () => {
 
   return (
 
-    <section id="skills" className="py-24 px-[5vw] font-sans bg-[]">
+    <section id="skills" className="py-24 px-[5vw] font-sans ">
 
       {/* Title */}
-      <div className="mb-12 flex items-center justify-center gap-4">
+      <div className="mb-12 flex items-center justify-center gap-2">
 
         {/* Skills Icon */}
         <RiToolsFill

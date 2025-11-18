@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
-import { FaGithub, FaLinkedin } from "react-icons/fa6";
+import { FaGithub, } from "react-icons/fa6";
 import { motion, AnimatePresence } from "framer-motion";
 import { Coffee } from "lucide-react";
 
@@ -30,14 +30,12 @@ const Navbar = () => {
   const [activeSection, setActiveSection] = useState("");
   const [isScrolled, setIsScrolled] = useState(false);
 
-  // Background on scroll
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 50);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Active section highlight
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -84,7 +82,7 @@ const Navbar = () => {
           />
         </motion.div>
 
-        {/* Desktop Nav */}
+        {/* Desktop Navabr AMIT */}
         <ul className="hidden md:flex space-x-10 text-gray-300 font-medium">
           {menuItems.map((item) => (
             <li
@@ -119,7 +117,7 @@ const Navbar = () => {
               className="relative group"
             >
               <div
-                className="w-9 h-9 flex items-center justify-center rounded-full bg-[#111926] text-gray-300 
+                className="w-9 h-9 flex items-center justify-center rounded-full bg-teal-950/55 text-[#4FB7B3] 
                 transition-all duration-300 hover:text-[#4FB7B3] hover:scale-110"
               >
                 {item.icon}
@@ -203,7 +201,7 @@ const Navbar = () => {
                 ))}
               </ul>
 
-              {/* Social Icons */}
+              {/*  Mobile Social Icons */}
               {/* <div className="flex gap-6 mt-auto justify-center mb-8">
                 {icons.map((item) => (
                   <a
@@ -225,10 +223,10 @@ const Navbar = () => {
                         background:
                           "conic-gradient(from 0deg, #7f5af0, #2cb67d, #7f5af0)",
                       }}></div>
-
                   </a>
                 ))}
               </div> */}
+
             </motion.div>
           </>
         )}
