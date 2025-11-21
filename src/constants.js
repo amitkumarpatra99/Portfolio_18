@@ -54,7 +54,7 @@ import todo from './assets/Project Photo/To-do List.png'
 import webstore from './assets/Project Photo/Web Store.png'
 import linkTree from './assets/Project Photo/Link Tree Clone.png'
 import mrpatra from './assets/Project Photo/MRPATRA.png'
-import currency from './assets/Project Photo/Currency Converter.png'
+import value from './assets/Project Photo/Valunex.png'
 import rock from './assets/Project Photo/Rock Paper.png'
 import tic from './assets/Project Photo/Tic Tac Toe.png'
 import Bgremove from './assets/Project Photo/BG Remover.png'
@@ -172,7 +172,25 @@ export const projects = [
     github: "https://github.com/amitkumarpatra99/Password_Keeper",
   },
 
+ {
+    id: 12,
+    title: "REMOVER AI",
+    description: "Remove image backgrounds instantly with our powerful AI background remover.Upload any photo and get a clean, transparent background in seconds — no design skills needed!",
+    image: Bgremove,
+    tags: ["HTML", "CSS", "JavaScript"],
+    github: "https://github.com/amitkumarpatra99/Remover.AI",
+    live:"https://removerai.netlify.app/",
+  },
 
+    {
+    id: 9,
+    title: "ValuneX",
+    description: "Currency Converter – A web-based tool designed to convert values between multiple international currencies instantly. Developed using HTML, CSS, and JavaScript with a clean and user-friendly interface that ensures accuracy and responsiveness across all devices.",
+    image: value,
+    tags: ["HTML", "CSS", "JavaScript"],
+    github: "https://github.com/amitkumarpatra99/ValuneX",
+    live:"https://valunex.netlify.app/",
+  },
 
   {
     id: 4,
@@ -209,7 +227,7 @@ export const projects = [
     image: portfolio01,
     tags: ["HTML", "CSS", "JavaScript"],
     github: "https://github.com/amitkumarpatra99/PORTFOLIO_99",
-    live:"https://akpatra.netlify.app/"
+    live:"https://akpatra.netlify.app/",
   },
   {
     id: 8,
@@ -220,14 +238,7 @@ export const projects = [
     github: "https://github.com/amitkumarpatra99/FACE_DETECTION",
   },
 
-  {
-    id: 9,
-    title: "CURRENCY CONVERTER",
-    description: "Currency Converter – A web-based tool designed to convert values between multiple international currencies instantly. Developed using HTML, CSS, and JavaScript with a clean and user-friendly interface that ensures accuracy and responsiveness across all devices.",
-    image: currency,
-    tags: ["HTML", "CSS", "JavaScript"],
-    github: "https://github.com/amitkumarpatra99/Currency_Converter",
-  },
+
 
   {
     id: 10,
@@ -246,15 +257,7 @@ export const projects = [
     tags: ["HTML", "CSS", "JavaScript"],
     github: "https://github.com/amitkumarpatra99/JavaScript-Projects/tree/main/Tic%20Tac%20Toe%20Game",
   },
-  {
-    id: 12,
-    title: "AI BG REMOVER",
-    description: "Remove image backgrounds instantly with our powerful AI background remover.Upload any photo and get a clean, transparent background in seconds — no design skills needed!",
-    image: Bgremove,
-    tags: ["HTML", "CSS", "JavaScript"],
-    github: "https://github.com/amitkumarpatra99/BG-REMOVER",
-  },
-
+ 
   {
     id: 13,
     title: "PIC FINDER",
