@@ -35,7 +35,7 @@ const Work = () => {
   return (
     <section
       id="work"
-      className="py-24 px-[8vw] md:px-[6vw] lg:px-[18vw] font-sans relative overflow-hidden"
+      className="py-24 px-[8vw] md:px-[6vw] lg:px-[18vw] font-sans relative overflow-hidden "
     >
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-teal-500/10 rounded-full blur-[120px] -z-10" />
 

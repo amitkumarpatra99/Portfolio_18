@@ -8,120 +8,130 @@ import { RiToolsFill } from "react-icons/ri";
 const Skills = () => {
   const [ref, slider] = useKeenSlider({
     loop: true,
-    renderMode: "performance",
-    dragSpeed: 0.8,
+    dragSpeed: 1, // 1:1 touch response for mobile
+    renderMode: "performance", // Optimizes for mobile GPUs
     slides: {
-      perView: 1,
-      spacing: 14,
+      perView: 1, // Show exactly 1 card on mobile
+      spacing: 16, // Tighter spacing on mobile
     },
     breakpoints: {
-      "(min-width: 600px)": {
-        slides: { perView: 1.2, spacing: 16 },
+      "(min-width: 640px)": {
+        slides: { perView: 1.1, spacing: 20 }, // Peek the next slide on large phones
       },
-      "(min-width: 900px)": {
-        slides: { perView: 1.6, spacing: 18 },
+      "(min-width: 768px)": {
+        slides: { perView: 1.3, spacing: 24 }, // Tablet view
       },
-      "(min-width: 1200px)": {
-        slides: { perView: 2, spacing: 22 },
+      "(min-width: 1024px)": {
+        slides: { perView: 1.5, spacing: 32 }, // Small laptop
+      },
+      "(min-width: 1280px)": {
+        slides: { perView: 2, spacing: 40 }, // Large Desktop
       },
     },
-    animation: {
-      duration: 650,
-      easing: (t) => 1 - Math.pow(1 - t, 3), // smooth cubic ease
-    }
   });
 
   return (
+    <section className="py-16 md:py-24 bg-[#09090b] relative overflow-hidden font-sans">
 
-    <section id="skills" className="py-24 px-[5vw] font-sans ">
+      {/* Background: Adaptive Blurs (Smaller on mobile for performance) */}
+      <div className="absolute top-0 left-0 md:left-1/4 w-64 md:w-[500px] h-64 md:h-[500px] bg-purple-600/10 rounded-full blur-[80px] md:blur-[100px] pointer-events-none mix-blend-screen" />
+      <div className="absolute bottom-0 right-0 md:right-1/4 w-64 md:w-[500px] h-64 md:h-[500px] bg-teal-600/10 rounded-full blur-[80px] md:blur-[100px] pointer-events-none mix-blend-screen" />
 
-      {/* Title */}
-      <div className="mb-12 flex items-center justify-center gap-2">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
 
-        {/* Skills Icon */}
-        <RiToolsFill
-          className="text-4xl text-teal-500 drop-shadow-[0_0_12px_#4FB7B3] hover:scale-110 transition-transform duration-300"
-        />
+        {/* Head */}
 
-        {/* Text Block */}
-        <div className="text-center ">
+        <div className="mb-16 flex items-center justify-center gap-2">
+          <RiToolsFill
+            size={40}
+            className="text-4xl text-[#4FB7B3] animate-spin-slow drop-shadow-[0_0_12px_#4FB7B3]"
+          />
 
-          <p className="text-gray-400 text-sm tracking-[3px] uppercase ">
-            <span className="text-teal-600">Explore</span> My
-          </p>
+          <div className="text-center">
+            <p className="text-gray-400 mb-1 cursor-default text-sm tracking-[3px] uppercase">
+              Explore<span className="text-[#4FB7B3]"> My</span>
+            </p>
 
-          <h2 className="text-4xl font-bold text-white mt-1 hover:scale-105 transition duration-400">
-            SKILL <span className="text-teal-500">SET</span>
-          </h2>
 
-          <div className="w-20 h-[3px] rounded-full mx-auto mb-3 mt-3 bg-gradient-to-r from-[#2351A8] via-[#4FB7B3] to-[#2CB67D] shadow-[0_0_10px_#4FB7B3]"></div>
+            <h2 className="text-4xl font-bold text-white cursor-pointer hover:scale-105 transform transition-transform duration-300">
+              SKILL<span className="text-[#4FB7B3]"> SET</span>
+            </h2>
 
+            <div className="w-20 h-[3px] rounded-full mx-auto mb-3 mt-3 bg-gradient-to-r from-[#2351A8] via-[#4FB7B3] to-[#2CB67D] shadow-[0_0_10px_#4FB7B3]" />
+          </div>
         </div>
-      </div>
 
-      {/* Slider + Buttons */}
-      <div className="relative max-w-[1200px] mx-auto px-10 sm:px-16 lg:px-24">
 
-        <div ref={ref} className="keen-slider">
-          {SkillsInfo.map((category) => (
-            <div
-              key={category.title}
-              className="keen-slider__slide rounded-2xl border border-[#4FB7B377]
-              bg-[rgba(15,25,31,0.65)]
-              shadow-[0_0_10px_rgba(79,183,179,0.15)]
-              hover:shadow-[0_4px_35px_rgba(79,183,179,0.25)]
-              backdrop-blur-xl transition-all duration-500
-              p-5 sm:p-7 transform hover:-translate-y-2 scale-[0.97] hover:scale-100"
-            >
-              <h3 className="text-xl sm:text-[1.45rem] font-semibold text-[#4FB7B3] mb-4 text-center">
-                {category.title}
-              </h3>
+        {/* Slider Container */}
+        <div className="relative select-none touch-pan-y"> {/* Prevents text selection while dragging */}
 
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-                {category.skills.map((skill) => (
-                  <div
-                    key={skill.name}
-                    className="flex items-center gap-2 bg-[rgba(5,12,14,0.45)] 
-                    border border-[#4FB7B355] rounded-xl px-2 py-2
-                    hover:bg-[rgba(5,12,14,0.7)]
-                    hover:border-[#ffffff66] transition-all duration-300"
-                  >
-                    <img src={skill.logo} className="w-6 h-6 sm:w-7 sm:h-7 drop-shadow-md" alt="" />
-                    <span className="text-xs sm:text-sm text-gray-300">
-                      {skill.name}
-                    </span>
+          <div ref={ref} className="keen-slider !overflow-visible">
+            {SkillsInfo.map((category, index) => (
+              <div key={index} className="keen-slider__slide h-auto"> {/* h-auto ensures flex stretching */}
+
+                {/* CARD: Responsive Padding & Height */}
+                <div className="group relative h-full bg-zinc-900/50 rounded-3xl md:rounded-[2.5rem] border border-white/5 p-6 md:p-8 transition-all duration-500 hover:border-white/10 overflow-hidden flex flex-col">
+
+                  {/* The "Spotlight" Effect */}
+                  <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full md:w-2/3 h-1/2 bg-gradient-to-b from-white/5 to-transparent blur-2xl -z-10 group-hover:from-teal-500/20 transition-all duration-500" />
+
+                  {/* Category Title */}
+                  <div className="flex flex-col items-center mb-6 md:mb-10">
+                    <h3 className="text-xl md:text-2xl font-bold text-white mb-2">{category.title}</h3>
+                    <div className="w-12 h-1 rounded-full bg-gradient-to-r from-[#2351A8] via-[#4FB7B3] to-[#2CB67D] shadow-[0_0_10px_#4FB7B3]" />
                   </div>
-                ))}
+
+                  {/* Skills Cloud - Responsive Spacing */}
+                  <div className="flex flex-wrap justify-center gap-2 md:gap-3">
+                    {category.skills.map((skill) => (
+                      <div
+                        key={skill.name}
+                        className="relative flex items-center gap-2 md:gap-3 pl-2 pr-3 md:pl-2 md:pr-4 py-2 md:py-2.5 
+                                   bg-black/40 rounded-full border border-white/5 
+                                   hover:bg-white/10 hover:border-white/20 active:scale-95
+                                   transition-all duration-300 cursor-default"
+                      >
+                        {/* Circle background for Logo */}
+                        <div className="w-6 h-6 md:w-8 md:h-8 rounded-full bg-zinc-800 flex items-center justify-center p-1 md:p-1.5 shadow-sm shrink-0">
+                          <img
+                            src={skill.logo}
+                            alt={skill.name}
+                            className="w-full h-full object-contain"
+                          />
+                        </div>
+                        <span className="text-xs md:text-sm font-medium text-gray-300 group-hover:text-white transition-colors whitespace-nowrap">
+                          {skill.name}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
+
+          {/* Navigation - Touch Friendly Size */}
+          <div className="flex justify-center gap-4 mt-8 md:mt-12">
+            <button
+              onClick={() => slider.current?.prev()}
+              className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-zinc-900 border border-zinc-800 text-white flex items-center justify-center hover:bg-zinc-800 hover:border-zinc-700 transition-all active:scale-90"
+              aria-label="Previous Slide"
+            >
+              <ChevronLeft size={20} />
+            </button>
+            <button
+              onClick={() => slider.current?.next()}
+              className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-zinc-900 border border-zinc-800 text-white flex items-center justify-center hover:bg-zinc-800 hover:border-zinc-700 transition-all active:scale-90"
+              aria-label="Next Slide"
+            >
+              <ChevronRight size={20} />
+            </button>
+          </div>
+
         </div>
-
-        {/* Arrows */}
-        <button
-          onClick={() => slider.current?.prev()}
-          className="absolute left-2 sm:left-6 top-1/2 -translate-y-1/2
-          bg-[#0E1B22]/90 hover:bg-[#15323D]
-          border border-white/10 rounded-full p-3 sm:p-4
-          shadow-lg backdrop-blur-md transition
-          hover:scale-110 hover:shadow-[0_0_12px_#4FB7B3]"
-        >
-          <ChevronLeft className="text-white w-5 h-5" />
-        </button>
-
-        <button
-          onClick={() => slider.current?.next()}
-          className="absolute right-2 sm:right-6 top-1/2 -translate-y-1/2
-          bg-[#0E1B22]/90 hover:bg-[#15323D]
-          border border-white/10 rounded-full p-3 sm:p-4
-          shadow-lg backdrop-blur-md transition
-          hover:scale-110 hover:shadow-[0_0_12px_#4FB7B3]"
-        >
-          <ChevronRight className="text-white w-5 h-5" />
-        </button>
       </div>
     </section>
-
   );
 };
 
