@@ -105,7 +105,7 @@ const About = () => {
             ABOUT<span className="text-[#4FB7B3]"> ME</span>
           </h2>
 
-          <div className="w-28 h-[3px] rounded-full mx-auto mb-3 mt-3 bg-gradient-to-r from-[#2351A8] via-[#4FB7B3] to-[#2CB67D] shadow-[0_0_10px_#4FB7B3]"></div>
+          <div className="w-28 h-[3px] rounded-full mx-auto mb-3 mt-3 bg-gradient-to-r from-[#2351A8] via-[#4FB7B3] to-[#2CB67D] shadow-[0_0_10px_#4FB7B3]"/>
         </div>
       </div>
 

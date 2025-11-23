@@ -31,7 +31,7 @@ const Skills = () => {
   });
 
   return (
-    <section className="py-16 md:py-24 bg-[#09090b] relative overflow-hidden font-sans">
+    <section id="skills" className="py-16 md:py-24 bg-[#09090b] relative overflow-hidden font-sans">
 
       {/* Background: Adaptive Blurs (Smaller on mobile for performance) */}
       <div className="absolute top-0 left-0 md:left-1/4 w-64 md:w-[500px] h-64 md:h-[500px] bg-purple-600/10 rounded-full blur-[80px] md:blur-[100px] pointer-events-none mix-blend-screen" />
