@@ -23,11 +23,11 @@ const Work = () => {
 
   const itemVariants = {
     hidden: { opacity: 0, y: 30, scale: 0.9 },
-    visible: { 
-      opacity: 1, 
-      y: 0, 
+    visible: {
+      opacity: 1,
+      y: 0,
       scale: 1,
-      transition: { duration: 0.5, type: "spring" } 
+      transition: { duration: 0.5, type: "spring" }
     },
   };
 
@@ -38,7 +38,7 @@ const Work = () => {
     >
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-teal-500/10 rounded-full blur-[120px] -z-10" />
 
-           <div className="mb-16 flex items-center justify-center gap-2">
+      <div className="mb-16 flex items-center justify-center gap-2">
         <Folder
           size={30}
           className="text-4xl text-[#4FB7B3] animate-spin-slow drop-shadow-[0_0_12px_#4FB7B3]"
@@ -76,7 +76,7 @@ const Work = () => {
 
               <div className="p-4 pb-0 overflow-hidden relative">
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#071e22]/90 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                
+
                 <img
                   src={project.image}
                   alt={project.title}
@@ -196,7 +196,7 @@ const Work = () => {
                 </div>
 
                 <div className="w-full md:w-1/2 flex flex-col justify-between p-5 sm:p-6 md:p-8 overflow-hidden">
-                  
+
                   <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-2">
                     {selectedProject.title}
                   </h3>

@@ -1,24 +1,107 @@
-import React from "react";
+// Ultra-Modern Journey Component
+// Includes: 3D Hover Depth, Particle Background, Floating Icons, Parallax Scroll,
+// Light/Dark Modes, Page Transition Animations
+
+import React, { useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import { motion } from "framer-motion";
-import { Briefcase, Coffee, GraduationCap, Mail, Sparkles, Zap } from "lucide-react";
+import { motion, useScroll, useTransform } from "framer-motion";
+import {
+  Briefcase,
+  GraduationCap,
+  Mail,
+  Coffee,
+  Sparkles,
+  Zap,
+} from "lucide-react";
 
 const Journey = () => {
   const navigate = useNavigate();
+  const parallaxRef = useRef(null);
+  const { scrollYProgress } = useScroll({ target: parallaxRef });
+  const parallaxY = useTransform(scrollYProgress, [0, 1], [0, -200]);
 
   const navItems = [
-    { label: "Experience", icon: <Briefcase size={32} />, path: "/experience" },
-    { label: "Education", icon: <GraduationCap size={32} />, path: "/education" },
-    { label: "Contact", icon: <Mail size={32} />, path: "/contact" },
+    { label: "Experience", icon: Briefcase, path: "/experience" },
+    { label: "Education", icon: GraduationCap, path: "/education" },
+    { label: "Contact", icon: Mail, path: "/contact" },
   ];
 
+  // PARTICLE BACKGROUND CANVAS
+  useEffect(() => {
+    const canvas = document.getElementById("particles");
+    const ctx = canvas.getContext("2d");
+    let particles = [];
+    let w, h;
+
+    const init = () => {
+      w = (canvas.width = window.innerWidth);
+      h = (canvas.height = window.innerHeight);
+
+      particles = Array.from({ length: 60 }, () => ({
+        x: Math.random() * w,
+        y: Math.random() * h,
+        r: Math.random() * 2 + 1,
+        dx: (Math.random() - 0.5) * 0.4,
+        dy: (Math.random() - 0.5) * 0.4,
+      }));
+    };
+
+    const animate = () => {
+      ctx.clearRect(0, 0, w, h);
+      particles.forEach((p) => {
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fillStyle = "rgba(79,183,179,0.4)";
+        ctx.fill();
+
+        p.x += p.dx;
+        p.y += p.dy;
+
+        if (p.x < 0 || p.x > w) p.dx *= -1;
+        if (p.y < 0 || p.y > h) p.dy *= -1;
+      });
+
+      requestAnimationFrame(animate);
+    };
+
+    init();
+    animate();
+    window.onresize = init;
+  }, []);
+
   return (
-    <section
+    <motion.section
       id="Journey"
-      className="w-full min-h-screen flex flex-col items-center justify-center px-6 py-24"
+      ref={parallaxRef}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.8 }}
+      className="w-full min-h-screen flex flex-col items-center justify-center px-6 py-24 relative overflow-hidden dark:bg-[#0A0D12] bg-[#F9F9F9]"
     >
-      {/* Heading */}
-      <div className="mb-16 flex items-center justify-center gap-2">
+      {/* PARTICLES */}
+      <canvas
+        id="particles"
+        className="absolute inset-0 pointer-events-none opacity-60"
+      />
+
+      {/* PARALLAX FLOATING ICONS */}
+      <motion.div
+        style={{ y: parallaxY }}
+        className="absolute top-10 left-10 opacity-30 dark:opacity-40"
+      >
+        <Sparkles size={70} className="text-[#4FB7B3]" />
+      </motion.div>
+
+      <motion.div
+        style={{ y: parallaxY }}
+        className="absolute bottom-10 right-10 opacity-30 dark:opacity-40"
+      >
+        <Zap size={70} className="text-[#2CB67D]" />
+      </motion.div>
+
+      {/* HEADING */}
+        <div className="mb-16 flex items-center justify-center gap-2">
         <Sparkles
           size={30}
           className="text-4xl text-[#4FB7B3] animate-spin-slow drop-shadow-[0_0_12px_#4FB7B3]"
@@ -38,84 +121,60 @@ const Journey = () => {
       </div>
 
       {/* NAV CARDS */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 max-w-6xl w-full place-items-center">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-14 max-w-6xl w-full place-items-center relative z-10">
         {navItems.map((item, i) => (
           <motion.div
             key={i}
-            initial={{ opacity: 0, x: i % 2 === 0 ? -50 : 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: i * 0.2, type: "spring", stiffness: 100 }}
-            whileHover={{ y: -12, scale: 1.05 }}
+            initial={{ opacity: 0, scale: 0.6 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: i * 0.2, type: "spring", stiffness: 140 }}
             onClick={() => navigate(item.path)}
-            className="group cursor-pointer"
+            className="cursor-pointer group"
           >
-            <div
-              className="
-                flex flex-col items-center gap-6 p-10 rounded-3xl w-64 h-64 sm:w-72 sm:h-72 justify-center transition-all duration-500 
-                bg-white/5 backdrop-blur-xl
-                border border-white/20
-                shadow-[0_0_25px_rgba(255,255,255,0.1)]
-                hover:border-[#4FB7B3]
-                hover:shadow-[0_0_35px_rgba(79,183,179,0.4)]
-              "
+            <motion.div
+              whileHover={{ rotateX: 15, rotateY: -15, scale: 1.08 }}
+              transition={{ type: "spring", stiffness: 150 }}
+              className="w-72 h-80 rounded-3xl p-10 backdrop-blur-xl border shadow-xl flex flex-col items-center justify-center gap-8 transition-all duration-300 dark:bg-white/[0.05] bg-white border-gray-200 dark:border-white/10 dark:shadow-[0_0_40px_rgba(0,0,0,0.4)]"
             >
               {/* ICON */}
               <motion.div
-                whileHover={{ rotate: 360 }}
-                transition={{ duration: 0.7 }}
-                className="
-                  p-5 rounded-full 
-                  bg-[#4FB7B3]/90 text-white shadow-xl
-                  border border-white/30
-                "
+                animate={{ y: [0, -6, 0] }}
+                transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                className="p-6 rounded-full bg-[#4FB7B3]/20 text-[#4FB7B3] border border-[#4FB7B3]/30 shadow-lg"
               >
-                {item.icon}
+                {React.createElement(item.icon, { size: 38 })}
               </motion.div>
 
               {/* LABEL */}
-              <p className="text-xl font-semibold text-slate-200 group-hover:text-[#4FB7B3] transition-colors">
+              <p className="text-2xl font-semibold dark:text-gray-200 text-gray-700 group-hover:text-[#4FB7B3] transition">
                 {item.label}
               </p>
-            </div>
+            </motion.div>
           </motion.div>
         ))}
       </div>
 
-      {/* WARM CUP BUTTON */}
+      {/* CTA BUTTON */}
       <motion.div
-        initial={{ scale: 0.8, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        transition={{ delay: 0.6 }}
-        whileHover={{ scale: 1.1, rotate: 5 }}
-        className="mt-14"
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 1 }}
+        whileHover={{ scale: 1.1 }}
+        className="mt-20 relative z-10"
       >
         <a
           href="https://warmcup.vercel.app/"
           target="_blank"
           rel="noopener noreferrer"
-          className="
-    relative cursor-pointer mt-6 inline-flex items-center gap-3 
-    text-white py-2.5 sm:py-3 px-6 sm:px-8 rounded-full 
-    text-base sm:text-lg font-semibold 
-    border-2 backdrop-blur-md transition-all duration-300 
-    hover:scale-[1.06] hover:shadow-[0_0_18px_#4FB7B366]
-    group
-  "
-          style={{
-            borderColor: "#4FB7B3",
-            background: "linear-gradient(145deg, rgba(79,183,179,0.18), rgba(79,183,179,0.06))",
-            boxShadow: "0 0 20px #4FB7B340",
-          }}
+          className="inline-flex items-center gap-3 px-9 py-3 text-lg font-medium rounded-full border dark:text-white text-black dark:border-[#4FB7B3] border-[#4FB7B3] dark:bg-[#4FB7B3]/10 bg-[#4FB7B3]/20 hover:bg-[#4FB7B3]/30 backdrop-blur-md transition-all duration-300 shadow-[0_0_20px_#4FB7B360]"
         >
-          <Coffee size={22} className="text-[#4FB7B3] group-hover:text-white transition" />
-          <span className="text-white">WARM CUP</span>
-          <Zap size={20} className="text-[#4FB7B3] group-hover:text-white transition" />
-
+          <Coffee size={22} />
+          <span>WARM CUP</span>
+          <Zap size={20} />
         </a>
-
       </motion.div>
-    </section>
+    </motion.section>
   );
-};
+}
 
 export default Journey;
