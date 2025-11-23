@@ -136,7 +136,7 @@ export const projects = [
     title: "Warm Cup ",
     description: "Warm Cup is a modern platform designed to help developers receive support from their audience. Inspired by “Buy Me a Coffee,” Warm Cup brings a clean design, smooth UI, and a warm donor experience..",
     image: cup,
-    tags: ["HTML", "CSS", "JavaScript", "API", "Mongo DB", "Express Js", "React JS ", "Next JS", "Node JS", "Tailwind CSS"],
+    tags: ["HTML", "CSS", "JavaScript", "Mongo DB", "Express Js", "React JS ", "Next JS", "Node JS", "Tailwind CSS", "API", "Framer Motion", "React-Icons", "Redux", "Material UI", "GSAP"],
     github: "https://github.com/amitkumarpatra99/Warm_Cup",
     live: "https://warmcup.vercel.app/"
 
@@ -147,7 +147,7 @@ export const projects = [
     title: "LINK COMPRESSOR",
     description: "  A simple yet powerful URL shortener built to make long links more manageable and shareable. It generates custom short links, offering a clean, user-friendly interface for seamless integration and easy access.",
     image: url,
-    tags: ["HTML", "CSS", "JavaScript", "API", "Mongo DB", "Express Js", "React JS ", "Next JS", "Node JS", "Tailwind CSS"],
+    tags: ["HTML", "CSS", "JavaScript", "Mongo DB", "Express Js", "React JS ", "Next JS", "Node JS", "Tailwind CSS", "API", "Framer Motion", "React-Icons", "Redux", "Material UI", "GSAP"],
     github: "https://github.com/amitkumarpatra99/Link_Compressor",
     live: "https://link-compressor.vercel.app/"
   },
@@ -157,8 +157,7 @@ export const projects = [
     title: "ACTION PLAN",
     description: "TODO LIST - A task management application that helps users organize and prioritize their daily activities. With a simple interface, users can add, edit, and delete tasks, set deadlines, and mark tasks as complete, enhancing productivity and time management",
     image: todo,
-    tags: ["HTML", "CSS", "JavaScript", "API", "Mongo DB", "Express Js", "React JS ", "Next JS", "Node JS", "Tailwind CSS"],
-    github: "https://github.com/amitkumarpatra99/ACTION_PLAN",
+    tags: ["HTML", "CSS", "JavaScript", "Mongo DB", "Express Js", "React JS ", "Next JS", "Node JS", "Tailwind CSS", "API", "Framer Motion", "React-Icons", "Redux", "Material UI", "GSAP"], github: "https://github.com/amitkumarpatra99/ACTION_PLAN",
     live: "https://actionp.netlify.app/",
 
   },
@@ -168,28 +167,28 @@ export const projects = [
     title: "PASSWORD KEEPER",
     description: "Password Keeper is a secure and user-friendly application designed to store and manage passwords with encryption. It helps users organize, access, and protect sensitive login information effortlessly, ensuring robust security with features like auto-fill and password generation",
     image: password,
-    tags: ["HTML", "CSS", "JavaScript", "API", "Mongo DB", "Express Js", "React JS ", "Next JS", "Node JS", "Tailwind CSS"],
+    tags: ["HTML", "CSS", "JavaScript", "Mongo DB", "Express Js", "React JS ", "Next JS", "Node JS", "Tailwind CSS", "API", "Framer Motion", "React-Icons", "Redux", "Material UI", "GSAP"],
     github: "https://github.com/amitkumarpatra99/Password_Keeper",
   },
 
- {
+  {
     id: 12,
     title: "REMOVER AI",
     description: "Remove image backgrounds instantly with our powerful AI background remover.Upload any photo and get a clean, transparent background in seconds — no design skills needed!",
     image: Bgremove,
-    tags: ["HTML", "CSS", "JavaScript"],
+    tags: ["HTML", "CSS", "JavaScript", "Mongo DB", "Express Js", "React JS ", "Next JS", "Node JS", "Tailwind CSS", "API", "Framer Motion", "React-Icons", "Redux", "Material UI", "GSAP"],
     github: "https://github.com/amitkumarpatra99/Remover.AI",
-    live:"https://removerai.netlify.app/",
+    live: "https://removerai.netlify.app/",
   },
 
-    {
+  {
     id: 9,
     title: "ValuneX",
     description: "Currency Converter – A web-based tool designed to convert values between multiple international currencies instantly. Developed using HTML, CSS, and JavaScript with a clean and user-friendly interface that ensures accuracy and responsiveness across all devices.",
     image: value,
-    tags: ["HTML", "CSS", "JavaScript"],
+    tags: ["HTML", "CSS", "JavaScript", "Mongo DB", "Express Js", "React JS ", "Next JS", "Node JS", "Tailwind CSS", "API", "Framer Motion", "React-Icons", "Redux", "Material UI", "GSAP"],
     github: "https://github.com/amitkumarpatra99/ValuneX",
-    live:"https://valunex.netlify.app/",
+    live: "https://valunex.netlify.app/",
   },
 
   {
@@ -197,7 +196,7 @@ export const projects = [
     title: "WEB STORE",
     description: "E-Commerce Website is a fully functional online store platform, designed for seamless browsing, product management, and secure checkout. Featuring a user-friendly interface, shopping cart integration, and payment gateway, it offers a smooth shopping experience for customers and easy management for administrators",
     image: webstore,
-    tags: ["HTML", "CSS", "JavaScript", "API", "Mongo DB", "Express Js", "React JS ", "Next JS", "Node JS", "Tailwind CSS"],
+    tags: ["HTML", "CSS", "JavaScript", "Mongo DB", "Express Js", "React JS ", "Next JS", "Node JS", "Tailwind CSS", "API", "Framer Motion", "React-Icons", "Redux", "Material UI", "GSAP"],
     github: "https://github.com/amitkumarpatra99/WEB-STORE",
   },
 
@@ -206,7 +205,7 @@ export const projects = [
     title: "LINKTREE CLONE",
     description: "A personalized version of the popular Linktree platform, this project allows users to create and manage a custom landing page with multiple links. It features a clean, responsive design, intuitive link management, and real-time analytics for tracking engagement.",
     image: linkTree,
-    tags: ["HTML", "CSS", "JavaScript", "API", "Mongo DB", "Express Js", "React JS ", "Next JS", "Node JS", "Tailwind CSS"],
+    tags: ["HTML", "CSS", "JavaScript", "Mongo DB", "Express Js", "React JS ", "Next JS", "Node JS", "Tailwind CSS", "API", "Framer Motion", "React-Icons", "Redux", "Material UI", "GSAP"],
     github: "https://github.com/amitkumarpatra99",
   },
 
@@ -215,9 +214,9 @@ export const projects = [
     title: "MR PATRA WEB ",
     description: "Animated Portfolio Website – A visually appealing and fully responsive personal portfolio designed with HTML, CSS, JavaScript and  React. It includes engaging animations, smooth scrolling, and interactive UI elements that highlight my skills, projects, and contact details in an elegant way.",
     image: mrpatra,
-    tags: ["HTML", "CSS", "JavaScript", "API", "Mongo DB", "Express Js", "React JS ", "Next JS", "Node JS", "Tailwind CSS"],
+    tags: ["HTML", "CSS", "JavaScript", "Mongo DB", "Express Js", "React JS ", "Next JS", "Node JS", "Tailwind CSS", "API", "Framer Motion", "React-Icons", "Redux", "Material UI", "GSAP"],
     github: "https://github.com/amitkumarpatra99/MR_PATRA_WEB",
-    live:"https://mrpatra.vercel.app/"
+    live: "https://mrpatra.vercel.app/"
   },
 
   {
@@ -227,7 +226,7 @@ export const projects = [
     image: portfolio01,
     tags: ["HTML", "CSS", "JavaScript"],
     github: "https://github.com/amitkumarpatra99/PORTFOLIO_99",
-    live:"https://akpatra.netlify.app/",
+    live: "https://akpatra.netlify.app/",
   },
   {
     id: 8,
@@ -257,7 +256,7 @@ export const projects = [
     tags: ["HTML", "CSS", "JavaScript"],
     github: "https://github.com/amitkumarpatra99/JavaScript-Projects/tree/main/Tic%20Tac%20Toe%20Game",
   },
- 
+
   {
     id: 13,
     title: "PIC FINDER",

@@ -94,9 +94,9 @@ const Work = () => {
                 </p>
 
                 <div className="flex items-center gap-3">
-                  {/* 🔥 ROUNDED FULL BUTTON */}
+                  {/* 🔥 BUTTON 1: DETAILS */}
                   <button
-                    className="flex-1 flex items-center justify-center gap-2 px-5 py-2.5 
+                    className="flex-1 flex items-center justify-center gap-2 px-4 py-2.5 
                     rounded-full text-sm font-semibold 
                     text-white bg-white/5 border border-white/10 
                     hover:bg-teal-500/20 hover:border-teal-500/50 
@@ -105,16 +105,19 @@ const Work = () => {
                     Details <ArrowRight size={16} className="text-teal-400" />
                   </button>
 
+                  {/* 🔥 BUTTON 2: LIVE (NOW SAME SIZE AS DETAILS) */}
                   {project.live && (
                     <a
                       href={project.live}
                       target="_blank"
                       onClick={(e) => e.stopPropagation()}
-                      className="p-2.5 rounded-full bg-teal-500/10 border border-teal-500/20 
-                      text-teal-400 hover:bg-teal-500 hover:text-white 
+                      className="flex-1 flex items-center justify-center gap-2 px-4 py-2.5 
+                      rounded-full text-sm font-semibold 
+                      text-teal-400 bg-teal-500/10 border border-teal-500/20 
+                      hover:bg-teal-500 hover:text-white 
                       transition-all duration-300"
                     >
-                      <RiExternalLinkLine size={20} />
+                      Live <RiExternalLinkLine size={18} />
                     </a>
                   )}
                 </div>
@@ -214,7 +217,7 @@ const Work = () => {
                     ))}
                   </div>
 
-                  {/* 🔥 FULL ROUNDED BUTTONS */}
+                  {/* 🔥 FULL ROUNDED BUTTONS IN MODAL (UNCHANGED) */}
                   <div className="flex gap-3 w-full">
                     <a
                       href={selectedProject.github}
