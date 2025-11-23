@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { projects } from "../../constants";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, ChevronDown, ChevronUp, ExternalLink, Folder, Github, X } from "lucide-react";
-import { FiFolder } from "react-icons/fi";
 import { RiExternalLinkLine } from "react-icons/ri";
 
 const Work = () => {

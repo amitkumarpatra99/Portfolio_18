@@ -218,6 +218,16 @@ export const projects = [
     github: "https://github.com/amitkumarpatra99/MR_PATRA_WEB",
     live: "https://mrpatra.vercel.app/"
   },
+  {
+    id: 11,
+    title: "TIC TAC TOE GAME",
+    description: "Tic Tac Toe Challenge – A simple yet engaging browser-based game where two players compete for victory. Designed with clean UI and smart game logic that instantly declares the winner or draw — perfect for testing your strategy skills!",
+    image: tic,
+    tags: ["HTML", "CSS", "JavaScript"],
+    github: "https://github.com/amitkumarpatra99/JavaScript-Projects/tree/main/Tic%20Tac%20Toe%20Game",
+    live:"https://ticbox.netlify.app/",
+  },
+
 
   {
     id: 7,
@@ -248,15 +258,7 @@ export const projects = [
     github: "https://github.com/amitkumarpatra99/JavaScript-Projects/tree/main/Rock%20Paper%20Scissros",
   },
 
-  {
-    id: 11,
-    title: "TIC TAC TOE GAME",
-    description: "Tic Tac Toe Challenge – A simple yet engaging browser-based game where two players compete for victory. Designed with clean UI and smart game logic that instantly declares the winner or draw — perfect for testing your strategy skills!",
-    image: tic,
-    tags: ["HTML", "CSS", "JavaScript"],
-    github: "https://github.com/amitkumarpatra99/JavaScript-Projects/tree/main/Tic%20Tac%20Toe%20Game",
-  },
-
+  
   {
     id: 13,
     title: "PIC FINDER",
