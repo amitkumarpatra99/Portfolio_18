@@ -1,7 +1,7 @@
 import React from "react";
 import { Link as ScrollLink } from "react-scroll";
-import { Mail, Phone, MapPin, Github, Instagram, ArrowUp, Twitter, CreditCard } from "lucide-react";
-import { LiaLinkedinIn } from "react-icons/lia";
+import { Mail, Phone, MapPin, Github, Instagram, ArrowUp, Twitter, CreditCard, } from "lucide-react";
+import { FaLinkedin } from "react-icons/fa6";
 
 const Footer = () => {
   // 1️⃣ Added the 'color' property to match your About component's logic
@@ -14,7 +14,7 @@ const Footer = () => {
     },
     {
       id: 2,
-      icon: <LiaLinkedinIn size={18} />,
+      icon: <FaLinkedin size={18} />,
       link: "https://www.linkedin.com/in/amitkumarpatra99",
       color: "hover:text-blue-500 hover:border-blue-500 hover:shadow-blue-500/30"
     },
@@ -28,7 +28,7 @@ const Footer = () => {
       id: 4,
       icon: <Twitter size={18} />,
       link: "https://x.com/mr_patra_",
-      color: "hover:text-white hover:border-white hover:shadow-white/30"
+      color: "hover:text-blue-300 hover:border-blue-300 hover:shadow-blue-300/30"
     },
     {
       id: 5,
@@ -65,7 +65,7 @@ const Footer = () => {
         {/* 1️⃣ About Section */}
         <div className="space-y-6">
           <div className="flex items-center gap-3 group cursor-default">
-            <div className="relative p-[2px] rounded-full bg-gradient-to-r from-teal-500 to-purple-500">
+            <div className="relative p-[2px] rounded-full bg-gradient-to-r from-teal-500 to-blue-500">
               <img
                 src="DP.jpg"
                 alt="Logo"
@@ -197,7 +197,7 @@ const Footer = () => {
       {/* Bottom Bar */}
       <div className="relative z-10 max-w-7xl mx-auto mt-16 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
         <p className="text-sm text-gray-500">
-          © {new Date().getFullYear()} <span className="text-teal-400 font-medium">Mr Patra</span>. All Rights Reserved.
+          © {new Date().getFullYear()} <span className="text-teal-500 font-medium uppercase">Mr Patra</span>. All Rights Reserved.
         </p>
 
         <button

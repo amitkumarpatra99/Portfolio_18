@@ -1,8 +1,7 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
-import { FaGithub, } from "react-icons/fa6";
+import { FaGithub, FaLinkedin, } from "react-icons/fa6";
 import { motion, AnimatePresence } from "framer-motion";
-import { Coffee } from "lucide-react";
 
 const menuItems = [
   { id: "home", label: "Home" },
@@ -13,16 +12,8 @@ const menuItems = [
 ];
 
 const icons = [
-  {
-    id: 1,
-    icon: <FaGithub size={18} />,
-    link: "https://github.com/amitkumarpatra99",
-  },
-  {
-    id: 2,
-    icon: <Coffee size={18} />,
-    link: "https://warmcup.vercel.app/",
-  },
+{ id: 1, icon: <FaGithub size={20} />, link: "https://github.com/amitkumarpatra99", color: "hover:text-gray-400 hover:border-gray-400 hover:shadow-gray-400/30" },
+  { id: 2, icon: <FaLinkedin size={20} />, link: "https://www.linkedin.com/in/amitkumarpatra99", color: "hover:text-blue-500 hover:border-blue-500 hover:shadow-blue-500/30" },
 ];
 
 const Navbar = () => {
@@ -107,36 +98,16 @@ const Navbar = () => {
         </ul>
 
         {/* Social Icons */}
-        <div className="hidden md:flex items-center gap-4">
-          {icons.map((item) => (
+        <div className="flex items-center gap-4">
+          {icons.map((social) => (
             <a
-              key={item.id}
-              href={item.link}
+              key={social.id}
+              href={social.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="relative group"
+              className={`w-10 h-10 flex items-center justify-center rounded-full bg-white/5 border border-white/10 text-gray-400 transition-all duration-300 hover:scale-110 hover:shadow-lg backdrop-blur-md ${social.color} hover:bg-white/10`}
             >
-              <div
-                className="w-9 h-9 flex items-center justify-center rounded-full bg-teal-950/55 text-[#4FB7B3] 
-                transition-all duration-300 hover:text-[#4FB7B3] hover:scale-110"
-              >
-                {item.icon}
-              </div>
-              <motion.div
-                className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 blur-md transition-all duration-500"
-                style={{
-                  background:
-                    "conic-gradient(from 0deg, #7f5af0, #2cb67d, #7f5af0)",
-                }}
-                animate={{
-                  rotate: [0, 360],
-                }}
-                transition={{
-                  repeat: Infinity,
-                  duration: 6,
-                  ease: "linear",
-                }}
-              ></motion.div>
+              {social.icon}
             </a>
           ))}
         </div>

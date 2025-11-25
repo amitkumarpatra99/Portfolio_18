@@ -48,7 +48,6 @@ const AnimatedStars = () => {
     </div>
   );
 };
-// --------------------------------------------------
 
 
 // --- Main Component Variants ---
