@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
-import { FaGithub, FaLinkedin, } from "react-icons/fa6";
+import { FaGithub, FaLinkedin } from "react-icons/fa6";
 import { motion, AnimatePresence } from "framer-motion";
 
 const menuItems = [
@@ -12,8 +12,19 @@ const menuItems = [
 ];
 
 const icons = [
-{ id: 1, icon: <FaGithub size={20} />, link: "https://github.com/amitkumarpatra99", color: "hover:text-gray-400 hover:border-gray-400 hover:shadow-gray-400/30" },
-  { id: 2, icon: <FaLinkedin size={20} />, link: "https://www.linkedin.com/in/amitkumarpatra99", color: "hover:text-blue-500 hover:border-blue-500 hover:shadow-blue-500/30" },
+  {
+    id: 1,
+    icon: <FaGithub size={20} />,
+    link: "https://github.com/amitkumarpatra99",
+    color:
+      "hover:text-gray-400 hover:border-gray-400 hover:shadow-gray-400/30",
+  },
+  {
+    id: 2,
+    icon: <FaLinkedin size={20} />,
+    link: "https://www.linkedin.com/in/amitkumarpatra99",
+    color: "hover:text-blue-500 hover:border-blue-500 hover:shadow-blue-500/30",
+  },
 ];
 
 const Navbar = () => {
@@ -29,15 +40,15 @@ const Navbar = () => {
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
+      entries => {
+        entries.forEach(entry => {
           if (entry.isIntersecting) setActiveSection(entry.target.id);
         });
       },
       { rootMargin: "-40% 0px -40% 0px" }
     );
 
-    menuItems.forEach((item) => {
+    menuItems.forEach(item => {
       const el = document.getElementById(item.id);
       if (el) observer.observe(el);
     });
@@ -45,8 +56,7 @@ const Navbar = () => {
     return () => observer.disconnect();
   }, []);
 
-  // Smooth scroll
-  const handleMenuItemClick = useCallback((sectionId) => {
+  const handleMenuItemClick = useCallback(sectionId => {
     setIsOpen(false);
     const section = document.getElementById(sectionId);
     if (section) section.scrollIntoView({ behavior: "smooth" });
@@ -54,17 +64,16 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${isScrolled ? "backdrop-blur-xl bg-[#0A0F1D]/60" : "bg-transparent"
-        }`}
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
+        isScrolled ? "backdrop-blur-xl bg-[#0A0F1D]/60" : "bg-transparent"
+      }`}
     >
       <div className="max-w-screen-xl mx-auto flex justify-between items-center h-20 px-[7vw] text-white">
-        {/* Logo */}
         <motion.div
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           className="flex items-center gap-3 cursor-pointer hover:scale-[1.05] transition-all duration-300"
           initial={{ opacity: 0, y: -15 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
         >
           <img
             src="DP.jpg"
@@ -73,18 +82,20 @@ const Navbar = () => {
           />
         </motion.div>
 
-        {/* Desktop Navabr AMIT */}
+        {/* Desktop Menu */}
         <ul className="hidden md:flex space-x-10 text-gray-300 font-medium">
-          {menuItems.map((item) => (
+          {menuItems.map(item => (
             <li
               key={item.id}
-              className={`relative transition-all duration-200 hover:text-white ${activeSection === item.id ? "text-[#4FB7B3]" : ""
-                }`}
+              className={`relative transition-all duration-200 hover:text-white ${
+                activeSection === item.id ? "text-[#4FB7B3]" : ""
+              }`}
             >
               {activeSection === item.id && (
                 <motion.span
                   layoutId="underline"
-                  className="absolute -bottom-1 left-0 w-full h-[2px] bg-gradient-to-r from-[#2351A8] via-[#4FB7B3] to-[#2CB67D] rounded-full"
+                  className="absolute -bottom-1 left-0 w-full h-[2px] 
+                  bg-gradient-to-r from-[#2351A8] via-[#4FB7B3] to-[#2CB67D] rounded-full"
                 />
               )}
               <button
@@ -97,9 +108,9 @@ const Navbar = () => {
           ))}
         </ul>
 
-        {/* Social Icons */}
-        <div className="flex items-center gap-4">
-          {icons.map((social) => (
+        {/* ICONS */}
+        <div className="hidden md:flex items-center gap-4">
+          {icons.map(social => (
             <a
               key={social.id}
               href={social.link}
@@ -117,7 +128,6 @@ const Navbar = () => {
           className="md:hidden"
           initial={{ opacity: 0, rotate: -90 }}
           animate={{ opacity: 1, rotate: 0 }}
-          transition={{ duration: 0.5 }}
         >
           {isOpen ? (
             <FiX
@@ -133,73 +143,59 @@ const Navbar = () => {
         </motion.div>
       </div>
 
-      {/* Animated Drawer */}
+      {/* Mobile Drawer */}
       <AnimatePresence>
         {isOpen && (
-          <>
-            <motion.div
-              key="drawer"
-              initial={{ x: "100%", opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              exit={{ x: "100%", opacity: 0 }}
-              transition={{ type: "spring", stiffness: 100, damping: 18 }}
-              className="fixed top-0 right-0 h-screen w-[50%] sm:w-[60%] bg-[rgba(10,15,25,0.9)] backdrop-blur-md 
-              shadow-[0_0_25px_rgba(79,183,179,0.25)] border-l border-[#4FB7B3]/30 text-gray-300 font-medium
-              flex flex-col py-10 px-8 z-[60]">
+          <motion.div
+            key="drawer"
+            initial={{ x: "100%", opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            exit={{ x: "100%", opacity: 0 }}
+            transition={{ type: "spring", stiffness: 110, damping: 18 }}
+            className="fixed top-0 right-0 h-screen w-[50%] sm:w-[60%] bg-[#0A0F1D]/90 backdrop-blur-md shadow-xl 
+            border-l border-[#4FB7B3]/30 text-gray-300 font-medium flex flex-col py-16 px-8 z-[100]"
+          >
+            <button
+              onClick={() => setIsOpen(false)}
+              className="absolute top-6 right-6 text-[#4FB7B3] text-3xl hover:text-white transition-all duration-300 hover:scale-110"
+            >
+              <FiX />
+            </button>
 
-              <button
-                onClick={() => setIsOpen(false)}
-                className="absolute top-6 right-6 text-[#4FB7B3] text-3xl hover:text-white transition-all duration-300 hover:scale-110">
-                <FiX />
-              </button>
-
-              <ul className="flex flex-col items-center gap-6 text-lg mt-16">
-                {menuItems.map((item) => (
-                  <motion.li
-                    key={item.id}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.1 }}
-                    className={`cursor-pointer transition-all duration-300 tracking-wide ${activeSection === item.id
+            <ul className="flex flex-col items-center gap-6 text-lg">
+              {menuItems.map(item => (
+                <motion.li
+                  key={item.id}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className={`cursor-pointer transition-all duration-300 ${
+                    activeSection === item.id
                       ? "text-[#4FB7B3] scale-105"
                       : "hover:text-white hover:scale-105"
-                      }`}
-                  >
-                    <button onClick={() => handleMenuItemClick(item.id)}>
-                      {item.label}
-                    </button>
-                  </motion.li>
-                ))}
-              </ul>
+                  }`}
+                >
+                  <button onClick={() => handleMenuItemClick(item.id)}>
+                    {item.label}
+                  </button>
+                </motion.li>
+              ))}
+            </ul>
 
-              {/*  Mobile Social Icons */}
-              {/* <div className="flex gap-6 mt-auto justify-center mb-8">
-                {icons.map((item) => (
-                  <a
-                    key={item.id}
-                    href={item.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="relative group">
-
-                    <div
-                      className="w-10 h-10 flex items-center justify-center rounded-full bg-[#111926] text-gray-300 
-                      transition-all duration-300 group-hover:text-[#4FB7B3] group-hover:scale-110">
-                      {item.icon}
-                    </div>
-
-                    <div
-                      className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 blur-md transition-all duration-500"
-                      style={{
-                        background:
-                          "conic-gradient(from 0deg, #7f5af0, #2cb67d, #7f5af0)",
-                      }}></div>
-                  </a>
-                ))}
-              </div> */}
-
-            </motion.div>
-          </>
+            {/* MOBILE SOCIAL ICONS */}
+            <div className="flex justify-center gap-6 mt-auto mb-6">
+              {icons.map(social => (
+                <a
+                  key={social.id}
+                  href={social.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 flex items-center justify-center rounded-full bg-white/5 border border-white/10 hover:scale-110 transition-all duration-300"
+                >
+                  {social.icon}
+                </a>
+              ))}
+            </div>
+          </motion.div>
         )}
       </AnimatePresence>
     </nav>

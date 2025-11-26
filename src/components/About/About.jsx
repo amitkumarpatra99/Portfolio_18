@@ -1,21 +1,22 @@
-import React from "react";
-import { Briefcase, Code, Coffee, ExternalLink, User, UserCircle } from "lucide-react";
+import React, { useMemo } from "react";
+// Added 'Database' to the imports
+import { Briefcase, Code, Coffee, Database, ExternalLink, User, UserCircle } from "lucide-react";
 import { motion } from "framer-motion";
-// Make sure this path is correct based on your project structure
-import profileImage from "../../assets/certificate/A.jpg"; 
+import profileImage from "../../assets/certificate/A.jpg";
 import { FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa6";
 
-// --- New Component: Animated Stars Background ---
+// --- Restore Original Background with Performance Tweaks ---
 const AnimatedStars = () => {
-  // Generate static data for stars once to avoid hydration mismatches
-  const stars = [...Array(100)].map((_, i) => ({
-    id: i,
-    size: Math.random() * 2.5 + 0.5, // Size between 0.5px and 3px
-    top: `${Math.random() * 100}%`,
-    left: `${Math.random() * 100}%`,
-    duration: Math.random() * 10 + 5, // Slow animation duration between 5-15s
-    delay: Math.random() * 5, // Random start delay
-  }));
+  const stars = useMemo(() => {
+    return [...Array(70)].map((_, i) => ({
+      id: i,
+      size: Math.random() * 2.5 + 0.5,
+      top: `${Math.random() * 100}%`,
+      left: `${Math.random() * 100}%`,
+      duration: Math.random() * 10 + 5,
+      delay: Math.random() * 5,
+    }));
+  }, []);
 
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
@@ -29,11 +30,10 @@ const AnimatedStars = () => {
             width: `${star.size}px`,
             height: `${star.size}px`,
           }}
-          // The Animation: Twinkle and subtle upward drift
           animate={{
-            opacity: [0.1, 0.8, 0.1], 
+            opacity: [0.1, 0.8, 0.1],
             scale: [1, 1.2, 1],
-            y: [0, -50, 0] // Subtle vertical movement
+            y: [0, -50, 0]
           }}
           transition={{
             duration: star.duration,
@@ -43,19 +43,17 @@ const AnimatedStars = () => {
           }}
         />
       ))}
-         {/* Optional: Add a subtle nebula gradient overlay for depth */}
-         <div className="absolute inset-0 bg-gradient-to-tr from-[#0a0a0a] via-transparent to-[#0a0a0a]/80"></div>
+      <div className="absolute inset-0 bg-gradient-to-tr from-[#0a0a0a] via-transparent to-[#0a0a0a]/80"></div>
     </div>
   );
 };
 
-
-// --- Main Component Variants ---
+// --- Variants ---
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    transition: { staggerChildren: 0.2 },
+    transition: { staggerChildren: 0.15 },
   },
 };
 
@@ -75,43 +73,36 @@ const About = () => {
   return (
     <section
       id="about"
-      // Added a subtle radial gradient background base
-      className="relative py-24 px-4 md:px-8 lg:px-12 text-white overflow-hidden bg-[radial-gradient(ellipse_at_bottom,_#1b2735_0%,_#090a0f_100%)]"
+      className="relative py-16 md:py-24 px-4 md:px-8 lg:px-12 text-white overflow-hidden bg-[radial-gradient(ellipse_at_bottom,_#1b2735_0%,_#090a0f_100%)]"
     >
-      {/* Insert the Star Background Component Here */}
       <AnimatedStars />
-      
-      {/* Kept one subtle large glow blob for color tint */}
-      <div className="absolute top-1/4 -left-20 w-96 h-96 bg-teal-500/20 rounded-full blur-[120px] pointer-events-none mix-blend-screen" />
 
+      {/* Background Blob */}
+      <div className="absolute top-1/4 -left-20 w-64 h-64 md:w-96 md:h-96 bg-teal-500/10 rounded-full blur-[80px] md:blur-[100px] pointer-events-none mix-blend-screen" />
 
-      {/* Main Content Container (Z-index ensures it's above stars) */}
       <div className="container mx-auto max-w-6xl relative z-10">
-        
-        {/* Section Header */}
-  <div className="mb-16 flex items-center justify-center gap-2">
-        <UserCircle
-          size={40}
-          className="text-4xl text-[#4FB7B3] animate-spin-slow drop-shadow-[0_0_12px_#4FB7B3]"
-        />
 
-        <div className="text-center">
-          <p className="text-gray-400 mb-1 cursor-default text-sm tracking-[3px] uppercase">
-            Know<span className="text-[#4FB7B3]"> more</span>
-          </p>
-
-          <h2 className="text-4xl font-bold text-white cursor-pointer hover:scale-105 transform transition-transform duration-300">
-            ABOUT<span className="text-[#4FB7B3]"> ME</span>
-          </h2>
-
-          <div className="w-28 h-[3px] rounded-full mx-auto mb-3 mt-3 bg-gradient-to-r from-[#2351A8] via-[#4FB7B3] to-[#2CB67D] shadow-[0_0_10px_#4FB7B3]"/>
+        {/* Header */}
+        <div className="mb-12 md:mb-16 flex items-center justify-center gap-2">
+          <UserCircle
+            size={40}
+            className="text-3xl md:text-4xl text-[#4FB7B3] animate-spin-slow drop-shadow-[0_0_12px_#4FB7B3]"
+          />
+          <div className="text-center">
+            <p className="text-gray-400 mb-1 cursor-default text-xs md:text-sm tracking-[3px] uppercase">
+              Know<span className="text-[#4FB7B3]"> more</span>
+            </p>
+            <h2 className="text-3xl md:text-4xl font-bold text-white cursor-pointer hover:scale-105 transform transition-transform duration-300">
+              ABOUT<span className="text-[#4FB7B3]"> ME</span>
+            </h2>
+            <div className="w-20 md:w-28 h-[3px] rounded-full mx-auto mb-3 mt-3 bg-gradient-to-r from-[#2351A8] via-[#4FB7B3] to-[#2CB67D] shadow-[0_0_10px_#4FB7B3]" />
+          </div>
         </div>
-      </div>
 
-        {/* Main Content Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-          
-          {/* Left: Image Column */}
+        {/* Grid Layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+
+          {/* Left: Image Section */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -119,80 +110,85 @@ const About = () => {
             transition={{ duration: 0.7 }}
             className="relative flex justify-center lg:justify-end"
           >
-            {/* Image Card with Gradient Border */}
-            <div className="relative group w-full max-w-md">
-              <div className="absolute inset-0 bg-gradient-to-br from-teal-500 to-blue-600 rounded-3xl blur opacity-30 group-hover:opacity-50 transition-opacity duration-500"></div>
-              
+            <div className="relative group w-full max-w-[350px] md:max-w-md mx-auto lg:mx-0">
+              <div className="absolute inset-0 bg-gradient-to-br from-teal-500 to-blue-600 rounded-3xl blur opacity-20 group-hover:opacity-40 transition-opacity duration-500"></div>
+
               <div className="relative rounded-3xl p-[2px] bg-gradient-to-br from-white/20 to-white/0 overflow-hidden backdrop-blur-sm">
-                 <div className="rounded-[22px] overflow-hidden bg-[#0f172a] relative h-[450px]">
-                    <img
-                      src={profileImage}
-                      alt="Profile"
-                      className="w-full h-full object-cover object-center transform transition-transform duration-700 group-hover:scale-105"
-                    />
-                    {/* Overlay Gradient for text readability if needed */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-40"></div>
-                 </div>
+                <div className="rounded-[22px] overflow-hidden bg-[#0f172a] relative h-[350px] sm:h-[400px] md:h-[450px]">
+                  <img
+                    src={profileImage}
+                    alt="Profile"
+                    loading="lazy"
+                    className="w-full h-full object-cover object-center transform transition-transform duration-700 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-40"></div>
+                </div>
               </div>
 
               {/* Floating Badge */}
-              <motion.div 
+              <motion.div
                 animate={{ y: [0, -10, 0] }}
                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute -bottom-6 -right-6 md:right-6 bg-[#112240]/90 backdrop-blur-xl border border-teal-500/30 p-4 rounded-2xl shadow-2xl max-w-[200px]"
+                className="absolute -bottom-6 -right-2 md:-right-6 bg-[#112240]/95 backdrop-blur-md border border-teal-500/30 p-3 md:p-4 rounded-2xl shadow-2xl w-[160px] md:w-[200px]"
               >
-                <div className="flex items-center gap-3">
-                   <div className="w-3 h-3 rounded-full bg-green-500 animate-pulse"></div>
-                   <span className="text-gray-300 text-sm font-medium">Open to work</span>
+                <div className="flex items-center gap-2 md:gap-3">
+                  <div className="w-2 h-2 md:w-3 md:h-3 rounded-full bg-green-500 animate-pulse"></div>
+                  <span className="text-gray-300 text-xs md:text-sm font-medium">Open to work</span>
                 </div>
-                <p className="text-white font-bold text-lg mt-1">Full Stack Dev</p>
+                <p className="text-white font-bold text-sm md:text-lg mt-1">Full Stack Dev</p>
               </motion.div>
             </div>
           </motion.div>
 
-          {/* Right: Content Column */}
+          {/* Right: Content Section */}
           <motion.div
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="space-y-8 lg:pl-8"
+            className="space-y-8 text-center lg:text-left lg:pl-8"
           >
-            <motion.p variants={itemVariants} className="text-gray-400 text-lg leading-relaxed">
+            <motion.p variants={itemVariants} className="text-gray-400 text-base md:text-lg leading-relaxed">
               I am a passionate developer who bridges the gap between design and engineering. I build performant web applications with a focus on <span className="text-teal-400 font-medium">clean code</span> and <span className="text-teal-400 font-medium">pixel-perfect designs</span>.
             </motion.p>
 
-            {/* Glass Cards for Skills */}
-            <div className="space-y-4">
+            {/* Skills Grid - Now with 4 Items */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {[
                 {
                   icon: <Code className="w-6 h-6 text-teal-400" />,
                   title: "Web Development",
-                  desc: "Modern, responsive applications using React & Tailwind.",
+                  desc: "React & Tailwind apps.",
                 },
                 {
                   icon: <User className="w-6 h-6 text-blue-400" />,
                   title: "UI / UX Design",
-                  desc: "Crafting intuitive and engaging digital experiences.",
+                  desc: "Intuitive experiences.",
+                },
+                {
+                  // --- NEW CARD ADDED HERE ---
+                  icon: <Database className="w-6 h-6 text-rose-400" />,
+                  title: "Backend Integration",
+                  desc: "Robust APIs & databases.",
                 },
                 {
                   icon: <Briefcase className="w-6 h-6 text-purple-400" />,
                   title: "Project Management",
-                  desc: "Agile execution with clear planning and delivery.",
+                  desc: "Agile execution.",
                 },
               ].map((item, index) => (
                 <motion.div
                   key={index}
                   variants={itemVariants}
-                  className="group relative p-5 rounded-2xl bg-white/5 border border-white/10 hover:border-teal-500/50 hover:bg-white/10 transition-all duration-300 backdrop-blur-md"
+                  className="group relative p-4 md:p-5 rounded-2xl bg-white/5 border border-white/10 hover:border-teal-500/50 hover:bg-white/10 transition-all duration-300 backdrop-blur-md text-left"
                 >
-                  <div className="flex items-start gap-5">
-                    <div className="p-3 rounded-xl bg-white/5 group-hover:bg-teal-500/20 transition-colors duration-300 shadow-[inset_0_1px_1px_rgba(255,255,255,0.1)]">
+                  <div className="flex items-start gap-4">
+                    <div className="p-3 rounded-xl bg-white/5 group-hover:bg-teal-500/20 transition-colors duration-300 shadow-[inset_0_1px_1px_rgba(255,255,255,0.1)] shrink-0">
                       {item.icon}
                     </div>
                     <div>
-                      <h3 className="text-white font-semibold text-lg">{item.title}</h3>
-                      <p className="text-gray-400 text-sm mt-1 group-hover:text-gray-300 transition-colors">
+                      <h3 className="text-white font-semibold text-base md:text-lg">{item.title}</h3>
+                      <p className="text-gray-400 text-xs md:text-sm mt-1 group-hover:text-gray-300 transition-colors">
                         {item.desc}
                       </p>
                     </div>
@@ -202,17 +198,16 @@ const About = () => {
             </div>
 
             {/* Action Area */}
-            <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-6 pt-4">
+            <motion.div variants={itemVariants} className="flex flex-col sm:flex-row items-center lg:items-start gap-6 pt-4 justify-center lg:justify-start">
               <a
                 href="https://drive.google.com/file/d/1xgU-OvduPOkcmW6dzjLCwNYCRdNBGHdU/view?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group relative inline-flex items-center justify-center gap-3 px-8 py-3.5 text-white font-medium rounded-full overflow-hidden bg-teal-600 transition-all hover:bg-teal-700 shadow-lg shadow-teal-500/25 hover:shadow-teal-500/50"
+                className="group relative inline-flex items-center justify-center gap-3 px-8 py-3.5  font-medium rounded-full overflow-hidden           text-teal-400 bg-teal-500/10 border border-teal-500/20  hover:bg-teal-500/20 hover:text-white transition-all duration-300 w-full sm:w-auto"
               >
                 <span className="relative z-10 flex items-center gap-2">
-                   Download CV <ExternalLink size={18} />
+                  View My CV <ExternalLink size={18} />
                 </span>
-                <div className="absolute inset-0 bg-gradient-to-r from-teal-500 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </a>
 
               <div className="flex items-center gap-4">

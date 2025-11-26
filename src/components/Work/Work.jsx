@@ -113,7 +113,7 @@ const Work = () => {
                       className="flex-1 flex items-center justify-center gap-2 px-4 py-2.5 
                       rounded-full text-sm font-semibold 
                       text-teal-400 bg-teal-500/10 border border-teal-500/20 
-                      hover:bg-teal-500 hover:text-white 
+                      hover:bg-teal-500/20 hover:text-white 
                       transition-all duration-300"
                     >
                       Live <RiExternalLinkLine size={18} />
@@ -235,8 +235,9 @@ const Work = () => {
                         target="_blank"
                         className="flex-1 flex items-center justify-center gap-2 px-5 py-3 
                         rounded-full text-sm sm:text-base font-semibold 
-                        text-white bg-teal-600 hover:bg-teal-500 
-                        shadow-lg shadow-teal-500/20 transition"
+                        text-teal-400 bg-teal-500/10 border border-teal-500/20 
+                      hover:bg-teal-500/20 hover:text-white 
+                      transition-all duration-300"
                       >
                         <ExternalLink size={16} /> Live
                       </a>
