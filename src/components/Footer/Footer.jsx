@@ -52,7 +52,7 @@ const Footer = () => {
 
       {/* 🌟 ANIMATED BACKGROUND LAYERS 🌟 */}
       <div className="absolute inset-0 w-full h-full overflow-hidden z-0 pointer-events-none">
-        <div className="absolute top-[-10%] left-[-10%] w-96 h-96 bg-purple-600/20 rounded-full blur-[100px] animate-blob mix-blend-screen"></div>
+        <div className="absolute top-[-10%] left-[-10%] w-96 h-96 bg-blue-500/20 rounded-full blur-[100px] animate-blob mix-blend-screen"></div>
         <div className="absolute top-[-10%] right-[-10%] w-96 h-96 bg-teal-600/20 rounded-full blur-[100px] animate-blob animation-delay-2000 mix-blend-screen"></div>
         <div className="absolute bottom-[-20%] left-[20%] w-96 h-96 bg-blue-600/20 rounded-full blur-[100px] animate-blob animation-delay-4000 mix-blend-screen"></div>
         <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:40px_40px] opacity-30"></div>

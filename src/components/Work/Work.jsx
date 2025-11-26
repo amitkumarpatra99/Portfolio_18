@@ -34,9 +34,18 @@ const Work = () => {
   return (
     <section
       id="work"
-      className="py-24 px-[8vw] md:px-[6vw] lg:px-[18vw] font-sans relative overflow-hidden "
+      className="py-24 px-[8vw] md:px-[6vw] lg:px-[18vw] font-sans relative overflow-hidden bg-[#010814]"
+      
     >
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-teal-500/10 rounded-full blur-[120px] -z-10" />
+      <div className="absolute inset-0 -z-10 pointer-events-none">
+        <div
+          className="
+      absolute top-[-100px] left-1/2 -translate-x-1/2
+      w-[900px] h-[900px]
+      bg-[#4FB7B3]/40
+      blur-[180px] rounded-full"  /> 
+
+      </div>
 
       <div className="mb-16 flex items-center justify-center gap-2">
         <Folder
@@ -88,14 +97,14 @@ const Work = () => {
                 <h3 className="text-xl font-bold text-slate-100 mb-1 group-hover:text-teal-400 transition-colors">
                   {project.title}
                 </h3>
-                <p className="text-xs text-slate-400 mb-6 line-clamp-2">
+                <p className="text-xs text-slate-500 mb-6 line-clamp-2">
                   Click for details regarding tech stack and features.
                 </p>
 
                 <div className="flex items-center gap-3">
-                  {/* 🔥 BUTTON 1: DETAILS */}
+
                   <button
-                    className="flex-1 flex items-center justify-center gap-2 px-4 py-2.5 
+                    className="flex-1 flex items-center justify-center gap-1 px-4 py-2.5 
                     rounded-full text-sm font-semibold 
                     text-white bg-white/5 border border-white/10 
                     hover:bg-teal-500/20 hover:border-teal-500/50 
@@ -104,7 +113,6 @@ const Work = () => {
                     Details <ArrowRight size={16} className="text-teal-400" />
                   </button>
 
-                  {/* 🔥 BUTTON 2: LIVE (NOW SAME SIZE AS DETAILS) */}
                   {project.live && (
                     <a
                       href={project.live}
@@ -136,17 +144,11 @@ const Work = () => {
               setTimeout(() => document.getElementById("work")?.scrollIntoView({ behavior: "smooth" }), 200);
             }
           }}
+          
           className="
-            group flex items-center gap-3 px-10 py-4 rounded-full
-            text-white font-semibold tracking-wide
-            bg-gradient-to-r from-[#0b2a2e] to-[#04181b]
-            border border-teal-500/30
-            shadow-[0_0_20px_rgba(79,183,179,0.15)]
-            hover:shadow-[0_0_30px_rgba(79,183,179,0.3)]
-            hover:border-teal-400/50
-            transition-all duration-300
-          "
-        >
+            group flex items-center gap-3 px-5 py-3 rounded-full
+            text-white font-semibold tracking-wide bg-teal-500/10 border border-teal-500/20  hover:bg-teal-500/20 hover:text-white transition-all duration-300">
+
           {showAll ? "Show Less" : "View All Projects"}
           {showAll ? (
             <ChevronUp className="text-teal-400 group-hover:-translate-y-1 transition-transform" />
