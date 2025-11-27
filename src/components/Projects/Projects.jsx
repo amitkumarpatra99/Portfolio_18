@@ -13,6 +13,14 @@ const Projects = () => {
 
   const visibleProjects = showAll ? projects : projects.slice(0, 3);
 
+  // ⭐ Smooth scroll helper (fixed navbar offset)
+  const scrollToProjectsTop = (offset = 76) => {
+    const el = document.getElementById("projects");
+    if (!el) return;
+    const y = el.getBoundingClientRect().top + window.pageYOffset - offset;
+    window.scrollTo({ top: y, behavior: "smooth" });
+  };
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -34,17 +42,16 @@ const Projects = () => {
   return (
     <section
       id="projects"
-      className="py-24 px-[8vw] md:px-[6vw] lg:px-[18vw] font-sans relative overflow-hidden bg-[#010814]"
-      
+      className="py-24 px-[8vw] md:px-[6vw] lg:px-[18vw] font-sans relative overflow-hidden bg-[#01112d]"
     >
+      
       <div className="absolute inset-0 -z-10 pointer-events-none">
         <div
           className="
       absolute top-[-100px] left-1/2 -translate-x-1/2
       w-[900px] h-[900px]
       bg-[#4FB7B3]/40
-      blur-[180px] rounded-full"  /> 
-
+      blur-[180px] rounded-full"  />
       </div>
 
       <div className="mb-16 flex items-center justify-center gap-2">
@@ -134,21 +141,25 @@ const Projects = () => {
         </AnimatePresence>
       </motion.div>
 
+      {/* ⭐ FIXED SHOW-LESS BUTTON */}
       <div className="flex justify-center mt-16">
         <motion.button
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           onClick={() => {
-            setShowAll(!showAll);
             if (showAll) {
-              setTimeout(() => document.getElementById("work")?.scrollIntoView({ behavior: "smooth" }), 200);
+              // hide all → scroll to top of projects
+              setShowAll(false);
+              setTimeout(() => scrollToProjectsTop(76), 60);
+            } else {
+              // show all
+              setShowAll(true);
             }
           }}
-          
           className="
             group flex items-center gap-3 px-5 py-3 rounded-full
-            text-white font-semibold tracking-wide bg-teal-500/10 border border-teal-500/20  hover:bg-teal-500/20 hover:text-white transition-all duration-300">
-
+            text-white font-semibold tracking-wide bg-teal-500/10 border border-teal-500/20  hover:bg-teal-500/20 hover:text-white transition-all duration-300"
+        >
           {showAll ? "Show Less" : "View All Projects"}
           {showAll ? (
             <ChevronUp className="text-teal-400 group-hover:-translate-y-1 transition-transform" />
@@ -218,7 +229,6 @@ const Projects = () => {
                     ))}
                   </div>
 
-                  {/* 🔥 FULL ROUNDED BUTTONS IN MODAL (UNCHANGED) */}
                   <div className="flex gap-3 w-full">
                     <a
                       href={selectedProject.github}
@@ -238,8 +248,8 @@ const Projects = () => {
                         className="flex-1 flex items-center justify-center gap-2 px-5 py-3 
                         rounded-full text-sm sm:text-base font-semibold 
                         text-teal-400 bg-teal-500/10 border border-teal-500/20 
-                      hover:bg-teal-500/20 hover:text-white 
-                      transition-all duration-300"
+                        hover:bg-teal-500/20 hover:text-white 
+                        transition-all duration-300"
                       >
                         <ExternalLink size={16} /> Live
                       </a>

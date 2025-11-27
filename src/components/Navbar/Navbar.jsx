@@ -165,7 +165,7 @@ export default function NavbarPremium() {
                 <FaLinkedin size={18} className="" />
               </a>
 
-             
+
             </div>
 
             {/* WhatsApp Contact Button */}
@@ -267,8 +267,6 @@ export default function NavbarPremium() {
               >
                 <FaLinkedin size={24} />
               </a>
-
-
 
               {/* WhatsApp */}
               <a

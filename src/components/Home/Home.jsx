@@ -3,7 +3,7 @@ import ReactTypingEffect from 'react-typing-effect'
 import { ArrowRight } from "lucide-react"
 import { FaCode } from 'react-icons/fa6'
 import { Link } from "react-scroll"
-import ScrollButtons from '../ScrollButtons'
+// import ScrollButtons from '../ScrollButtons'
 
 const ACCENT_COLOR = "#4FB7B3"
 
@@ -122,7 +122,7 @@ const Home = () => {
       </div>
 
       {/* Scroll Indicator */}
-      <ScrollButtons next="about" />
+      {/* <ScrollButtons next="about" /> */}
 
     </section>
   )

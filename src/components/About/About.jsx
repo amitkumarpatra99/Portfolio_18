@@ -126,7 +126,7 @@ const About = () => {
               </div>
 
               {/* Floating Badge */}
-              <motion.div
+              {/* <motion.div
                 animate={{ y: [0, -10, 0] }}
                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
                 className="absolute -bottom-6 -right-2 md:-right-6 bg-[#112240]/95 backdrop-blur-md border border-teal-500/30 p-3 md:p-4 rounded-2xl shadow-2xl w-[160px] md:w-[200px]"
@@ -136,7 +136,8 @@ const About = () => {
                   <span className="text-gray-300 text-xs md:text-sm font-medium">Open to work</span>
                 </div>
                 <p className="text-white font-bold text-sm md:text-lg mt-1">Full Stack Dev</p>
-              </motion.div>
+              </motion.div> */}
+              
             </div>
           </motion.div>
 
