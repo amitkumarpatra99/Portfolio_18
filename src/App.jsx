@@ -2,7 +2,7 @@ import React from "react";
 import Navbar from "./components/Navbar/Navbar";
 import Home from "./components/Home/Home";
 import Skills from "./components/Skills/Skills";
-import Work from "./components/Work/Work";
+import Projects from "./components/Projects/Projects";
 import Footer from "./components/Footer/Footer";
 import About from './components/About/About';
 import Journey from "./components/Journey/Journey";
@@ -23,7 +23,7 @@ const App = () => {
 
       <div className="App">
         <BrowserRouter>
-          <div className="bg-[#011028]">
+          <div className="bg-[#010c1e]">
 
             <StickyMiniNavbar />
             <div className="relative pt-20">
@@ -34,12 +34,12 @@ const App = () => {
                 <Route
                   path="/"
                   element={
-                    <div className="bg-[#011028] min-h-screen">
+                    <div className="bg-[#010c1e] min-h-screen">
                       <Navbar />
                       <Home />
                       <About />
                       <Skills />
-                      <Work />
+                      <Projects />
                       <Journey />
                       <Footer />
                     </div>

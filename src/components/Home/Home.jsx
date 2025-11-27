@@ -14,7 +14,7 @@ const Home = () => {
     <section
       id="home"
       className="relative min-h-screen w-full flex flex-col items-center justify-center text-center 
-      px-6 sm:px-10 md:px-[10vw] lg:px-[18vw] overflow-hidden font-sans bg-[#011028]"
+      px-6 sm:px-10 md:px-[10vw] lg:px-[18vw] overflow-hidden font-sans bg-[#010c1e]"
     >
 
       {/* 🌌 Animated Background Glow */}

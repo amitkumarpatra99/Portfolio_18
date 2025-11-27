@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, ChevronDown, ChevronUp, ExternalLink, Folder, Github, X } from "lucide-react";
 import { RiExternalLinkLine } from "react-icons/ri";
 
-const Work = () => {
+const Projects = () => {
   const [selectedProject, setSelectedProject] = useState(null);
   const [showAll, setShowAll] = useState(false);
 
@@ -33,7 +33,7 @@ const Work = () => {
 
   return (
     <section
-      id="work"
+      id="projects"
       className="py-24 px-[8vw] md:px-[6vw] lg:px-[18vw] font-sans relative overflow-hidden bg-[#010814]"
       
     >
@@ -259,4 +259,4 @@ const Work = () => {
   );
 };
 
-export default Work;
+export default Projects;
