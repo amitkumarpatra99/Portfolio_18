@@ -65,6 +65,7 @@ import flipkart from './assets/Project Photo/Flipkart Clone.png'
 import netflix from './assets/Project Photo/Netflix Clone.png'
 import twitter from './assets/Project Photo/Twitter Clone.png'
 import face from './assets/Project Photo/Face Detection.png'
+import mind from './assets/Project Photo/mindforge.png'
 
 
 export const SkillsInfo = [
@@ -192,6 +193,15 @@ export const projects = [
   },
 
   {
+    id: 10,
+    title: "MindForge",
+    description: "Mind Forge is a sleek, intuitive, and productivity-focused task manager designed to help you organize your day with clarity and control. Built for creators, students, and professionals, Mind Forge transforms your scattered thoughts into structured, actionable tasks—so you can focus on what truly matters.",
+    image: mind,
+    tags: ["HTML", "CSS", "JavaScript", "Mongo DB", "Express Js", "React JS ", "Next JS", "Node JS", "Tailwind CSS", "API", "Framer Motion", "React-Icons", "Redux", "Material UI", "GSAP"],
+    github: "https://github.com/amitkumarpatra99/MindForge",
+  },
+
+  {
     id: 4,
     title: "WEB STORE",
     description: "E-Commerce Website is a fully functional online store platform, designed for seamless browsing, product management, and secure checkout. Featuring a user-friendly interface, shopping cart integration, and payment gateway, it offers a smooth shopping experience for customers and easy management for administrators",
@@ -218,15 +228,6 @@ export const projects = [
     github: "https://github.com/amitkumarpatra99/MR_PATRA_WEB",
     live: "https://mrpatra.vercel.app/"
   },
-  {
-    id: 11,
-    title: "TIC TAC TOE GAME",
-    description: "Tic Tac Toe Challenge – A simple yet engaging browser-based game where two players compete for victory. Designed with clean UI and smart game logic that instantly declares the winner or draw — perfect for testing your strategy skills!",
-    image: tic,
-    tags: ["HTML", "CSS", "JavaScript"],
-    github: "https://github.com/amitkumarpatra99/JavaScript-Projects/tree/main/Tic%20Tac%20Toe%20Game",
-    live:"https://ticbox.netlify.app/",
-  },
 
 
   {
@@ -238,6 +239,17 @@ export const projects = [
     github: "https://github.com/amitkumarpatra99/PORTFOLIO_99",
     live: "https://akpatra.netlify.app/",
   },
+
+    {
+    id: 11,
+    title: "TIC TAC TOE GAME",
+    description: "Tic Tac Toe Challenge – A simple yet engaging browser-based game where two players compete for victory. Designed with clean UI and smart game logic that instantly declares the winner or draw — perfect for testing your strategy skills!",
+    image: tic,
+    tags: ["HTML", "CSS", "JavaScript"],
+    github: "https://github.com/amitkumarpatra99/JavaScript-Projects/tree/main/Tic%20Tac%20Toe%20Game",
+    live: "https://ticbox.netlify.app/",
+  },
+  
   {
     id: 8,
     title: "FACE DETECTION",
@@ -258,7 +270,7 @@ export const projects = [
     github: "https://github.com/amitkumarpatra99/JavaScript-Projects/tree/main/Rock%20Paper%20Scissros",
   },
 
-  
+
   {
     id: 13,
     title: "PIC FINDER",
