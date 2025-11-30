@@ -2,7 +2,7 @@ import React, { useMemo } from "react";
 // Added 'Database' to the imports
 import { Briefcase, Code, Coffee, Database, ExternalLink, User, UserCircle } from "lucide-react";
 import { motion } from "framer-motion";
-import profileImage from "../../assets/certificate/A.jpg";
+import profileImage from '../../assets/A.jpg';
 import { FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa6";
 
 // --- Restore Original Background with Performance Tweaks ---
