@@ -66,6 +66,7 @@ import netflix from './assets/Project Photo/Netflix Clone.png'
 import twitter from './assets/Project Photo/Twitter Clone.png'
 import face from './assets/Project Photo/Face Detection.png'
 import mind from './assets/Project Photo/mindforge.png'
+import connect from './assets/Project Photo/ConnectX.png'
 
 
 export const SkillsInfo = [
@@ -191,6 +192,14 @@ export const projects = [
     github: "https://github.com/amitkumarpatra99/ValuneX",
     live: "https://valunex.netlify.app/",
   },
+   {
+    id: 20,
+    title: "ConnectX",
+    description: "ConnectX — A modern social media platform built with Next.js, MongoDB, and NextAuth. Create posts, follow friends, chat, explore a dynamic feed, and experience a fast, clean, secure social network.",
+    image: connect,
+    tags: ["HTML", "CSS", "JavaScript", "Mongo DB", "Express Js", "React JS ", "Next JS", "Node JS", "Tailwind CSS", "API", "Framer Motion", "React-Icons", "Redux", "Material UI", "GSAP"],
+    github: "https://github.com/amitkumarpatra99/ConnectX",
+  },
 
   {
     id: 10,
@@ -200,6 +209,8 @@ export const projects = [
     tags: ["HTML", "CSS", "JavaScript", "Mongo DB", "Express Js", "React JS ", "Next JS", "Node JS", "Tailwind CSS", "API", "Framer Motion", "React-Icons", "Redux", "Material UI", "GSAP"],
     github: "https://github.com/amitkumarpatra99/MindForge",
   },
+
+ 
 
   {
     id: 4,
@@ -240,7 +251,7 @@ export const projects = [
     live: "https://akpatra.netlify.app/",
   },
 
-    {
+  {
     id: 11,
     title: "TIC TAC TOE GAME",
     description: "Tic Tac Toe Challenge – A simple yet engaging browser-based game where two players compete for victory. Designed with clean UI and smart game logic that instantly declares the winner or draw — perfect for testing your strategy skills!",
@@ -249,7 +260,7 @@ export const projects = [
     github: "https://github.com/amitkumarpatra99/JavaScript-Projects/tree/main/Tic%20Tac%20Toe%20Game",
     live: "https://ticbox.netlify.app/",
   },
-  
+
   {
     id: 8,
     title: "FACE DETECTION",
