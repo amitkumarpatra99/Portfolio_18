@@ -264,7 +264,6 @@ const Projects = () => {
           </motion.div>
         )}
       </AnimatePresence>
-
     </section>
   );
 };
