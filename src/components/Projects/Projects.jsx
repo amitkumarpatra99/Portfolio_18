@@ -141,7 +141,7 @@ const Projects = () => {
         </AnimatePresence>
       </motion.div>
 
-      {/* ⭐ FIXED SHOW-LESS BUTTON */}
+
       <div className="flex justify-center mt-16">
         <motion.button
           whileHover={{ scale: 1.05 }}
