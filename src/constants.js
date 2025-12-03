@@ -67,6 +67,7 @@ import twitter from './assets/Project Photo/Twitter Clone.png'
 import face from './assets/Project Photo/Face Detection.png'
 import mind from './assets/Project Photo/mindforge.png'
 import connect from './assets/Project Photo/ConnectX.png'
+import battery from './assets/Project Photo/Battery.png'
 
 
 export const SkillsInfo = [
@@ -192,7 +193,17 @@ export const projects = [
     github: "https://github.com/amitkumarpatra99/ValuneX",
     live: "https://valunex.netlify.app/",
   },
-   {
+
+  {
+    id: 9,
+    title: "Battery Report Monitor",
+    description: "A modern, full-stack MERN application that provides real-time telemetry and historical data for your Windows laptop's battery health. Built with a beautiful, dark-themed UI using Tailwind CSS and Glassmorphism design principles..",
+    image: battery,
+    tags: ["HTML", "CSS", "JavaScript", "Mongo DB", "Express Js", "React JS ", "Next JS", "Node JS", "Tailwind CSS", "API", "Framer Motion", "React-Icons", "Redux", "Material UI", "GSAP"],
+    github: "https://github.com/amitkumarpatra99/Battery_Report",
+    live: "https://batteryhelth.vercel.app/",
+  },
+  {
     id: 20,
     title: "ConnectX",
     description: "ConnectX — A modern social media platform built with Next.js, MongoDB, and NextAuth. Create posts, follow friends, chat, explore a dynamic feed, and experience a fast, clean, secure social network.",
@@ -210,7 +221,7 @@ export const projects = [
     github: "https://github.com/amitkumarpatra99/MindForge",
   },
 
- 
+
 
   {
     id: 4,
