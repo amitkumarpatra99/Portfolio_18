@@ -196,7 +196,7 @@ export const projects = [
 
   {
     id: 9,
-    title: "Battery Report Monitor",
+    title: "Battery Report",
     description: "A modern, full-stack MERN application that provides real-time telemetry and historical data for your Windows laptop's battery health. Built with a beautiful, dark-themed UI using Tailwind CSS and Glassmorphism design principles..",
     image: battery,
     tags: ["HTML", "CSS", "JavaScript", "Mongo DB", "Express Js", "React JS ", "Next JS", "Node JS", "Tailwind CSS", "API", "Framer Motion", "React-Icons", "Redux", "Material UI", "GSAP"],
