@@ -195,6 +195,16 @@ export const projects = [
   },
 
   {
+    id: 11,
+    title: "TIC TAC TOE GAME",
+    description: "Tic Tac Toe Challenge – A simple yet engaging browser-based game where two players compete for victory. Designed with clean UI and smart game logic that instantly declares the winner or draw — perfect for testing your strategy skills!",
+    image: tic,
+    tags: ["HTML", "CSS", "JavaScript", "Mongo DB", "Express Js", "React JS ", "Next JS", "Node JS", "Tailwind CSS", "API", "Framer Motion", "React-Icons", "Redux", "Material UI", "GSAP"],
+    github: "https://github.com/amitkumarpatra99/TicBox",
+    live: "https://ticbox.netlify.app/",
+  },
+
+  {
     id: 9,
     title: "Battery Report",
     description: "A modern, full-stack MERN application that provides real-time telemetry and historical data for your Windows laptop's battery health. Built with a beautiful, dark-themed UI using Tailwind CSS and Glassmorphism design principles..",
@@ -262,15 +272,7 @@ export const projects = [
     live: "https://akpatra.netlify.app/",
   },
 
-  {
-    id: 11,
-    title: "TIC TAC TOE GAME",
-    description: "Tic Tac Toe Challenge – A simple yet engaging browser-based game where two players compete for victory. Designed with clean UI and smart game logic that instantly declares the winner or draw — perfect for testing your strategy skills!",
-    image: tic,
-    tags: ["HTML", "CSS", "JavaScript"],
-    github: "https://github.com/amitkumarpatra99/JavaScript-Projects/tree/main/Tic%20Tac%20Toe%20Game",
-    live: "https://ticbox.netlify.app/",
-  },
+
 
   {
     id: 8,
@@ -285,11 +287,11 @@ export const projects = [
 
   {
     id: 10,
-    title: "ROCK PAPER SCISSORS",
+    title: "STONE PAPER SCISSORS",
     description: "Rock Paper Scissors  – A browser-based game developed using HTML, CSS, and JavaScript. It allows users to play against the computer with real-time score updates and responsive animations for a smooth gaming experience.",
     image: rock,
     tags: ["HTML", "CSS", "JavaScript"],
-    github: "https://github.com/amitkumarpatra99/JavaScript-Projects/tree/main/Rock%20Paper%20Scissros",
+    github: "https://github.com/amitkumarpatra99/StonePaperScissors",
   },
 
 
@@ -315,7 +317,7 @@ export const projects = [
     description: "Amazon Clone Web Application – A front-end e-commerce project replicating the core features of Amazon. Developed using HTML, CSS, it includes product listings, categories, a shopping cart interface, and responsive layouts for all devices.",
     image: amazon,
     tags: ["HTML", "CSS", "JavaScript"],
-    github: "https://github.com/amitkumarpatra99/AMAZON-FLIPKART-NETFLIX_CLONE/tree/main/AMAZON%20CLONE",
+    github: "https://github.com/amitkumarpatra99/CLONES/tree/main/AMAZON%20CLONE",
   },
 
   {
@@ -324,7 +326,7 @@ export const projects = [
     description: "Flipkart Clone Web Application – A front-end e-commerce project replicating Flipkart’s core design and functionality. Developed using HTML, CSS, it features product grids, navigation bars, a shopping cart interface, and a responsive design that adapts to all devices.",
     image: flipkart,
     tags: ["HTML", "CSS", "JavaScript"],
-    github: "https://github.com/amitkumarpatra99/AMAZON-FLIPKART-NETFLIX_CLONE/tree/main/FLIPKART%20CLONE",
+    github: "https://github.com/amitkumarpatra99/CLONES/tree/main/FLIPKART%20CLONE",
   },
 
   {
@@ -333,7 +335,7 @@ export const projects = [
     description: "Netflix Clone – Stream Your Imagination! A stylish and interactive streaming platform inspired by Netflix’s design.Built to display movies and web series in a sleek, dark- themed interface with engaging visuals and smooth animations, showcasing my front - end development and UI design skills.",
     image: netflix,
     tags: ["HTML", "CSS", "JavaScript"],
-    github: "https://github.com/amitkumarpatra99/AMAZON-FLIPKART-NETFLIX_CLONE/tree/main/NETFLIX%20CLONE",
+    github: "https://github.com/amitkumarpatra99/CLONES/tree/main/NETFLIX%20CLONE",
   },
 ];
 
