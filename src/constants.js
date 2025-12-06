@@ -248,7 +248,7 @@ export const projects = [
     description: "A personalized version of the popular Linktree platform, this project allows users to create and manage a custom landing page with multiple links. It features a clean, responsive design, intuitive link management, and real-time analytics for tracking engagement.",
     image: linkTree,
     tags: ["HTML", "CSS", "JavaScript", "Mongo DB", "Express Js", "React JS ", "Next JS", "Node JS", "Tailwind CSS", "API", "Framer Motion", "React-Icons", "Redux", "Material UI", "GSAP"],
-    github: "https://github.com/amitkumarpatra99",
+    github: "https://github.com/amitkumarpatra99/LinkeTreeClone",
   },
 
   {
