@@ -77,7 +77,7 @@ const Journey = () => {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.8 }}
-      className="w-full min-h-screen flex flex-col items-center justify-center px-6 py-24 relative overflow-hidden dark:bg-[#0A0D12] bg-[#F9F9F9]"
+      className="w-full min-h-screen flex flex-col items-center justify-center px-6 py-24 relative overflow-hidden dark:bg-[#0A0D12] bg-transparent"
     >
       {/* PARTICLES */}
       <canvas
@@ -101,18 +101,18 @@ const Journey = () => {
       </motion.div>
 
       {/* HEADING */}
-        <div className="mb-16 flex items-center justify-center gap-2">
+      <div className="mb-16 flex items-center justify-center gap-2">
         <Sparkles
           size={30}
           className="text-4xl text-[#4FB7B3] animate-spin-slow drop-shadow-[0_0_12px_#4FB7B3]"
         />
 
         <div className="text-center">
-          <p className="text-gray-400 mb-1 cursor-default text-sm tracking-[3px] uppercase">
+          <p className="text-gray-500 dark:text-gray-400 mb-1 cursor-default text-sm tracking-[3px] uppercase">
             Expl<span className="text-[#4FB7B3]">ore</span>
           </p>
 
-          <h2 className="text-4xl font-bold text-white cursor-pointer hover:scale-105 transform transition-transform duration-300">
+          <h2 className="text-4xl font-bold text-gray-900 dark:text-white cursor-pointer hover:scale-105 transform transition-transform duration-300">
             MY<span className="text-[#4FB7B3]">JOURNEY</span>
           </h2>
 

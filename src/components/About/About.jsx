@@ -23,7 +23,7 @@ const AnimatedStars = () => {
       {stars.map((star) => (
         <motion.div
           key={star.id}
-          className="absolute bg-white rounded-full"
+          className="absolute bg-teal-500/20 dark:bg-white rounded-full"
           style={{
             top: star.top,
             left: star.left,
@@ -73,7 +73,7 @@ const About = () => {
   return (
     <section
       id="about"
-      className="relative py-16 md:py-24 px-4 md:px-8 lg:px-12 text-white overflow-hidden bg-[radial-gradient(ellipse_at_bottom,_#1b2735_0%,_#090a0f_100%)]"
+      className="relative py-16 md:py-24 px-4 md:px-8 lg:px-12 text-gray-800 dark:text-white overflow-hidden bg-transparent transition-colors duration-300"
     >
       <AnimatedStars />
 
@@ -89,10 +89,10 @@ const About = () => {
             className="text-3xl md:text-4xl text-[#4FB7B3] animate-spin-slow drop-shadow-[0_0_12px_#4FB7B3]"
           />
           <div className="text-center">
-            <p className="text-gray-400 mb-1 cursor-default text-xs md:text-sm tracking-[3px] uppercase">
+            <p className="text-gray-500 dark:text-gray-400 mb-1 cursor-default text-xs md:text-sm tracking-[3px] uppercase">
               Know<span className="text-[#4FB7B3]"> more</span>
             </p>
-            <h2 className="text-3xl md:text-4xl font-bold text-white cursor-pointer hover:scale-105 transform transition-transform duration-300">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white cursor-pointer hover:scale-105 transform transition-transform duration-300">
               ABOUT<span className="text-[#4FB7B3]"> ME</span>
             </h2>
             <div className="w-20 md:w-28 h-[3px] rounded-full mx-auto mb-3 mt-3 bg-gradient-to-r from-[#2351A8] via-[#4FB7B3] to-[#2CB67D] shadow-[0_0_10px_#4FB7B3]" />
@@ -137,7 +137,7 @@ const About = () => {
                 </div>
                 <p className="text-white font-bold text-sm md:text-lg mt-1">Full Stack Dev</p>
               </motion.div> */}
-              
+
             </div>
           </motion.div>
 
@@ -149,7 +149,7 @@ const About = () => {
             viewport={{ once: true }}
             className="space-y-8 text-center lg:text-left lg:pl-8"
           >
-            <motion.p variants={itemVariants} className="text-gray-400 text-base md:text-lg leading-relaxed">
+            <motion.p variants={itemVariants} className="text-gray-600 dark:text-gray-400 text-base md:text-lg leading-relaxed">
               I am a passionate developer who bridges the gap between design and engineering. I build performant web applications with a focus on <span className="text-teal-400 font-medium">clean code</span> and <span className="text-teal-400 font-medium">pixel-perfect designs</span>.
             </motion.p>
 
@@ -181,15 +181,15 @@ const About = () => {
                 <motion.div
                   key={index}
                   variants={itemVariants}
-                  className="group relative p-4 md:p-5 rounded-2xl bg-white/5 border border-white/10 hover:border-teal-500/50 hover:bg-white/10 transition-all duration-300 backdrop-blur-md text-left"
+                  className="group relative p-4 md:p-5 rounded-2xl bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 hover:border-teal-500/50 hover:bg-white dark:hover:bg-white/10 transition-all duration-300 backdrop-blur-md text-left shadow-sm dark:shadow-none"
                 >
                   <div className="flex items-start gap-4">
-                    <div className="p-3 rounded-xl bg-white/5 group-hover:bg-teal-500/20 transition-colors duration-300 shadow-[inset_0_1px_1px_rgba(255,255,255,0.1)] shrink-0">
+                    <div className="p-3 rounded-xl bg-white dark:bg-white/5 group-hover:bg-teal-500/20 transition-colors duration-300 shadow-sm dark:shadow-[inset_0_1px_1px_rgba(255,255,255,0.1)] shrink-0 border border-gray-100 dark:border-transparent">
                       {item.icon}
                     </div>
                     <div>
-                      <h3 className="text-white font-semibold text-base md:text-lg">{item.title}</h3>
-                      <p className="text-gray-400 text-xs md:text-sm mt-1 group-hover:text-gray-300 transition-colors">
+                      <h3 className="text-gray-900 dark:text-white font-semibold text-base md:text-lg">{item.title}</h3>
+                      <p className="text-gray-500 dark:text-gray-400 text-xs md:text-sm mt-1 group-hover:text-gray-700 dark:group-hover:text-gray-300 transition-colors">
                         {item.desc}
                       </p>
                     </div>
@@ -204,7 +204,7 @@ const About = () => {
                 href="https://drive.google.com/file/d/1xgU-OvduPOkcmW6dzjLCwNYCRdNBGHdU/view?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group relative inline-flex items-center justify-center gap-3 px-8 py-3.5  font-medium rounded-full overflow-hidden           text-teal-400 bg-teal-500/10 border border-teal-500/20  hover:bg-teal-500/20 hover:text-white transition-all duration-300 w-full sm:w-auto"
+                className="group relative inline-flex items-center justify-center gap-3 px-8 py-3.5  font-medium rounded-full overflow-hidden           text-teal-600 dark:text-teal-400 bg-teal-50 dark:bg-teal-500/10 border border-teal-200 dark:border-teal-500/20  hover:bg-teal-100 dark:hover:bg-teal-500/20 hover:text-teal-700 dark:hover:text-white transition-all duration-300 w-full sm:w-auto"
               >
                 <span className="relative z-10 flex items-center gap-2">
                   View My CV <ExternalLink size={18} />
@@ -218,7 +218,7 @@ const About = () => {
                     href={social.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`w-12 h-12 flex items-center justify-center rounded-full bg-white/5 border border-white/10 text-gray-400 transition-all duration-300 hover:scale-110 hover:shadow-lg backdrop-blur-md ${social.color} hover:bg-white/10`}
+                    className={`w-12 h-12 flex items-center justify-center rounded-full bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 text-gray-500 dark:text-gray-400 transition-all duration-300 hover:scale-110 hover:shadow-lg backdrop-blur-md ${social.color} hover:bg-white dark:hover:bg-white/10`}
                   >
                     {social.icon}
                   </a>

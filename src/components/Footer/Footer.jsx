@@ -48,7 +48,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="relative bg-[#0a0f1c] text-gray-300 py-16 px-6 overflow-hidden border-t border-white/10">
+    <footer className="relative bg-white dark:bg-[#0a0f1c] text-gray-600 dark:text-gray-300 py-16 px-6 overflow-hidden border-t border-gray-200 dark:border-white/10 transition-colors duration-300">
 
       {/* 🌟 ANIMATED BACKGROUND LAYERS 🌟 */}
       <div className="absolute inset-0 w-full h-full overflow-hidden z-0 pointer-events-none">
@@ -73,14 +73,14 @@ const Footer = () => {
               />
             </div>
             <div>
-              <h2 className="text-xl font-bold text-white tracking-wide">
+              <h2 className="text-xl font-bold text-gray-900 dark:text-white tracking-wide">
                 AMIT KUMAR <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-emerald-400">PATRA</span>
               </h2>
               <span className="text-xs text-gray-500 tracking-wider">WEB DEVELOPER</span>
             </div>
           </div>
 
-          <p className="text-sm text-gray-400 leading-relaxed hover:text-gray-300 transition-colors duration-300">
+          <p className="text-sm text-gray-500 dark:text-gray-400 leading-relaxed hover:text-gray-700 dark:hover:text-gray-300 transition-colors duration-300">
             A passionate web developer building interactive and aesthetic digital experiences.
             Focused on clean design, smooth performance, and creative problem-solving.
           </p>
@@ -95,9 +95,9 @@ const Footer = () => {
                 rel="noopener noreferrer"
                 // Applied the exact classes from your About component
                 className={`w-10 h-10 flex items-center justify-center rounded-full 
-                  bg-white/5 border border-white/10 text-gray-400 
+                  bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 text-gray-500 dark:text-gray-400 
                   transition-all duration-300 hover:scale-110 hover:shadow-lg backdrop-blur-md 
-                  hover:bg-white/10 ${social.color}`}
+                  hover:bg-white dark:hover:bg-white/10 ${social.color}`}
               >
                 {social.icon}
               </a>
@@ -107,7 +107,7 @@ const Footer = () => {
 
         {/* 2️⃣ Quick Links */}
         <div className="lg:ml-10">
-          <h3 className="text-lg font-semibold text-white">Quick Links</h3>
+          <h3 className="text-lg font-semibold text-gray-900 dark:text-white">Quick Links</h3>
           <div className="w-16 h-1 rounded-full mb-6 mt-2 bg-gradient-to-r from-[#2351A8] via-[#4FB7B3] to-[#2CB67D]" />
 
           <ul className="space-y-3 text-sm">
@@ -118,7 +118,7 @@ const Footer = () => {
                   smooth={true}
                   duration={600}
                   spy={true}
-                  className="flex items-center group cursor-pointer text-gray-400 hover:text-white transition-all duration-300"
+                  className="flex items-center group cursor-pointer text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-all duration-300"
                 >
                   <span className="w-0 group-hover:w-2 h-[2px] bg-teal-400 mr-0 group-hover:mr-2 transition-all duration-300"></span>
                   {link.name}
@@ -130,7 +130,7 @@ const Footer = () => {
 
         {/* 3️⃣ Highlights */}
         <div>
-          <h3 className="text-lg font-semibold text-white cursor-default">Highlights</h3>
+          <h3 className="text-lg font-semibold text-gray-900 dark:text-white cursor-default">Highlights</h3>
           <div className="w-16 h-1 rounded-full mb-6 mt-2 bg-gradient-to-r from-[#2351A8] via-[#4FB7B3] to-[#2CB67D]" />
 
           <ul className="space-y-4 text-sm">
@@ -140,7 +140,7 @@ const Footer = () => {
               "⚡ Responsive Web Apps",
               "💡 Open Source Enthusiast"
             ].map((item, i) => (
-              <li key={i} className="flex items-center text-gray-400 hover:text-teal-300 transition-colors duration-300 cursor-default">
+              <li key={i} className="flex items-center text-gray-500 dark:text-gray-400 hover:text-teal-600 dark:hover:text-teal-300 transition-colors duration-300 cursor-default">
                 <span className="w-1.5 h-1.5 rounded-full bg-teal-500 mr-3 animate-pulse"></span>
                 {item}
               </li>
@@ -150,18 +150,18 @@ const Footer = () => {
 
         {/* 4️⃣ Contact Info */}
         <div>
-          <h3 className="text-lg font-semibold text-white">Contact</h3>
+          <h3 className="text-lg font-semibold text-gray-900 dark:text-white">Contact</h3>
           <div className="w-16 h-1 rounded-full mb-6 mt-2 bg-gradient-to-r from-[#2351A8] via-[#4FB7B3] to-[#2CB67D]" />
 
           <ul className="space-y-4 text-sm">
             {/* Email */}
             <li className="flex items-center gap-3 group">
-              <div className="w-10 h-10 flex-shrink-0 flex items-center justify-center rounded-full bg-white/5 border border-white/10 group-hover:bg-teal-500/10 group-hover:border-teal-500 text-gray-400 group-hover:text-teal-400 transition-all duration-300">
+              <div className="w-10 h-10 flex-shrink-0 flex items-center justify-center rounded-full bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 group-hover:bg-teal-500/10 group-hover:border-teal-500 text-gray-500 dark:text-gray-400 group-hover:text-teal-600 dark:group-hover:text-teal-400 transition-all duration-300">
                 <Mail size={18} />
               </div>
               <div className="flex flex-col">
-                <span className="text-xs text-gray-500 font-bold mb-1">EMAIL</span>
-                <a href="mailto:mrpatra.web@gmail.com" className="text-gray-300 hover:text-white transition-colors">
+                <span className="text-xs text-gray-400 dark:text-gray-500 font-bold mb-1">EMAIL</span>
+                <a href="mailto:mrpatra.web@gmail.com" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">
                   mrpatra.web@gmail.com
                 </a>
               </div>
@@ -169,12 +169,12 @@ const Footer = () => {
 
             {/* Phone */}
             <li className="flex items-center gap-3 group">
-              <div className="w-10 h-10 flex-shrink-0 flex items-center justify-center rounded-full bg-white/5 border border-white/10 group-hover:bg-teal-500/10 group-hover:border-teal-500 text-gray-400 group-hover:text-teal-400 transition-all duration-300">
+              <div className="w-10 h-10 flex-shrink-0 flex items-center justify-center rounded-full bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 group-hover:bg-teal-500/10 group-hover:border-teal-500 text-gray-500 dark:text-gray-400 group-hover:text-teal-600 dark:group-hover:text-teal-400 transition-all duration-300">
                 <Phone size={18} />
               </div>
               <div className="flex flex-col">
-                <span className="text-xs text-gray-500 font-bold mb-1">PHONE</span>
-                <a href="tel:+918144129955" className="text-gray-300 hover:text-white transition-colors">
+                <span className="text-xs text-gray-400 dark:text-gray-500 font-bold mb-1">PHONE</span>
+                <a href="tel:+918144129955" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">
                   +91 8144129955
                 </a>
               </div>
@@ -182,12 +182,12 @@ const Footer = () => {
 
             {/* Location */}
             <li className="flex items-center gap-3 group">
-              <div className="w-10 h-10 flex-shrink-0 flex items-center justify-center rounded-full bg-white/5 border border-white/10 group-hover:bg-teal-500/10 group-hover:border-teal-500 text-gray-400 group-hover:text-teal-400 transition-all duration-300">
+              <div className="w-10 h-10 flex-shrink-0 flex items-center justify-center rounded-full bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 group-hover:bg-teal-500/10 group-hover:border-teal-500 text-gray-500 dark:text-gray-400 group-hover:text-teal-600 dark:group-hover:text-teal-400 transition-all duration-300">
                 <MapPin size={18} />
               </div>
               <div className="flex flex-col">
-                <span className="text-xs text-gray-500 font-bold mb-1">LOCATION</span>
-                <span className="text-gray-300">Bhubaneswar, Odisha</span>
+                <span className="text-xs text-gray-400 dark:text-gray-500 font-bold mb-1">LOCATION</span>
+                <span className="text-gray-600 dark:text-gray-300">Bhubaneswar, Odisha</span>
               </div>
             </li>
           </ul>
@@ -195,16 +195,16 @@ const Footer = () => {
       </div>
 
       {/* Bottom Bar */}
-      <div className="relative z-10 max-w-7xl mx-auto mt-16 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
-        <p className="text-sm text-gray-500">
+      <div className="relative z-10 max-w-7xl mx-auto mt-16 pt-8 border-t border-gray-200 dark:border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
+        <p className="text-sm text-gray-500 dark:text-gray-500">
           © {new Date().getFullYear()} <span className="text-teal-500 font-medium uppercase">Mr Patra</span>. All Rights Reserved.
         </p>
 
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          className="group flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 hover:bg-teal-500/10 border border-white/5 hover:border-teal-500/50 transition-all duration-300"
+          className="group flex items-center gap-2 px-4 py-2 rounded-full bg-gray-100 dark:bg-white/5 hover:bg-teal-500/10 border border-gray-200 dark:border-white/5 hover:border-teal-500/50 transition-all duration-300"
         >
-          <span className="text-sm text-gray-400 group-hover:text-white font-medium">Back to top</span>
+          <span className="text-sm text-gray-500 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white font-medium">Back to top</span>
           <ArrowUp size={16} className="text-teal-400 group-hover:-translate-y-1 transition-transform duration-300" />
         </button>
       </div>

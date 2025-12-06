@@ -16,14 +16,16 @@ import EducationPage from "./pages/EducationPage";
 import ContactPage from "./pages/ContactPage";
 
 
+import { ThemeProvider } from "./context/ThemeContext";
+
 const App = () => {
   return (
-    <>
+    <ThemeProvider>
       <CustomCursor />
 
       <div className="App">
         <BrowserRouter>
-          <div className="bg-[#010c1e]">
+          <div className="bg-gray-100 dark:bg-[#010c1e] transition-colors duration-300">
 
             <StickyMiniNavbar />
             <div className="relative pt-20">
@@ -34,7 +36,7 @@ const App = () => {
                 <Route
                   path="/"
                   element={
-                    <div className="bg-[#010c1e] min-h-screen">
+                    <div className="bg-gray-100 dark:bg-[#010c1e] min-h-screen transition-colors duration-300">
                       <Navbar />
                       <Home />
                       <About />
@@ -50,7 +52,7 @@ const App = () => {
                 <Route
                   path="/experience"
                   element={
-                    <div className="bg-[#011028] min-h-screen ">
+                    <div className="bg-gray-100 dark:bg-[#011028] min-h-screen transition-colors duration-300">
                       <ExperiencePage />
                       <Footer />
                     </div>
@@ -61,7 +63,7 @@ const App = () => {
                 <Route
                   path="/education"
                   element={
-                    <div className="bg-[#011028] min-h-screen">
+                    <div className="bg-gray-100 dark:bg-[#011028] min-h-screen transition-colors duration-300">
                       <EducationPage />
                       <Footer />
                     </div>
@@ -74,7 +76,7 @@ const App = () => {
                 <Route
                   path="/Contact"
                   element={
-                    <div className="bg-[#011028] min-h-screen">
+                    <div className="bg-gray-100 dark:bg-[#011028] min-h-screen transition-colors duration-300">
                       <ContactPage />
                       <Footer />
                     </div>
@@ -87,7 +89,7 @@ const App = () => {
           </div>
         </BrowserRouter >
       </div >
-    </>
+    </ThemeProvider>
   );
 };
 

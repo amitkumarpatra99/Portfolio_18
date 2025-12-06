@@ -42,15 +42,15 @@ const Projects = () => {
   return (
     <section
       id="projects"
-      className="py-24 px-[8vw] md:px-[6vw] lg:px-[18vw] font-sans relative overflow-hidden bg-[#01112d]"
+      className="py-24 px-[8vw] md:px-[6vw] lg:px-[18vw] font-sans relative overflow-hidden bg-transparent dark:bg-[#01112d] transition-colors duration-300"
     >
-      
+
       <div className="absolute inset-0 -z-10 pointer-events-none">
         <div
           className="
       absolute top-[-100px] left-1/2 -translate-x-1/2
       w-[900px] h-[900px]
-      bg-[#4FB7B3]/40
+      bg-[#4FB7B3]/20 dark:bg-[#4FB7B3]/40
       blur-[180px] rounded-full"  />
       </div>
 
@@ -61,11 +61,11 @@ const Projects = () => {
         />
 
         <div className="text-center">
-          <p className="text-gray-400 mb-1 cursor-default text-sm tracking-[3px] uppercase">
+          <p className="text-gray-500 dark:text-gray-400 mb-1 cursor-default text-sm tracking-[3px] uppercase">
             Explore<span className="text-[#4FB7B3]">My</span>
           </p>
 
-          <h2 className="text-4xl font-bold text-white cursor-pointer hover:scale-105 transform transition-transform duration-300">
+          <h2 className="text-4xl font-bold text-gray-900 dark:text-white cursor-pointer hover:scale-105 transform transition-transform duration-300">
             PROJ<span className="text-[#4FB7B3]">ECTS</span>
           </h2>
 
@@ -78,7 +78,7 @@ const Projects = () => {
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        className="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 text-white"
+        className="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 text-gray-800 dark:text-white"
       >
         <AnimatePresence mode="popLayout">
           {visibleProjects.map((project) => (
@@ -86,7 +86,7 @@ const Projects = () => {
               key={project.id}
               variants={itemVariants}
               layout
-              className="group relative rounded-3xl border border-white/10 bg-gradient-to-br from-white/5 to-white/0 backdrop-blur-xl shadow-2xl transition-all duration-500 hover:shadow-[0_0_30px_rgba(79,183,179,0.3)] hover:border-teal-500/30 overflow-hidden cursor-pointer"
+              className="group relative rounded-3xl border border-gray-200 dark:border-white/10 bg-white dark:bg-transparent dark:bg-gradient-to-br dark:from-white/5 dark:to-white/0 backdrop-blur-xl shadow-lg dark:shadow-2xl transition-all duration-500 hover:shadow-[0_0_30px_rgba(79,183,179,0.3)] hover:border-teal-500/30 overflow-hidden cursor-pointer"
               onClick={() => handleOpenModal(project)}
             >
 
@@ -101,10 +101,10 @@ const Projects = () => {
               </div>
 
               <div className="p-6 relative z-20">
-                <h3 className="text-xl font-bold text-slate-100 mb-1 group-hover:text-teal-400 transition-colors">
+                <h3 className="text-xl font-bold text-gray-800 dark:text-slate-100 mb-1 group-hover:text-teal-500 dark:group-hover:text-teal-400 transition-colors">
                   {project.title}
                 </h3>
-                <p className="text-xs text-slate-500 mb-6 line-clamp-2">
+                <p className="text-xs text-gray-500 dark:text-slate-500 mb-6 line-clamp-2">
                   Click for details regarding tech stack and features.
                 </p>
 
@@ -113,7 +113,7 @@ const Projects = () => {
                   <button
                     className="flex-1 flex items-center justify-center gap-1 px-4 py-2.5 
                     rounded-full text-sm font-semibold 
-                    text-white bg-white/5 border border-white/10 
+                    text-gray-700 dark:text-white bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10 
                     hover:bg-teal-500/20 hover:border-teal-500/50 
                     transition-all duration-300"
                   >
@@ -127,8 +127,8 @@ const Projects = () => {
                       onClick={(e) => e.stopPropagation()}
                       className="flex-1 flex items-center justify-center gap-2 px-4 py-2.5 
                       rounded-full text-sm font-semibold 
-                      text-teal-400 bg-teal-500/10 border border-teal-500/20 
-                      hover:bg-teal-500/20 hover:text-white 
+                      text-teal-600 dark:text-teal-400 bg-teal-50 dark:bg-teal-500/10 border border-teal-200 dark:border-teal-500/20 
+                      hover:bg-teal-100 dark:hover:bg-teal-500/20 hover:text-teal-700 dark:hover:text-white 
                       transition-all duration-300"
                     >
                       Live <RiExternalLinkLine size={18} />
@@ -158,7 +158,7 @@ const Projects = () => {
           }}
           className="
             group flex items-center gap-3 px-5 py-3 rounded-full
-            text-white font-semibold tracking-wide bg-teal-500/10 border border-teal-500/20  hover:bg-teal-500/20 hover:text-white transition-all duration-300"
+            text-gray-800 dark:text-white font-semibold tracking-wide bg-teal-50 dark:bg-teal-500/10 border border-teal-200 dark:border-teal-500/20  hover:bg-teal-100 dark:hover:bg-teal-500/20 hover:text-teal-700 dark:hover:text-white transition-all duration-300"
         >
           {showAll ? "Show Less" : "View All Projects"}
           {showAll ? (
@@ -185,7 +185,7 @@ const Projects = () => {
               transition={{ type: "spring", duration: 0.5 }}
               className="
                 relative w-full max-w-3xl rounded-2xl overflow-hidden 
-                bg-[#0B1215] border border-teal-500/30 shadow-2xl
+                bg-white dark:bg-[#0B1215] border border-gray-200 dark:border-teal-500/30 shadow-2xl
                 max-h-[90vh] flex flex-col
               "
               onClick={(e) => e.stopPropagation()}
@@ -200,7 +200,7 @@ const Projects = () => {
 
               <div className="flex flex-col md:flex-row w-full h-full">
 
-                <div className="w-full md:w-1/2 flex items-center justify-center bg-gradient-to-br from-teal-900/20 to-black p-4">
+                <div className="w-full md:w-1/2 flex items-center justify-center bg-gray-100 dark:bg-transparent dark:bg-gradient-to-br dark:from-teal-900/20 dark:to-black p-4">
                   <img
                     src={selectedProject.image}
                     alt={selectedProject.title}
@@ -210,11 +210,11 @@ const Projects = () => {
 
                 <div className="w-full md:w-1/2 flex flex-col justify-between p-5 sm:p-6 md:p-8 overflow-hidden">
 
-                  <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-2">
+                  <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-2">
                     {selectedProject.title}
                   </h3>
 
-                  <p className="text-slate-300 text-xs sm:text-sm md:text-base leading-relaxed mb-4">
+                  <p className="text-gray-600 dark:text-slate-300 text-xs sm:text-sm md:text-base leading-relaxed mb-4">
                     {selectedProject.description}
                   </p>
 
@@ -222,7 +222,7 @@ const Projects = () => {
                     {selectedProject.tags.map((tag, index) => (
                       <span
                         key={index}
-                        className="px-2 py-1 text-[10px] sm:text-xs font-medium text-teal-300 bg-teal-500/10 border border-teal-500/20 rounded-full"
+                        className="px-2 py-1 text-[10px] sm:text-xs font-medium rounded-full text-teal-700 dark:text-teal-300 bg-teal-50 dark:bg-teal-500/10 border border-teal-200 dark:border-teal-500/20"
                       >
                         {tag}
                       </span>
@@ -235,8 +235,8 @@ const Projects = () => {
                       target="_blank"
                       className="flex-1 flex items-center justify-center gap-2 px-5 py-3 
                       rounded-full text-sm sm:text-base font-semibold 
-                      text-white bg-white/5 border border-white/10 
-                      hover:bg-white/10 transition"
+                      text-gray-700 dark:text-white bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10 
+                      hover:bg-gray-200 dark:hover:bg-white/10 transition"
                     >
                       <Github size={16} /> Code
                     </a>
@@ -247,8 +247,8 @@ const Projects = () => {
                         target="_blank"
                         className="flex-1 flex items-center justify-center gap-2 px-5 py-3 
                         rounded-full text-sm sm:text-base font-semibold 
-                        text-teal-400 bg-teal-500/10 border border-teal-500/20 
-                        hover:bg-teal-500/20 hover:text-white 
+                        text-teal-600 dark:text-teal-400 bg-teal-50 dark:bg-teal-500/10 border border-teal-200 dark:border-teal-500/20 
+                        hover:bg-teal-100 dark:hover:bg-teal-500/20 hover:text-teal-700 dark:hover:text-white 
                         transition-all duration-300"
                       >
                         <ExternalLink size={16} /> Live

@@ -5,14 +5,14 @@ const Education = () => {
   return (
     <section
       id="education"
-      className=" pb-24 px-[12vw] md:px-[7vw] lg:px-[16vw] font-sans bg-skills-gradient clip-path-custom-3">
+      className=" pb-24 px-[12vw] md:px-[7vw] lg:px-[16vw] font-sans bg-transparent dark:bg-skills-gradient clip-path-custom-3">
       {/* Section Title */}
       <div className="text-center mb-16">
         <p className="text-gray-400 text-sm tracking-[3px] uppercase">
           <span className="text-teal-600">Explore</span> My
-        </p>     
-           <h2 className="text-4xl font-bold text-white cursor-pointer hover:scale-105 transform transition-transform duration-300">EDUC
-            <span className="text-teal-500">ATION</span></h2>
+        </p>
+        <h2 className="text-4xl font-bold text-gray-900 dark:text-white cursor-pointer hover:scale-105 transform transition-transform duration-300">EDUC
+          <span className="text-teal-500">ATION</span></h2>
         <div className="w-32 h-[3px] rounded-full mx-auto mb-3 mt-3  bg-gradient-to-r from-[#2351A8] via-[#4FB7B3] to-[#2CB67D] shadow-[0_0_10px_#4FB7B3]"></div>
 
       </div>
@@ -40,10 +40,11 @@ const Education = () => {
             </div>
             {/* Content Section */}
             <div
-              className={`w-full sm:max-w-md p-4 sm:p-8 rounded-2xl  border border-[#4FB7B3]  backdrop-blur-md shadow-[0_0_20px_1px_rgba(130,69,236,0.3)] ${index % 2 === 0 ? "sm:ml-0" : "sm:mr-0"} sm:ml-44 sm:mr-44 ml-8 transform transition-transform duration-300 hover:scale-105 hover:shadow-[#4FB7B3] `}
+              className={`w-full sm:max-w-md p-4 sm:p-8 rounded-2xl border border-white/60 dark:border-[#4FB7B3] backdrop-blur-md shadow-lg shadow-slate-200/50 dark:shadow-[0_0_20px_1px_rgba(130,69,236,0.3)] ${index % 2 === 0 ? "sm:ml-0" : "sm:mr-0"} sm:ml-44 sm:mr-44 ml-8 transform transition-transform duration-300 hover:scale-105 hover:shadow-[#4FB7B3] bg-white dark:bg-transparent`}
               style={{
-                background: 'linear-gradient(180deg, #042C33, #0E1314 )',
+                // background: 'linear-gradient(180deg, #042C33, #0E1314 )',
               }}>
+              <div className="absolute inset-0 rounded-2xl -z-10 bg-white dark:bg-gradient-to-b dark:from-[#042C33] dark:to-[#0E1314] opacity-100"></div>
 
               {/* Flex container for image and text */}
               <div className="flex items-center space-x-6">
@@ -58,15 +59,15 @@ const Education = () => {
                 {/* Degree, School Name,Address and Date */}
                 <div className="flex flex-col justify-between">
                   <div>
-                    <h4 className="text-xl sm:text-xl font-semibold text-slate-200">{edu.school} </h4>
-                    <h5 className="text-sm sm:text-sm text-slate-300">{edu.add}</h5>
-                    <h3 className="text-md sm:text-sm mt-2  text-slate-200"> {edu.degree}</h3>
+                    <h4 className="text-xl sm:text-xl font-semibold text-gray-800 dark:text-slate-200">{edu.school} </h4>
+                    <h5 className="text-sm sm:text-sm text-gray-600 dark:text-slate-300">{edu.add}</h5>
+                    <h3 className="text-md sm:text-sm mt-2 text-gray-700 dark:text-slate-200"> {edu.degree}</h3>
                   </div>
                   {/* Date */}
-                  <p className="text-sm text-slate-400 mt-1">{edu.date}</p>
+                  <p className="text-sm text-slate-500 dark:text-slate-400 mt-1">{edu.date}</p>
                 </div>
               </div>
-              <p className="mt-4 text-gray-400">{edu.desc}</p>
+              <p className="mt-4 text-gray-600 dark:text-gray-400">{edu.desc}</p>
             </div>
           </div>
         ))}
