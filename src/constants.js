@@ -267,7 +267,7 @@ export const projects = [
     title: "PORTFOLIO 99",
     description: "Personal Portfolio Website – A fully responsive and modern portfolio designed to highlight my skills, projects, and experience as a web developer. Built with HTML, CSS, and JavaScript, it reflects my passion for creating elegant, user-friendly, and functional web interfaces.",
     image: portfolio01,
-    tags: ["HTML", "CSS", "JavaScript"],
+    tags: ["HTML", "CSS", "JavaScript","Material UI"],
     github: "https://github.com/amitkumarpatra99/PORTFOLIO_99",
     live: "https://akpatra.netlify.app/",
   },
