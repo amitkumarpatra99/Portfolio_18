@@ -89,19 +89,19 @@ const Footer = () => {
       {/* 🌟 MAIN CONTENT 🌟 */}
       <div className="relative z-10 max-w-7xl mx-auto grid md:grid-cols-4 gap-12">
 
-        {/* ABOUT */}
+        {/* ABOUT & PROFILE */}
         <div className="space-y-6">
-          <div className="flex items-center gap-3 group cursor-default">
-            <div className="relative p-[2px] rounded-full bg-gradient-to-r from-teal-500 to-blue-500">
+          <div className="flex items-center gap-3 group cursor-pointer">
+            <div className="relative p-[2px] rounded-full bg-gradient-to-r from-teal-500 to-blue-500 transition-transform duration-500 group-hover:scale-105">
               <img
                 src="DP.jpg"
                 alt="Logo"
-                className="h-10 w-10 object-contain rounded-full border-2 border-white dark:border-[#0a0f1c]"
+                className="h-10 w-10 object-contain rounded-full border-2 border-white dark:border-[#0a0f1c] transition-transform duration-500 group-hover:rotate-12"
               />
             </div>
 
             <div>
-              <h2 className="text-xl font-bold text-black dark:text-white tracking-wide">
+              <h2 className="text-xl font-bold text-black dark:text-white tracking-wide transition-colors duration-300 group-hover:text-teal-500">
                 AMIT KUMAR{" "}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-500 to-emerald-500">
                   PATRA
@@ -129,7 +129,8 @@ const Footer = () => {
                   bg-black/5 dark:bg-white/5 
                   border border-black/10 dark:border-white/10 
                   text-gray-600 dark:text-gray-400 
-                  transition-all duration-300 hover:scale-110 hover:shadow-lg backdrop-blur-md 
+                  transition-all duration-300 
+                  hover:-translate-y-1 hover:scale-110 hover:shadow-lg backdrop-blur-md 
                   hover:bg-black/10 dark:hover:bg-white/10 ${social.color}`}
               >
                 {social.icon}
@@ -151,9 +152,9 @@ const Footer = () => {
                   smooth={true}
                   duration={600}
                   spy={true}
-                  className="flex items-center group cursor-pointer text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-all duration-300"
+                  className="flex items-center group cursor-pointer text-gray-600 dark:text-gray-400 hover:text-teal-600 dark:hover:text-teal-400 transition-all duration-300 hover:translate-x-2"
                 >
-                  <span className="w-0 group-hover:w-2 h-[2px] bg-teal-500 mr-0 group-hover:mr-2 transition-all duration-300"></span>
+                  <span className="w-0 group-hover:w-3 h-[2px] bg-teal-500 mr-0 group-hover:mr-2 transition-all duration-300"></span>
                   {link.name}
                 </ScrollLink>
               </li>
@@ -166,7 +167,7 @@ const Footer = () => {
           <h3 className="text-lg font-semibold text-black dark:text-white cursor-default">Highlights</h3>
           <div className="w-16 h-1 rounded-full mb-6 mt-2 bg-gradient-to-r from-blue-600 via-teal-500 to-green-500" />
 
-          <ul className="space-y-4 text-sm">
+          <ul className="space-y-2 text-sm">
             {[
               "🚀 MERN Stack Developer",
               "🎨 Frontend Animations",
@@ -175,7 +176,10 @@ const Footer = () => {
             ].map((item, i) => (
               <li
                 key={i}
-                className="flex items-center text-gray-600 dark:text-gray-400 hover:text-teal-600 dark:hover:text-teal-300 transition-colors duration-300 cursor-default"
+                className="flex items-center p-2 rounded-lg text-gray-600 dark:text-gray-400 
+                hover:text-teal-600 dark:hover:text-teal-300 
+                hover:bg-teal-500/5 dark:hover:bg-teal-500/10
+                transition-all duration-300 cursor-default hover:pl-3"
               >
                 <span className="w-1.5 h-1.5 rounded-full bg-teal-500 mr-3 animate-pulse"></span>
                 {item}
@@ -191,60 +195,62 @@ const Footer = () => {
 
           <ul className="space-y-4 text-sm">
             {/* Email */}
-            <li className="flex items-center gap-3 group">
+            <li className="flex items-center gap-3 group p-3 -ml-3 rounded-xl border border-transparent hover:border-black/5 dark:hover:border-white/5 hover:bg-black/5 dark:hover:bg-white/5 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
               <div className="w-10 h-10 flex items-center justify-center rounded-full 
                 bg-black/5 dark:bg-white/5 
                 border border-black/10 dark:border-white/10 
-                group-hover:bg-teal-500/10 
+                group-hover:bg-teal-500/20 
                 group-hover:border-teal-500 
                 text-gray-600 dark:text-gray-400 group-hover:text-teal-500 
-                transition-all duration-300">
+                transition-all duration-300 group-hover:scale-110">
                 <Mail size={18} />
               </div>
 
               <div className="flex flex-col">
-                <span className="text-xs text-gray-500 dark:text-gray-400 font-bold mb-1">EMAIL</span>
-                <a className="text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors">
+                <span className="text-xs text-gray-500 dark:text-gray-400 font-bold mb-1 group-hover:text-teal-500 transition-colors">EMAIL</span>
+                <a className="text-gray-700 dark:text-gray-300 group-hover:text-black dark:group-hover:text-white transition-colors cursor-pointer">
                   mrpatra.web@gmail.com
                 </a>
               </div>
             </li>
 
             {/* Phone */}
-            <li className="flex items-center gap-3 group">
+            <li className="flex items-center gap-3 group p-3 -ml-3 rounded-xl border border-transparent hover:border-black/5 dark:hover:border-white/5 hover:bg-black/5 dark:hover:bg-white/5 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
               <div className="w-10 h-10 flex items-center justify-center rounded-full 
                 bg-black/5 dark:bg-white/5 
                 border border-black/10 dark:border-white/10 
-                group-hover:bg-teal-500/10 
+                group-hover:bg-teal-500/20 
                 group-hover:border-teal-500 
                 text-gray-600 dark:text-gray-400 group-hover:text-teal-500 
-                transition-all duration-300">
+                transition-all duration-300 group-hover:scale-110">
                 <Phone size={18} />
               </div>
 
               <div className="flex flex-col">
-                <span className="text-xs text-gray-500 dark:text-gray-400 font-bold mb-1">PHONE</span>
-                <a className="text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors">
+                <span className="text-xs text-gray-500 dark:text-gray-400 font-bold mb-1 group-hover:text-teal-500 transition-colors">PHONE</span>
+                <a className="text-gray-700 dark:text-gray-300 group-hover:text-black dark:group-hover:text-white transition-colors cursor-pointer">
                   +91 8144129955
                 </a>
               </div>
             </li>
 
             {/* Location */}
-            <li className="flex items-center gap-3 group">
+            <li className="flex items-center gap-3 group p-3 -ml-3 rounded-xl border border-transparent hover:border-black/5 dark:hover:border-white/5 hover:bg-black/5 dark:hover:bg-white/5 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
               <div className="w-10 h-10 flex items-center justify-center rounded-full 
                 bg-black/5 dark:bg-white/5 
                 border border-black/10 dark:border-white/10 
-                group-hover:bg-teal-500/10 
+                group-hover:bg-teal-500/20 
                 group-hover:border-teal-500 
                 text-gray-600 dark:text-gray-400 group-hover:text-teal-500 
-                transition-all duration-300">
+                transition-all duration-300 group-hover:scale-110">
                 <MapPin size={18} />
               </div>
 
               <div className="flex flex-col">
-                <span className="text-xs text-gray-500 dark:text-gray-400 font-bold mb-1">LOCATION</span>
-                <span className="text-gray-700 dark:text-gray-300">Bhubaneswar, Odisha</span>
+                <span className="text-xs text-gray-500 dark:text-gray-400 font-bold mb-1 group-hover:text-teal-500 transition-colors">LOCATION</span>
+                <span className="text-gray-700 dark:text-gray-300 group-hover:text-black dark:group-hover:text-white transition-colors cursor-default">
+                  Bhubaneswar, Odisha
+                </span>
               </div>
             </li>
           </ul>
@@ -263,12 +269,12 @@ const Footer = () => {
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           className="group flex items-center gap-2 px-4 py-2 rounded-full 
             bg-black/5 dark:bg-white/5 
-            hover:bg-teal-500/10 
+            hover:bg-teal-500/20 
             border border-black/10 dark:border-white/10 
             hover:border-teal-500/50 
-            transition-all duration-300"
+            transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-teal-500/20"
         >
-          <span className="text-sm text-gray-600 dark:text-gray-400 group-hover:text-black dark:group-hover:text-white font-medium">
+          <span className="text-sm text-gray-600 dark:text-gray-400 group-hover:text-teal-600 dark:group-hover:text-teal-400 font-medium transition-colors">
             Back to top
           </span>
           <ArrowUp
