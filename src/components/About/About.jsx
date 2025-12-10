@@ -1,11 +1,9 @@
 import React, { useMemo } from "react";
-// Added 'Database' to the imports
 import { Briefcase, Code, Coffee, Database, ExternalLink, User, UserCircle } from "lucide-react";
 import { motion } from "framer-motion";
 import profileImage from '../../assets/A.jpg';
 import { FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa6";
 
-// --- Restore Original Background with Performance Tweaks ---
 const AnimatedStars = () => {
   const stars = useMemo(() => {
     return [...Array(70)].map((_, i) => ({
@@ -48,7 +46,6 @@ const AnimatedStars = () => {
   );
 };
 
-// --- Variants ---
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
@@ -62,13 +59,6 @@ const itemVariants = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
 };
 
-const icons = [
-  { id: 1, icon: <FaGithub size={20} />, link: "https://github.com/amitkumarpatra99", color: "hover:text-gray-400 hover:border-gray-400 hover:shadow-gray-400/30" },
-  { id: 2, icon: <FaLinkedin size={20} />, link: "https://www.linkedin.com/in/amitkumarpatra99", color: "hover:text-blue-500 hover:border-blue-500 hover:shadow-blue-500/30" },
-  { id: 3, icon: <FaWhatsapp size={20} />, link: "https://wa.me/8144129955", color: "hover:text-green-500 hover:border-green-500 hover:shadow-green-500/30" },
-  { id: 4, icon: <Coffee size={20} />, link: "https://warmcup.vercel.app/", color: "hover:text-amber-500 hover:border-amber-500 hover:shadow-amber-500/30" },
-];
-
 const About = () => {
   return (
     <section
@@ -77,7 +67,6 @@ const About = () => {
     >
       <AnimatedStars />
 
-      {/* Background Blob */}
       <div className="absolute top-1/4 -left-20 w-64 h-64 md:w-96 md:h-96 bg-teal-500/10 rounded-full blur-[80px] md:blur-[100px] pointer-events-none mix-blend-screen" />
 
       <div className="container mx-auto max-w-6xl relative z-10">
@@ -102,7 +91,7 @@ const About = () => {
         {/* Grid Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
 
-          {/* Left: Image Section */}
+          {/* Left Image */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -124,24 +113,10 @@ const About = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-40"></div>
                 </div>
               </div>
-
-              {/* Floating Badge */}
-              {/* <motion.div
-                animate={{ y: [0, -10, 0] }}
-                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute -bottom-6 -right-2 md:-right-6 bg-[#112240]/95 backdrop-blur-md border border-teal-500/30 p-3 md:p-4 rounded-2xl shadow-2xl w-[160px] md:w-[200px]"
-              >
-                <div className="flex items-center gap-2 md:gap-3">
-                  <div className="w-2 h-2 md:w-3 md:h-3 rounded-full bg-green-500 animate-pulse"></div>
-                  <span className="text-gray-300 text-xs md:text-sm font-medium">Open to work</span>
-                </div>
-                <p className="text-white font-bold text-sm md:text-lg mt-1">Full Stack Dev</p>
-              </motion.div> */}
-
             </div>
           </motion.div>
 
-          {/* Right: Content Section */}
+          {/* Right Content */}
           <motion.div
             variants={containerVariants}
             initial="hidden"
@@ -153,7 +128,7 @@ const About = () => {
               I am a passionate developer who bridges the gap between design and engineering. I build performant web applications with a focus on <span className="text-teal-400 font-medium">clean code</span> and <span className="text-teal-400 font-medium">pixel-perfect designs</span>.
             </motion.p>
 
-            {/* Skills Grid - Now with 4 Items */}
+            {/* Skills */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {[
                 {
@@ -167,7 +142,6 @@ const About = () => {
                   desc: "Intuitive experiences.",
                 },
                 {
-                  // --- NEW CARD ADDED HERE ---
                   icon: <Database className="w-6 h-6 text-rose-400" />,
                   title: "Backend Integration",
                   desc: "Robust APIs & databases.",
@@ -198,27 +172,62 @@ const About = () => {
               ))}
             </div>
 
-            {/* Action Area */}
+            {/* Action Area – UPDATED SOCIAL ICONS INSERTED 😊 */}
             <motion.div variants={itemVariants} className="flex flex-col sm:flex-row items-center lg:items-start gap-6 pt-4 justify-center lg:justify-start">
               <a
                 href="https://drive.google.com/file/d/1xgU-OvduPOkcmW6dzjLCwNYCRdNBGHdU/view?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group relative inline-flex items-center justify-center gap-3 px-8 py-3.5  font-medium rounded-full overflow-hidden           text-teal-600 dark:text-teal-400 bg-teal-50 dark:bg-teal-500/10 border border-teal-200 dark:border-teal-500/20  hover:bg-teal-100 dark:hover:bg-teal-500/20 hover:text-teal-700 dark:hover:text-white transition-all duration-300 w-full sm:w-auto"
+                className="group relative inline-flex items-center justify-center gap-3 px-8 py-3.5 font-medium rounded-full overflow-hidden text-teal-600 dark:text-teal-400 bg-teal-50 dark:bg-teal-500/10 border border-teal-200 dark:border-teal-500/20 hover:bg-teal-100 dark:hover:bg-teal-500/20 hover:text-teal-700 dark:hover:text-white transition-all duration-300 w-full sm:w-auto"
               >
                 <span className="relative z-10 flex items-center gap-2">
                   View My CV <ExternalLink size={18} />
                 </span>
               </a>
 
+              {/* ⭐ UPDATED FOOTER-STYLE ICONS ⭐ */}
               <div className="flex items-center gap-4">
-                {icons.map((social) => (
+                {[
+                  {
+                    id: 1,
+                    icon: <FaGithub size={18} />,
+                    link: "https://github.com/amitkumarpatra99",
+                    color:
+                      "hover:text-gray-600 dark:hover:text-gray-400 hover:border-gray-600 dark:hover:border-gray-400 hover:shadow-gray-600/30 dark:hover:shadow-gray-400/30",
+                  },
+                  {
+                    id: 2,
+                    icon: <FaLinkedin size={18} />,
+                    link: "https://www.linkedin.com/in/amitkumarpatra99",
+                    color:
+                      "hover:text-blue-600 dark:hover:text-blue-500 hover:border-blue-600 dark:hover:border-blue-500 hover:shadow-blue-600/30 dark:hover:shadow-blue-500/30",
+                  },
+                  {
+                    id: 3,
+                    icon: <FaWhatsapp size={18} />,
+                    link: "https://wa.me/8144129955",
+                    color:
+                      "hover:text-green-600 dark:hover:text-green-500 hover:border-green-600 dark:hover:border-green-500 hover:shadow-green-600/30 dark:hover:shadow-green-500/30",
+                  },
+                  {
+                    id: 4,
+                    icon: <Coffee size={18} />,
+                    link: "https://warmcup.vercel.app/",
+                    color:
+                      "hover:text-amber-600 dark:hover:text-amber-500 hover:border-amber-600 dark:hover:border-amber-500 hover:shadow-amber-600/30 dark:hover:shadow-amber-500/30",
+                  },
+                ].map((social) => (
                   <a
                     key={social.id}
                     href={social.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`w-12 h-12 flex items-center justify-center rounded-full bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 text-gray-500 dark:text-gray-400 transition-all duration-300 hover:scale-110 hover:shadow-lg backdrop-blur-md ${social.color} hover:bg-white dark:hover:bg-white/10`}
+                    className={`w-10 h-10 flex items-center justify-center rounded-full 
+                      bg-black/5 dark:bg-white/5 
+                      border border-black/10 dark:border-white/10 
+                      text-gray-600 dark:text-gray-400 
+                      transition-all duration-300 hover:scale-110 hover:shadow-lg backdrop-blur-md 
+                      hover:bg-black/10 dark:hover:bg-white/10 ${social.color}`}
                   >
                     {social.icon}
                   </a>
