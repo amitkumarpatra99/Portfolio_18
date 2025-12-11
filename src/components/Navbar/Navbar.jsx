@@ -175,7 +175,7 @@ export default function NavbarPremium() {
                   w-10 h-10 flex items-center justify-center 
                   rounded-full bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 text-black/70 dark:text-gray-400 
                   transition-all duration-300 hover:scale-110 hover:shadow-lg backdrop-blur-md 
-                  hover:bg-black/10 dark:hover:bg-white/10 hover:text-blue-500 hover:border-blue-500/50
+                  hover:bg-black/10 dark:hover:bg-white/10 hover:text-blue-500 hover:border-blue-500/50 dark:hover:text-blue-500 dark:hover:border-blue-500/50
                 "
               >
                 <FaLinkedin size={18} className="" />

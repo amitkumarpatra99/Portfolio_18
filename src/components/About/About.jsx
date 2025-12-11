@@ -194,6 +194,7 @@ const About = () => {
                     link: "https://github.com/amitkumarpatra99",
                     color:
                       "hover:text-gray-600 dark:hover:text-gray-400 hover:border-gray-600 dark:hover:border-gray-400 hover:shadow-gray-600/30 dark:hover:shadow-gray-400/30",
+                      
                   },
                   {
                     id: 2,
