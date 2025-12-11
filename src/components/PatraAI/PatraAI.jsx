@@ -4,15 +4,17 @@ import {
     FaVolumeUp, FaVolumeMute
 } from "react-icons/fa";
 import {
-    FiMessageSquare, FiCornerDownRight, FiCpu, FiGithub, FiLinkedin, FiMail
+    FiMessageSquare, FiCornerDownRight, FiGithub, FiLinkedin, FiMail
 } from "react-icons/fi";
 import { motion, AnimatePresence } from "framer-motion";
 // Ensure these imports exist, or the bot will default to empty arrays
 import { SkillsInfo, projects, experiences, education } from "../../constants";
 
 // --- SOUND ASSETS ---
-const sendSound = new Audio("https://cdn.pixabay.com/audio/2022/11/24/audio_9bc2f6b0e3.mp3");
-const receiveSound = new Audio("https://cdn.pixabay.com/audio/2022/03/15/audio_c8c8a73467.mp3");
+// --- SOUND ASSETS ---
+// Reliable Sound URLs
+const sendSound = new Audio("https://codeskulptor-demos.commondatastorage.googleapis.com/pang/pop.mp3");
+const receiveSound = new Audio("https://codeskulptor-demos.commondatastorage.googleapis.com/GalaxyInvaders/pause.wav");
 
 const PatraAI = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -26,7 +28,7 @@ const PatraAI = () => {
     const [messages, setMessages] = useState([
         {
             id: 1,
-            text: "Hi there! 👋 I'm Patra AI. I can show you Amit's projects, skills, or contact info. Try clicking a topic below!",
+            text: "Hi! 👋 I'm **Mr. Patra AI**. \n\nI know everything about Amit's **Projects**, **Experience**, **Education**, and **Skills**. \n\nTry asking:\n- *\"Where did Amit work?\"*\n- *\"Show me his Resume\"*\n- *\"Tell me about the Face Detection project\"*",
             sender: "bot",
             time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
             type: "text"
@@ -58,53 +60,71 @@ const PatraAI = () => {
     const generateResponse = (input) => {
         const lowerInput = input.toLowerCase();
 
-        // 1. GREETINGS
-        if (['hi', 'hello', 'hey', 'sup'].some(w => lowerInput.includes(w))) {
-            return "Hello! How can I help you explore Amit's portfolio today?";
+        // 1. GREETINGS & BASICS
+        if (['hi', 'hello', 'hey', 'start', 'sup'].some(w => lowerInput.includes(w))) {
+            return "Hello! I am ready to answer questions about Amit's **Work**, **Education**, or **Projects**. What would you like to know?";
+        }
+        if (lowerInput.includes("who are you")) return "I am **Patra AI**, a virtual assistant built by Amit using React & Tailwind to showcase his portfolio.";
+        if (lowerInput.includes("thank")) return "You're welcome! Let me know if you need anything else.";
+
+        // 2. CONTACT
+        if (lowerInput.includes("contact") || lowerInput.includes("email") || lowerInput.includes("phone")) {
+            return "📧 **Email**: mrpatra.web@gmail.com\n📞 **Phone**: +91 8144129955\n🔗 **LinkedIn**: [amitkumarpatra99](https://linkedin.com/in/amitkumarpatra99)";
         }
 
-        // 2. CONTACT INFO
-        if (lowerInput.includes("email") || lowerInput.includes("contact")) {
-            return "You can reach Amit at **mrpatra.web@gmail.com** or connect via LinkedIn.";
-        }
-        if (lowerInput.includes("linkedin")) {
-            return "Here is his LinkedIn: [linkedin.com/in/amitkumarpatra99](https://linkedin.com/in/amitkumarpatra99)";
-        }
-        if (lowerInput.includes("github")) {
-            return "Check out his code repo: [github.com/amitkumarpatra99](https://github.com/amitkumarpatra99)";
+        // 2b. GITHUB
+        if (lowerInput.includes("github") || lowerInput.includes("git")) {
+            return "💻 **GitHub**: Check out my code repositories here:\n🔗 [github.com/amitkumarpatra99](https://github.com/amitkumarpatra99)";
         }
 
-        // 3. SKILLS (Dynamic from your constants file)
-        if (lowerInput.includes("skill") || lowerInput.includes("stack") || lowerInput.includes("tech")) {
-            // Safety check if SkillsInfo is undefined
-            const skillsList = SkillsInfo
-                ? SkillsInfo.flatMap(s => s.skills.map(i => i.name)).slice(0, 10).join(", ")
-                : "React, Node.js, Express, MongoDB, Tailwind CSS, Python";
-            return `Amit works with modern tech including: **${skillsList}** and more.`;
+        // 3. EXPERIENCE / INTERNSHIPS
+        if (['experience', 'work', 'job', 'internship', 'company'].some(w => lowerInput.includes(w))) {
+            if (!experiences) return "Amit has focused on Full Stack Development and AI/ML projects.";
+
+            const expList = experiences.map(exp =>
+                `🔸 **${exp.role}** at *${exp.company}* (${exp.date})\n   - Focus: ${exp.project}`
+            ).join("\n\n");
+            return `### 💼 Work Experience\n\n${expList}`;
         }
 
-        // 4. PROJECTS (Dynamic)
-        if (lowerInput.includes("project") || lowerInput.includes("work")) {
-            const projList = projects
-                ? projects.map(p => p.title).join(", ")
-                : "Portfolio, E-commerce App, AI Tracker";
-            return `He has built some cool stuff: **${projList}**. Ask me about a specific one!`;
+        // 4. EDUCATION
+        if (['education', 'college', 'school', 'degree', 'study', 'btech'].some(w => lowerInput.includes(w))) {
+            if (!education) return "Amit is pursuing his B.Tech in Computer Science.";
+
+            const eduList = education.map(edu =>
+                `🎓 **${edu.degree}**\n   🏫 ${edu.school}\n   📅 ${edu.date} | 📍 ${edu.add}`
+            ).join("\n\n");
+            return `### 📚 Education\n\n${eduList}`;
         }
 
-        // 5. SPECIFIC PROJECT SEARCH
+        // 5. SKILLS / TECH STACK
+        if (['skill', 'tech', 'stack', 'tool', 'language'].some(w => lowerInput.includes(w))) {
+            const allSkills = SkillsInfo.flatMap(cat => `**${cat.title}**: ${cat.skills.map(s => s.name).join(", ")}`).join("\n\n");
+            return `### 🛠️ Technical Skills\n\n${allSkills}`;
+        }
+
+        // 6. SPECIFIC PROJECT SEARCH (By Title)
+        // Check if the user named a specific project
         if (projects) {
             const foundProject = projects.find(p => lowerInput.includes(p.title.toLowerCase()));
             if (foundProject) {
-                return `📂 **${foundProject.title}**\n${foundProject.description}\n\n🔗 [View Live](${foundProject.live}) | [GitHub](${foundProject.github})`;
+                return `📂 **${foundProject.title}**\n\n${foundProject.description}\n\n� **Tech**: ${foundProject.tags.slice(0, 5).join(", ")}\n🔗 [Live Demo](${foundProject.live || '#'}) | [GitHub](${foundProject.github})`;
             }
         }
 
-        // 6. PERSONAL / FUN
-        if (lowerInput.includes("who are you")) return "I am a virtual assistant created by Amit using React & Framer Motion.";
-        if (lowerInput.includes("hire")) return "Amit is currently **Open to Work**! Please send him an email.";
+        // 7. ALL PROJECTS LIST
+        if (['project', 'portfolio', 'app', 'website'].some(w => lowerInput.includes(w))) {
+            const projList = projects.slice(0, 5).map(p => `• **${p.title}**: ${p.description.substring(0, 50)}...`).join("\n");
+            return `### 🚀 Featured Projects\n\n${projList}\n\n*Type a project name (e.g., "Netflix Clone") for more details!*`;
+        }
+
+        // 8. RESUME / CV
+        if (lowerInput.includes("resume") || lowerInput.includes("cv")) {
+            return "You can download Amit's Resume from the **About** section or contact him directly for the latest version!";
+        }
 
         // FALLBACK
-        return "I'm still learning! Try asking about 'Skills', 'Projects', or 'Contact Info'.";
+        return "I'm not sure about that. Try asking about **Education**, **Experience**, **Skills**, or a specific **Project** name.";
     };
 
     // --- HANDLE SEND ---
@@ -145,7 +165,6 @@ const PatraAI = () => {
     const QuickReplies = () => (
         <div className="flex gap-2 overflow-x-auto py-2 px-4 scrollbar-hide">
             {[
-                { icon: <FiCpu />, text: "Skills" },
                 { icon: <FiCornerDownRight />, text: "Projects" },
                 { icon: <FiMail />, text: "Contact Me" },
                 { icon: <FiGithub />, text: "GitHub" },
@@ -197,7 +216,7 @@ const PatraAI = () => {
                         animate={{ opacity: 1, y: 0, scale: 1 }}
                         exit={{ opacity: 0, y: 50, scale: 0.9 }}
                         transition={{ type: "spring", stiffness: 300, damping: 30 }}
-                        className="fixed bottom-52 right-8 w-[90vw] md:w-[380px] h-[550px] max-h-[calc(100vh-220px)] z-[60] bg-white dark:bg-[#0f172a] rounded-2xl shadow-2xl border border-gray-200 dark:border-gray-700 flex flex-col overflow-hidden font-sans"
+                        className="fixed bottom-[5.5rem] right-4 md:right-8 w-[92vw] sm:w-[380px] h-[550px] max-h-[75vh] z-[60] bg-white dark:bg-[#0f172a] rounded-2xl shadow-2xl border border-gray-200 dark:border-gray-700 flex flex-col overflow-hidden font-sans"
                     >
                         {/* 1. HEADER */}
                         <div className="bg-gradient-to-r from-blue-700 to-violet-700 p-4 flex items-center justify-between text-white shadow-md">
