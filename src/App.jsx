@@ -1,5 +1,6 @@
 import React from "react";
 import Navbar from "./components/Navbar/Navbar";
+import PatraAI from "./components/PatraAI/PatraAI";
 import Home from "./components/Home/Home";
 import Skills from "./components/Skills/Skills";
 import Projects from "./components/Projects/Projects";
@@ -22,6 +23,7 @@ const App = () => {
   return (
     <ThemeProvider>
       <CustomCursor />
+      <PatraAI />
 
       <div className="App">
         <BrowserRouter>
