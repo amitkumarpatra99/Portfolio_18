@@ -43,9 +43,3 @@ Built with **React**, **Framer Motion**, and **TailwindCSS**, it blends design a
 
 > Navigate seamlessly with fluid animations that enhance user experience and storytelling.  
 > Every section — from About Me to Projects — moves with purpose, creating a sense of rhythm and continuity.
-
----
-
-<!-- ## 📂 Project Structure -->
-
-
