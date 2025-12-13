@@ -6,7 +6,7 @@ import {
   FaVolumeUp,
   FaVolumeMute,
 } from "react-icons/fa";
-import { GiArtificialIntelligence } from "react-icons/gi";
+import { FaRobot } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
 import { SkillsInfo, projects, experiences, education } from "../../constants";
 
@@ -160,7 +160,7 @@ const PatraAI = () => {
               shadow-xl
             "
           >
-            <GiArtificialIntelligence className="text-2xl sm:text-3xl" />
+            <FaRobot className="text-2xl sm:text-3xl" />
           </motion.button>
         )}
       </AnimatePresence>
@@ -192,7 +192,7 @@ const PatraAI = () => {
               text-white
             ">
               <div className="flex items-center gap-2 font-semibold">
-                <GiArtificialIntelligence />
+                <FaRobot />
                 Patra AI
               </div>
               <div className="flex gap-3">
