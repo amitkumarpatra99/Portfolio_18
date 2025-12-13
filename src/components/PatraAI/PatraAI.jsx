@@ -56,7 +56,7 @@ const PatraAI = () => {
     if (!soundEnabled) return;
     const sound = type === "send" ? sendSound : receiveSound;
     sound.currentTime = 0;
-    sound.play().catch(() => {});
+    sound.play().catch(() => { });
   };
 
   useEffect(() => {
@@ -150,8 +150,8 @@ const PatraAI = () => {
             }}
             transition={{ repeat: Infinity, duration: 2.6 }}
             className="
-              fixed bottom-32 right-8 z-[60]
-              h-16 w-16 rounded-full
+              fixed bottom-[calc(1.5rem+env(safe-area-inset-bottom))] right-4 sm:bottom-32 sm:right-8 z-[60]
+              h-14 w-14 sm:h-16 sm:w-16 rounded-full
               bg-gradient-to-br from-indigo-600 via-violet-600 to-fuchsia-600
               border border-white/20
               backdrop-blur-xl
@@ -160,7 +160,7 @@ const PatraAI = () => {
               shadow-xl
             "
           >
-            <GiArtificialIntelligence size={30} />
+            <GiArtificialIntelligence className="text-2xl sm:text-3xl" />
           </motion.button>
         )}
       </AnimatePresence>
@@ -173,8 +173,8 @@ const PatraAI = () => {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 40, scale: 0.95 }}
             className="
-              fixed bottom-[5.5rem] right-4 sm:right-8
-              w-[92vw] sm:w-[380px] h-[560px]
+              fixed bottom-[calc(4rem+env(safe-area-inset-bottom))] right-4 sm:bottom-[5.5rem] sm:right-8
+              w-[92vw] sm:w-[380px] h-[75vh] sm:h-[560px]
               z-[60] flex flex-col overflow-hidden
               rounded-3xl
               bg-white/20 dark:bg-black/30
@@ -213,9 +213,8 @@ const PatraAI = () => {
               {messages.map((m) => (
                 <div
                   key={m.id}
-                  className={`flex ${
-                    m.sender === "user" ? "justify-end" : "justify-start"
-                  }`}
+                  className={`flex ${m.sender === "user" ? "justify-end" : "justify-start"
+                    }`}
                 >
                   <div
                     className={`
@@ -223,10 +222,9 @@ const PatraAI = () => {
                       max-w-[75%]
                       break-words break-all
                       backdrop-blur-xl
-                      ${
-                        m.sender === "user"
-                          ? "bg-gradient-to-br from-indigo-500 to-violet-600 text-white"
-                          : "bg-white/30 dark:bg-white/10 text-gray-900 dark:text-gray-100 border border-white/20"
+                      ${m.sender === "user"
+                        ? "bg-gradient-to-br from-indigo-500 to-violet-600 text-white"
+                        : "bg-white/30 dark:bg-white/10 text-gray-900 dark:text-gray-100 border border-white/20"
                       }
                     `}
                     dangerouslySetInnerHTML={{
